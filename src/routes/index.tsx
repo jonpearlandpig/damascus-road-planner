@@ -157,16 +157,10 @@ function ShowRow({ show }: { show: TourShow }) {
 
   return (
     <li className="border-b border-border last:border-none hover:bg-sand/50">
-      {hasWorkspace ? (
-        <Link
-          to="/venues/$slug" as any
-          // TanStack requires typed to path; use the concrete route paths:
-          {...(show.venueSlug === "spectrum-center"
-            ? { to: "/venues/spectrum-center" }
-            : { to: "/venues/bok-center" })}
-        >
-          {content}
-        </Link>
+      {show.venueSlug === "spectrum-center" ? (
+        <Link to="/venues/spectrum-center">{content}</Link>
+      ) : show.venueSlug === "bok-center" ? (
+        <Link to="/venues/bok-center">{content}</Link>
       ) : (
         <div className="cursor-default">{content}</div>
       )}

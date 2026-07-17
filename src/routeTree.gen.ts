@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as VenuesSpectrumCenterRouteImport } from './routes/venues.spectrum-center'
+import { Route as VenuesBokCenterRouteImport } from './routes/venues.bok-center'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VenuesSpectrumCenterRoute = VenuesSpectrumCenterRouteImport.update({
+  id: '/venues/spectrum-center',
+  path: '/venues/spectrum-center',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VenuesBokCenterRoute = VenuesBokCenterRouteImport.update({
+  id: '/venues/bok-center',
+  path: '/venues/bok-center',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/venues/bok-center': typeof VenuesBokCenterRoute
+  '/venues/spectrum-center': typeof VenuesSpectrumCenterRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/venues/bok-center': typeof VenuesBokCenterRoute
+  '/venues/spectrum-center': typeof VenuesSpectrumCenterRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/venues/bok-center': typeof VenuesBokCenterRoute
+  '/venues/spectrum-center': typeof VenuesSpectrumCenterRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/venues/bok-center' | '/venues/spectrum-center'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/venues/bok-center' | '/venues/spectrum-center'
+  id: '__root__' | '/' | '/venues/bok-center' | '/venues/spectrum-center'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  VenuesBokCenterRoute: typeof VenuesBokCenterRoute
+  VenuesSpectrumCenterRoute: typeof VenuesSpectrumCenterRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/venues/spectrum-center': {
+      id: '/venues/spectrum-center'
+      path: '/venues/spectrum-center'
+      fullPath: '/venues/spectrum-center'
+      preLoaderRoute: typeof VenuesSpectrumCenterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/venues/bok-center': {
+      id: '/venues/bok-center'
+      path: '/venues/bok-center'
+      fullPath: '/venues/bok-center'
+      preLoaderRoute: typeof VenuesBokCenterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  VenuesBokCenterRoute: VenuesBokCenterRoute,
+  VenuesSpectrumCenterRoute: VenuesSpectrumCenterRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
