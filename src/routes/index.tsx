@@ -78,7 +78,7 @@ function Dashboard() {
             <div className="text-right">Last rev.</div>
           </div>
           <ul>
-            {shows.map((s) => (
+            {shows.map((s: TourShow) => (
               <ShowRow key={s.id} show={s} />
             ))}
           </ul>
