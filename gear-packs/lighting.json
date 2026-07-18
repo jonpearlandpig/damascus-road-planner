@@ -1,0 +1,17 @@
+{
+  "department": "lighting",
+  "schema": "_SCHEMA.md",
+  "source_policy": "T.I. only — no reference names",
+  "items": [
+    {
+      "id": "LX-0001",
+      "item": "grandMA3 Light console",
+      "qty": 1,
+      "status": "CANDIDATE",
+      "weight_lbs": "TBD",
+      "power": "TBD",
+      "source": "T.I.",
+      "notes": "Example line showing format. Qty 1 per corrected T.I. baseline. Extend from Gear List Working Baseline via the Notion crosswalk only."
+    }
+  ]
+}
