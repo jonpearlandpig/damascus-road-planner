@@ -1,5 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import { Grid, OrbitControls, Text } from '@react-three/drei';
+import { PCFShadowMap } from 'three';
 import type { VenueTwin } from '../data/types';
 import { ft } from '../lib/units';
 import { DrtProduction } from './DrtProduction';
@@ -19,7 +20,9 @@ function Scene({ venue, activeLayers, onSelect }: VenueSceneProps) {
   const { geometry } = venue;
   const halfWidth = ft(geometry.floorWidthFt / 2);
   const halfLength = ft(geometry.floorLengthFt / 2);
-  const lowSteel = ft(geometry.lowSteelFt ?? 80);
+  const lowSteelStatus = venue.geometryProvenance.lowSteelFt?.status;
+  const canRenderLowSteel = geometry.lowSteelFt !== undefined && lowSteelStatus !== 'MISSING' && lowSteelStatus !== 'CONFLICT';
+  const lowSteel = canRenderLowSteel ? ft(geometry.lowSteelFt!) : undefined;
 
   return (
     <>
@@ -54,10 +57,12 @@ function Scene({ venue, activeLayers, onSelect }: VenueSceneProps) {
       )}
       {activeLayers.has('rigging') && (
         <>
-          <mesh position={[0, lowSteel, 0]} onPointerDown={(event) => { event.stopPropagation(); onSelect('grid-plane'); }}>
-            <boxGeometry args={[ft(geometry.gridWidthFt ?? geometry.floorWidthFt * 0.82), ft(0.6), ft(geometry.gridDepthFt ?? geometry.floorLengthFt * 0.48)]} />
-            <meshStandardMaterial color="#3d5261" transparent opacity={0.24} wireframe />
-          </mesh>
+          {lowSteel !== undefined && (
+            <mesh position={[0, lowSteel, 0]} onPointerDown={(event) => { event.stopPropagation(); onSelect('grid-plane'); }}>
+              <boxGeometry args={[ft(geometry.gridWidthFt ?? geometry.floorWidthFt * 0.82), ft(0.6), ft(geometry.gridDepthFt ?? geometry.floorLengthFt * 0.48)]} />
+              <meshStandardMaterial color="#3d5261" transparent opacity={0.24} wireframe />
+            </mesh>
+          )}
           {geometry.centerhungBottomFt && (
             <mesh position={[0, ft(geometry.centerhungBottomFt + 8), 0]} onPointerDown={(event) => { event.stopPropagation(); onSelect('scoreboard'); }}>
               <cylinderGeometry args={[ft((geometry.centerhungDiameterFt ?? 30) / 2), ft((geometry.centerhungDiameterFt ?? 30) / 2.4), ft(16), 12]} />
@@ -79,10 +84,13 @@ function Scene({ venue, activeLayers, onSelect }: VenueSceneProps) {
 }
 
 export function VenueScene(props: VenueSceneProps) {
+  const lowSteelStatus = props.venue.geometryProvenance.lowSteelFt?.status;
+  const showRiggingHeightAlert = props.activeLayers.has('rigging') && (props.venue.geometry.lowSteelFt === undefined || lowSteelStatus === 'MISSING' || lowSteelStatus === 'CONFLICT');
   return (
     <div className="scene-shell" aria-label={`Interactive 3D planning model for ${props.venue.name}`}>
-      <Canvas shadows camera={{ position: [ft(115), ft(95), ft(135)], fov: 42 }} dpr={[1, 1.6]}><Scene {...props} /></Canvas>
+      <Canvas shadows={{ type: PCFShadowMap }} camera={{ position: [ft(115), ft(95), ft(135)], fov: 42 }} dpr={[1, 1.6]}><Scene {...props} /></Canvas>
       <div className="scene-watermark">PLANNING MODEL · NOT VENUE CAD</div>
+      {showRiggingHeightAlert && <div className="scene-alert">Rigging height not source-safe for this venue</div>}
     </div>
   );
 }

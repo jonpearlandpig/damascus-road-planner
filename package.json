@@ -13,9 +13,14 @@
     "typecheck": "tsc -b",
     "test": "vitest",
     "test:run": "vitest run",
-    "validate": "npm run validate:venues && npm run validate:gear",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install chromium",
+    "test:visual": "playwright test --project=chromium",
+    "validate": "npm run validate:venues && npm run validate:gear && npm run validate:reconciliation",
     "validate:venues": "tsx scripts/validate-venues.ts",
     "validate:gear": "tsx scripts/validate-gear.ts",
+    "validate:reconciliation": "tsx scripts/reconcile-sources.ts --check",
+    "reconcile:sources": "tsx scripts/reconcile-sources.ts",
     "audit": "npm audit --omit=dev --audit-level=moderate",
     "check": "npm run typecheck && npm run lint && npm run validate && npm run test:run && npm run build",
     "preview": "vite preview"
@@ -30,6 +35,7 @@
     "three": "^0.185.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/node": "^22.20.1",

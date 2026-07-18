@@ -37,9 +37,46 @@ export interface SourceRef {
   authority: AuthorityState;
 }
 
-export type MeasurementStatus = 'VERIFIED' | 'REFERENCE' | 'ESTIMATE' | 'MISSING';
+export type MeasurementStatus = 'VERIFIED' | 'REFERENCE' | 'ESTIMATE' | 'MISSING' | 'CONFLICT';
 export type MeasurementConfidence = 'HIGH' | 'MEDIUM' | 'LOW' | 'UNKNOWN';
 export type MeasurementUnit = 'ft' | 'lb' | 'count';
+
+export type SourceAssetAvailabilityState =
+  | 'AVAILABLE_LOCAL'
+  | 'AVAILABLE_EXTERNAL'
+  | 'REQUESTED'
+  | 'MISSING'
+  | 'SUPERSEDED'
+  | 'NOT_REQUIRED';
+
+export type SourceAssetControllingStatus = 'CONTROLLING' | 'REFERENCE' | 'SUPERSEDED' | 'NOT_REQUIRED';
+
+export type SourceAssetType =
+  | 'VENUE_PRODUCTION_GUIDE'
+  | 'VENUE_TECH_PACK'
+  | 'VENUE_MANUAL'
+  | 'VENUE_SOURCE_PACKET'
+  | 'CAD'
+  | 'RIGGING_PLOT';
+
+export interface SourceAssetManifestEntry {
+  id: string;
+  filename: string;
+  venueSlug: string;
+  sourceType: SourceAssetType;
+  revision?: string;
+  availabilityState: SourceAssetAvailabilityState;
+  controllingStatus: SourceAssetControllingStatus;
+  referencedBy: string[];
+  notes: string;
+  knownConflictFlags: string[];
+}
+
+export interface SourceAssetManifest {
+  version: 1;
+  updatedAt: string;
+  assets: SourceAssetManifestEntry[];
+}
 
 export interface SourcedMeasurement {
   value: number;

@@ -32,5 +32,11 @@ jobs:
       - name: Check project
         run: npm run check
 
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Run browser smoke tests
+        run: npm run test:e2e
+
       - name: Audit production dependencies
         run: npm run audit

@@ -1,70 +1,136 @@
 {
+  "version": 1,
+  "updatedAt": "2026-07-18",
   "assets": [
     {
+      "id": "spectrum-center-production-guide-2025",
       "filename": "2025 Spectrum Center Production Guide.pdf",
-      "status": "external",
+      "venueSlug": "spectrum-center",
+      "sourceType": "VENUE_PRODUCTION_GUIDE",
+      "revision": "2025 production guide",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": ["spectrum-center"],
-      "notes": "Venue source is expected from the controlled source library, not generated in this repo."
+      "notes": "Exact controlled source file was located outside the repo. It remains uncommitted under the source-assets/files privacy boundary.",
+      "knownConflictFlags": []
     },
     {
+      "id": "bok-center-production-manual-undated",
       "filename": "bok_center_tulsa_ok.pdf",
-      "status": "external",
+      "venueSlug": "bok-center",
+      "sourceType": "VENUE_MANUAL",
+      "revision": "Undated production manual",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": ["bok-center"],
-      "notes": "Venue source is expected from the controlled source library, not generated in this repo."
+      "notes": "A venue-issued manual was located outside the repo under a noncanonical local filename. The repo-safe expected filename is retained here.",
+      "knownConflictFlags": []
     },
     {
+      "id": "dickies-arena-tech-pack-2026",
       "filename": "dickies_arena_fort_worth_tx.pdf",
-      "status": "external",
+      "venueSlug": "dickies-arena",
+      "sourceType": "VENUE_TECH_PACK",
+      "revision": "Revised 2026",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": ["dickies-arena"],
-      "notes": "Venue source is expected from the controlled source library, not generated in this repo."
+      "notes": "Exact controlled source file was located outside the repo. It remains uncommitted under the source-assets/files privacy boundary.",
+      "knownConflictFlags": []
     },
     {
+      "id": "van-andel-arena-source-2026",
       "filename": "van_andel_arena_grand_rapids_mi.pdf",
-      "status": "external",
+      "venueSlug": "van-andel-arena",
+      "sourceType": "VENUE_SOURCE_PACKET",
+      "revision": "January 1, 2026",
+      "availabilityState": "MISSING",
+      "controllingStatus": "REFERENCE",
       "referencedBy": ["van-andel-arena"],
-      "notes": "Venue source is expected from the controlled source library, not generated in this repo."
+      "notes": "Declared source file was not located in the repo, source-assets/files, local controlled-source folders, or mounted workspace search. Height conflict remains unresolved.",
+      "knownConflictFlags": ["SOURCE_FILE_NOT_LOCATED", "UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT"]
     },
     {
+      "id": "heb-center-technical-manual-2024",
       "filename": "heb_center_cedar_park_tx.pdf",
-      "status": "external",
+      "venueSlug": "heb-center",
+      "sourceType": "VENUE_TECH_PACK",
+      "revision": "Technical Manual 2024",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": ["heb-center"],
-      "notes": "Venue source is expected from the controlled source library, not generated in this repo."
+      "notes": "A 2024 technical manual was located outside the repo under a noncanonical local filename. The repo-safe expected filename is retained here.",
+      "knownConflictFlags": []
     },
     {
+      "id": "t-mobile-center-source-pack",
       "filename": "t_mobile_center_kansas_city_mo.pdf",
-      "status": "external",
+      "venueSlug": "t-mobile-center",
+      "sourceType": "VENUE_SOURCE_PACKET",
+      "revision": "Technical information packet",
+      "availabilityState": "MISSING",
+      "controllingStatus": "REFERENCE",
       "referencedBy": ["t-mobile-center"],
-      "notes": "Venue source is expected from the controlled source library, not generated in this repo."
+      "notes": "Declared source file was not located in the repo, source-assets/files, local controlled-source folders, or mounted workspace search.",
+      "knownConflictFlags": ["SOURCE_FILE_NOT_LOCATED"]
     },
     {
+      "id": "desert-diamond-arena-tech-pack-2023",
       "filename": "desert_diamond_arena_glendale_az.pdf",
-      "status": "external",
+      "venueSlug": "desert-diamond-arena",
+      "sourceType": "VENUE_TECH_PACK",
+      "revision": "May 2023",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "REFERENCE",
       "referencedBy": ["desert-diamond-arena"],
-      "notes": "Venue source is stale and expected from the controlled source library, not generated in this repo."
+      "notes": "Controlled local source was located outside the repo, but the route record keeps it stale until a current 2026/27 revision is filed.",
+      "knownConflictFlags": ["STALE_SOURCE"]
     },
     {
+      "id": "gainbridge-fieldhouse-tech-pack-2026",
       "filename": "gainbridge-fieldhouse.pdf",
-      "status": "external",
+      "venueSlug": "gainbridge-fieldhouse",
+      "sourceType": "VENUE_TECH_PACK",
+      "revision": "Updated 2026-01-09",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": ["gainbridge-fieldhouse"],
-      "notes": "PDF inventory is noted in the route record; content audit remains pending."
+      "notes": "Controlled local source was located outside the repo under its venue-issued filename. The repo-safe expected filename is retained here.",
+      "knownConflictFlags": []
     },
     {
+      "id": "giant-center-source-pack",
       "filename": "giant-center.pdf",
-      "status": "external",
+      "venueSlug": "giant-center",
+      "sourceType": "VENUE_SOURCE_PACKET",
+      "availabilityState": "MISSING",
+      "controllingStatus": "REFERENCE",
       "referencedBy": ["giant-center"],
-      "notes": "PDF inventory is noted in the route record; content audit remains pending."
+      "notes": "Declared source file was not located in the repo, source-assets/files, local controlled-source folders, or mounted workspace search.",
+      "knownConflictFlags": ["SOURCE_FILE_NOT_LOCATED"]
     },
     {
+      "id": "target-center-source-pack",
       "filename": "target-center.pdf",
-      "status": "external",
+      "venueSlug": "target-center",
+      "sourceType": "VENUE_SOURCE_PACKET",
+      "availabilityState": "MISSING",
+      "controllingStatus": "REFERENCE",
       "referencedBy": ["target-center"],
-      "notes": "PDF inventory is noted in the route record; content audit remains pending."
+      "notes": "Declared source file was not located in the repo, source-assets/files, local controlled-source folders, or mounted workspace search. Unrelated demo material was not substituted.",
+      "knownConflictFlags": ["SOURCE_FILE_NOT_LOCATED"]
     },
     {
+      "id": "red-rocks-amphitheatre-guide-2017",
       "filename": "red-rocks.pdf",
-      "status": "external",
+      "venueSlug": "red-rocks",
+      "sourceType": "VENUE_MANUAL",
+      "revision": "2017 Rev. 3/15/2017",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "REFERENCE",
       "referencedBy": ["red-rocks"],
-      "notes": "Stale PDF inventory is noted in the route record; refresh remains pending."
+      "notes": "Controlled local source was located outside the repo, but the route record keeps it stale until a current venue source is filed.",
+      "knownConflictFlags": ["STALE_SOURCE"]
     }
   ]
 }
