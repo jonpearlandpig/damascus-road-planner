@@ -1,4 +1,16 @@
-import type { ConfidenceState, SceneObjectRecord, SourceRef, TourPackage, VenueTwin } from './types';
+import type {
+  ConfidenceState,
+  MeasurementConfidence,
+  MeasurementStatus,
+  MeasurementUnit,
+  SceneObjectRecord,
+  SourceRef,
+  TourPackage,
+  VenueGeometry,
+  VenueGeometryProvenance,
+  VenueTwin,
+} from './types';
+import { assertDrtPackageInvariants } from '../geometry/drt';
 
 export const tourSource: SourceRef = {
   file: 'JQ 2026 — AKB / Damascus Road MASTER editable Rev D',
@@ -21,6 +33,28 @@ export const drtPackage: TourPackage = {
   sideThrustWidthFt: 5, sideThrustLengthFt: 32,
   bStageDiameterFt: 26, bStageLocalZFt: 76,
 };
+assertDrtPackageInvariants(drtPackage);
+
+function unitForGeometryField(field: keyof VenueGeometry): MeasurementUnit {
+  if (field.endsWith('Lb')) return 'lb';
+  if (field === 'dockCount') return 'count';
+  return 'ft';
+}
+
+export function geometryProvenance(
+  geometry: VenueGeometry,
+  status: MeasurementStatus,
+  confidence: MeasurementConfidence,
+  source?: SourceRef,
+  note?: string,
+): VenueGeometryProvenance {
+  return Object.fromEntries(
+    Object.entries(geometry).map(([field, value]) => [
+      field,
+      { value, unit: unitForGeometryField(field as keyof VenueGeometry), status, confidence, source, note },
+    ]),
+  ) as VenueGeometryProvenance;
+}
 
 export function baseObjects(file: string, revision: string, floor: string, grid: string, scoreboard: string, gridConfidence: ConfidenceState = 'ENGINEERING CONFIRMATION REQUIRED'): SceneObjectRecord[] {
   return [
@@ -34,13 +68,23 @@ export function baseObjects(file: string, revision: string, floor: string, grid:
 }
 
 export function placeholder(slug: string, name: string, city: string, state: string, date: string, score: number, sourceStatus: VenueTwin['sourceStatus']): VenueTwin {
+  const geometry: VenueGeometry = { floorWidthFt: 85, floorLengthFt: 200 };
+  const source = venueSource(
+    sourceStatus === 'MISSING' ? 'No source filed' : `${slug}.pdf`,
+    'Placeholder planning envelope',
+    sourceStatus === 'MISSING' ? 'No source filed' : 'PDF source inventory pending content audit',
+    '85′ × 200′ planning envelope',
+    'UNVERIFIED',
+  );
   return {
     slug, name, city, state, showDate: date, sourceScore: score,
     sourceYear: sourceStatus === 'MISSING' ? 'No source' : 'PDF source', sourceFile: sourceStatus === 'MISSING' ? 'No source filed' : `${slug}.pdf`,
     fidelity: 'L0 SOURCE', sourceStatus, cadStatus: 'NONE', riggingConfidence: 'UNVERIFIED', logisticsConfidence: 'UNVERIFIED',
     pmOpen: sourceStatus === 'MISSING' ? 8 : 5, tmOpen: sourceStatus === 'MISSING' ? 5 : 3,
-    geometry: { floorWidthFt: 85, floorLengthFt: 200 }, zones: [], objects: [],
-    keyStrength: sourceStatus === 'MISSING' ? 'Source package required.' : 'PDF source inventory complete; content audit pending.',
+    geometry,
+    geometryProvenance: geometryProvenance(geometry, 'ESTIMATE', 'LOW', source, 'Placeholder planning envelope only; not a verified venue measurement.'),
+    zones: [], objects: [],
+    keyStrength: sourceStatus === 'MISSING' ? 'Source package required.' : 'PDF source inventory complete; planning envelope remains estimated pending content audit.',
     missingInputs: ['Venue tech pack', 'Floor/seating plan', 'Rigging plot or CAD'], detailed: false,
   };
 }

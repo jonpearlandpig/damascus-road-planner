@@ -37,6 +37,19 @@ export interface SourceRef {
   authority: AuthorityState;
 }
 
+export type MeasurementStatus = 'VERIFIED' | 'REFERENCE' | 'ESTIMATE' | 'MISSING';
+export type MeasurementConfidence = 'HIGH' | 'MEDIUM' | 'LOW' | 'UNKNOWN';
+export type MeasurementUnit = 'ft' | 'lb' | 'count';
+
+export interface SourcedMeasurement {
+  value: number;
+  unit: MeasurementUnit;
+  status: MeasurementStatus;
+  confidence: MeasurementConfidence;
+  source?: SourceRef;
+  note?: string;
+}
+
 export interface SceneObjectRecord {
   id: string;
   label: string;
@@ -73,6 +86,8 @@ export interface VenueGeometry {
   egressClearanceFt?: number;
 }
 
+export type VenueGeometryProvenance = Partial<Record<keyof VenueGeometry, SourcedMeasurement>>;
+
 export interface OperationalZone {
   id: string;
   label: string;
@@ -103,6 +118,7 @@ export interface VenueTwin {
   pmOpen: number;
   tmOpen: number;
   geometry: VenueGeometry;
+  geometryProvenance: VenueGeometryProvenance;
   zones: OperationalZone[];
   objects: SceneObjectRecord[];
   keyStrength: string;

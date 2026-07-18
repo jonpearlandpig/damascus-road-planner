@@ -1,5 +1,8 @@
-import type { VenueTwin } from '../types';
-import { baseObjects, venueSource } from '../helpers';
+import type { VenueGeometry, VenueTwin } from '../types';
+import { baseObjects, geometryProvenance, venueSource } from '../helpers';
+
+const dickiesGeometry: VenueGeometry = { floorWidthFt: 85, floorLengthFt: 200, centerhungBottomFt: 80, centerhungDiameterFt: 54, dockCount: 5, pushDistanceFt: 175, stageEndOpeningWidthFt: 18.5, stageEndOpeningHeightFt: 36, endStageRiggingLb: 200000, houseStageWidthFt: 80, houseStageDepthFt: 40, houseStageMinHeightFt: 4, houseStageMaxHeightFt: 6 };
+const vanAndelGeometry: VenueGeometry = { floorWidthFt: 85, floorLengthFt: 200, lowSteelFt: 65 + 8 / 12, highSteelFt: 98, gridWidthFt: 99, gridDepthFt: 52, centerhungBottomFt: 65, dockCount: 5, endStageRiggingLb: 100000, totalGridRiggingLb: 290000, houseStageWidthFt: 60, houseStageDepthFt: 40, houseStageMaxHeightFt: 6 };
 
 export const waveOneA: VenueTwin[] = [
   {
@@ -8,7 +11,8 @@ export const waveOneA: VenueTwin[] = [
     riggingConfidence: 'ENGINEERING CONFIRMATION REQUIRED', logisticsConfidence: 'CALIBRATED PLANNING', pmOpen: 5, tmOpen: 3,
     keyStrength: 'Strong building dimensions, backstage program, loading and detailed rigging diagrams.',
     missingInputs: ['Low-steel/grid trim', 'Exact push confirmation', 'SPL and curfew limits'], detailed: true,
-    geometry: { floorWidthFt: 85, floorLengthFt: 200, centerhungBottomFt: 80, centerhungDiameterFt: 54, dockCount: 5, pushDistanceFt: 175, stageEndOpeningWidthFt: 18.5, stageEndOpeningHeightFt: 36, endStageRiggingLb: 200000, houseStageWidthFt: 80, houseStageDepthFt: 40, houseStageMinHeightFt: 4, houseStageMaxHeightFt: 6 },
+    geometry: dickiesGeometry,
+    geometryProvenance: geometryProvenance(dickiesGeometry, 'REFERENCE', 'MEDIUM', venueSource('dickies_arena_fort_worth_tx.pdf', 'Venue geometry seed', 'Revised 2026', 'Authored source-backed geometry', 'CALIBRATED PLANNING'), 'Source-backed planning geometry; confirm before final operations.'),
     zones: [
       { id: 'dickies-docks', label: 'Main event loading docks', kind: 'dock', xFt: -30, zFt: -94, widthFt: 34, depthFt: 18, layer: 'logistics', source: venueSource('dickies_arena_fort_worth_tx.pdf', 'Loading Docks', 'Revised 2026', 'Five event-use docks') },
       { id: 'dickies-east-docks', label: 'East open-air docks', kind: 'dock', xFt: 32, zFt: -92, widthFt: 22, depthFt: 18, layer: 'logistics', source: venueSource('dickies_arena_fort_worth_tx.pdf', 'Loading Docks', 'Revised 2026', 'Two open-air docks and ramp') },
@@ -22,7 +26,8 @@ export const waveOneA: VenueTwin[] = [
     riggingConfidence: 'CONFLICT', logisticsConfidence: 'VERIFIED', pmOpen: 6, tmOpen: 3,
     keyStrength: 'Best measured floor/grid, dock, parking, seating and backstage source in the wave.',
     missingInputs: ['Resolve 84′-7″ vs 86′ grid height conflict', 'Native rigging CAD', 'Current seating manifest'], detailed: true,
-    geometry: { floorWidthFt: 85, floorLengthFt: 200, lowSteelFt: 65 + 8 / 12, highSteelFt: 98, gridWidthFt: 99, gridDepthFt: 52, centerhungBottomFt: 65, dockCount: 5, endStageRiggingLb: 100000, totalGridRiggingLb: 290000, houseStageWidthFt: 60, houseStageDepthFt: 40, houseStageMaxHeightFt: 6 },
+    geometry: vanAndelGeometry,
+    geometryProvenance: geometryProvenance(vanAndelGeometry, 'REFERENCE', 'LOW', venueSource('van_andel_arena_grand_rapids_mi.pdf', 'Venue geometry seed', '01.01.2026', 'Authored source-backed geometry with unresolved grid-height conflict', 'CONFLICT'), 'Source-backed planning geometry includes an authored height conflict; resolve before final operations.'),
     zones: [
       { id: 'vaa-docks', label: 'Five loading docks', kind: 'dock', xFt: -30, zFt: -94, widthFt: 38, depthFt: 18, layer: 'logistics', source: venueSource('van_andel_arena_grand_rapids_mi.pdf', 'Loading Dock', '01.01.2026', 'Five docks; Dock 5 door 20′ × 18′') },
       { id: 'vaa-horseshoe', label: 'Secure horseshoe parking', kind: 'parking', xFt: 30, zFt: -96, widthFt: 35, depthFt: 20, layer: 'logistics', source: venueSource('van_andel_arena_grand_rapids_mi.pdf', 'Tour Parking', '01.01.2026', 'Secure gated horseshoe lot') },
