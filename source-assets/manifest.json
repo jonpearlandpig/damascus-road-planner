@@ -1,0 +1,70 @@
+{
+  "assets": [
+    {
+      "filename": "2025 Spectrum Center Production Guide.pdf",
+      "status": "external",
+      "referencedBy": ["spectrum-center"],
+      "notes": "Venue source is expected from the controlled source library, not generated in this repo."
+    },
+    {
+      "filename": "bok_center_tulsa_ok.pdf",
+      "status": "external",
+      "referencedBy": ["bok-center"],
+      "notes": "Venue source is expected from the controlled source library, not generated in this repo."
+    },
+    {
+      "filename": "dickies_arena_fort_worth_tx.pdf",
+      "status": "external",
+      "referencedBy": ["dickies-arena"],
+      "notes": "Venue source is expected from the controlled source library, not generated in this repo."
+    },
+    {
+      "filename": "van_andel_arena_grand_rapids_mi.pdf",
+      "status": "external",
+      "referencedBy": ["van-andel-arena"],
+      "notes": "Venue source is expected from the controlled source library, not generated in this repo."
+    },
+    {
+      "filename": "heb_center_cedar_park_tx.pdf",
+      "status": "external",
+      "referencedBy": ["heb-center"],
+      "notes": "Venue source is expected from the controlled source library, not generated in this repo."
+    },
+    {
+      "filename": "t_mobile_center_kansas_city_mo.pdf",
+      "status": "external",
+      "referencedBy": ["t-mobile-center"],
+      "notes": "Venue source is expected from the controlled source library, not generated in this repo."
+    },
+    {
+      "filename": "desert_diamond_arena_glendale_az.pdf",
+      "status": "external",
+      "referencedBy": ["desert-diamond-arena"],
+      "notes": "Venue source is stale and expected from the controlled source library, not generated in this repo."
+    },
+    {
+      "filename": "gainbridge-fieldhouse.pdf",
+      "status": "external",
+      "referencedBy": ["gainbridge-fieldhouse"],
+      "notes": "PDF inventory is noted in the route record; content audit remains pending."
+    },
+    {
+      "filename": "giant-center.pdf",
+      "status": "external",
+      "referencedBy": ["giant-center"],
+      "notes": "PDF inventory is noted in the route record; content audit remains pending."
+    },
+    {
+      "filename": "target-center.pdf",
+      "status": "external",
+      "referencedBy": ["target-center"],
+      "notes": "PDF inventory is noted in the route record; content audit remains pending."
+    },
+    {
+      "filename": "red-rocks.pdf",
+      "status": "external",
+      "referencedBy": ["red-rocks"],
+      "notes": "Stale PDF inventory is noted in the route record; refresh remains pending."
+    }
+  ]
+}
