@@ -55,7 +55,7 @@ test.describe('route browser smoke', () => {
     await page.getByRole('link', { name: /Compare strongest sources/ }).click();
     await expect(page).toHaveURL(/\/compare$/);
     await expect(page.getByRole('heading', { name: 'Strongest venue comparison' })).toBeVisible();
-    await expect(page.getByText(/Missing/).first()).toBeVisible();
+    await expect(page.getByText(/Available external/).first()).toBeVisible();
     await expectNoDocumentOverflow(page);
 
     await page.goto('/venues/spectrum-center');
@@ -85,6 +85,29 @@ test.describe('route browser smoke', () => {
     await expect(page).toHaveURL(/\/venues\/spectrum-center$/);
     await expect(page.getByRole('heading', { name: 'Spectrum Center' })).toBeVisible();
     await expectCanvasLoaded(page);
+  });
+
+  test('source inventory matrix exposes 19 show statuses and filters', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+
+    await expect(page.getByRole('heading', { name: '19-show source status' })).toBeVisible();
+    await expect(page.locator('.source-matrix__row')).toHaveCount(19);
+    await expect(page.getByText('bok_center_tulsa_ok.pdf')).toBeVisible();
+    await expect(page.getByText(/Create 01 SOURCE DOCUMENTS folder/).first()).toBeVisible();
+    await expect(page.getByText(/suspended-grid/)).toBeVisible();
+
+    await page.getByRole('button', { name: 'Venue TBD' }).click();
+    await expect(page.locator('.source-matrix__row')).toHaveCount(1);
+    await expect(page.getByText('Playoff Contingency — Venue TBD')).toBeVisible();
+    await expect(page.getByText('los-angeles-contingency')).toBeVisible();
+
+    await page.getByRole('button', { name: 'Missing CAD' }).click();
+    await expect(page.locator('.source-matrix__row')).toHaveCount(19);
+
+    await page.getByRole('button', { name: 'Conflict' }).click();
+    await expect(page.locator('.source-matrix__row')).toHaveCount(1);
+    await expect(page.getByRole('table', { name: '19-show source completion matrix' }).getByText('Van Andel Arena')).toBeVisible();
   });
 
   test('unknown venue falls back to the dashboard', async ({ page }) => {

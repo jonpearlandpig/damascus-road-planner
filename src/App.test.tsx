@@ -29,7 +29,10 @@ describe('App route smoke coverage', () => {
 
     expect(await screen.findByRole('heading', { name: 'Venue Twin Control Room' })).toBeInTheDocument();
     expect(screen.getByText('19 venue records')).toBeInTheDocument();
-    expect(screen.getByText('Spectrum Center')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '19-show source status' })).toBeInTheDocument();
+    expect(screen.getByRole('table', { name: '19-show source completion matrix' })).toBeInTheDocument();
+    expect(screen.getAllByText('Spectrum Center').length).toBeGreaterThan(0);
+    expect(screen.getByText('Playoff Contingency — Venue TBD')).toBeInTheDocument();
   });
 
   it('renders the comparison view with meaningful venue data', async () => {
