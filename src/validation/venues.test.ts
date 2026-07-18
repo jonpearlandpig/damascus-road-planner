@@ -10,7 +10,7 @@ describe('venue validation', () => {
     const result = validateVenues(venues, { sourceAssetManifest: manifest, existingSourceFiles: new Set() });
 
     expect(result.errors).toEqual([]);
-    expect(result.warnings.map((warning) => warning.path)).toContain('sourceAssets.2025 Spectrum Center Production Guide.pdf');
+    expect(result.warnings.map((warning) => warning.path)).toContain('sourceAssets.spectrum_center_charlotte_nc.pdf');
   });
 
   it('rejects duplicate slugs with field-specific errors', () => {
@@ -57,15 +57,18 @@ describe('venue validation', () => {
     const result = validateVenues(venues, { sourceAssetManifest: { ...manifest, assets: [] }, existingSourceFiles: new Set() });
 
     expect(result.errors).toEqual(expect.arrayContaining([
-      expect.objectContaining({ path: 'sourceAssets.2025 Spectrum Center Production Guide.pdf', message: expect.stringContaining('manifest') }),
+      expect.objectContaining({ path: 'sourceAssets.spectrum_center_charlotte_nc.pdf', message: expect.stringContaining('manifest') }),
     ]));
   });
 
   it('rejects READY venue status when the declared source asset is missing', () => {
-    const result = validateVenues(venues.map((venue) => venue.slug === 't-mobile-center' ? {
-      ...venue,
-      sourceStatus: 'READY',
-    } : venue), { sourceAssetManifest: manifest, existingSourceFiles: new Set() });
+    const missingManifest: SourceAssetManifest = {
+      ...manifest,
+      assets: manifest.assets.map((asset) => asset.id === 't-mobile-center-source-pack'
+        ? { ...asset, availabilityState: 'MISSING' }
+        : asset),
+    };
+    const result = validateVenues(venues, { sourceAssetManifest: missingManifest, existingSourceFiles: new Set() });
 
     expect(result.errors).toEqual(expect.arrayContaining([
       expect.objectContaining({ path: 'sourceAssets.t_mobile_center_kansas_city_mo.pdf', message: expect.stringContaining('READY') }),

@@ -5,19 +5,14 @@
     "venueCount": 19,
     "sourceAssetCount": 11,
     "reconciliationRowCount": 174,
-    "missingSourceAssets": [
-      "van_andel_arena_grand_rapids_mi.pdf",
-      "t_mobile_center_kansas_city_mo.pdf",
-      "giant-center.pdf",
-      "target-center.pdf"
-    ],
-    "unavailableSourceRows": 45,
+    "missingSourceAssets": [],
+    "unavailableSourceRows": 0,
     "conflictedRows": 20
   },
   "sourceAssets": [
     {
       "id": "spectrum-center-production-guide-2025",
-      "filename": "2025 Spectrum Center Production Guide.pdf",
+      "filename": "spectrum_center_charlotte_nc.pdf",
       "venueSlug": "spectrum-center",
       "sourceType": "VENUE_PRODUCTION_GUIDE",
       "revision": "2025 production guide",
@@ -26,7 +21,7 @@
       "referencedBy": [
         "spectrum-center"
       ],
-      "notes": "Exact controlled source file was located outside the repo. It remains uncommitted under the source-assets/files privacy boundary.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. It remains uncommitted under the source-assets/files privacy boundary.",
       "knownConflictFlags": []
     },
     {
@@ -40,7 +35,7 @@
       "referencedBy": [
         "bok-center"
       ],
-      "notes": "A venue-issued manual was located outside the repo under a noncanonical local filename. The repo-safe expected filename is retained here.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. It remains uncommitted under the source-assets/files privacy boundary.",
       "knownConflictFlags": []
     },
     {
@@ -54,7 +49,7 @@
       "referencedBy": [
         "dickies-arena"
       ],
-      "notes": "Exact controlled source file was located outside the repo. It remains uncommitted under the source-assets/files privacy boundary.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. It remains uncommitted under the source-assets/files privacy boundary.",
       "knownConflictFlags": []
     },
     {
@@ -63,14 +58,13 @@
       "venueSlug": "van-andel-arena",
       "sourceType": "VENUE_SOURCE_PACKET",
       "revision": "January 1, 2026",
-      "availabilityState": "MISSING",
-      "controllingStatus": "REFERENCE",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": [
         "van-andel-arena"
       ],
-      "notes": "Declared source file was not located in the repo, source-assets/files, local controlled-source folders, or mounted workspace search. Height conflict remains unresolved.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Height conflict remains unresolved and must not be promoted to approved geometry.",
       "knownConflictFlags": [
-        "SOURCE_FILE_NOT_LOCATED",
         "UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT"
       ]
     },
@@ -85,7 +79,7 @@
       "referencedBy": [
         "heb-center"
       ],
-      "notes": "A 2024 technical manual was located outside the repo under a noncanonical local filename. The repo-safe expected filename is retained here.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. It remains uncommitted under the source-assets/files privacy boundary.",
       "knownConflictFlags": []
     },
     {
@@ -94,15 +88,13 @@
       "venueSlug": "t-mobile-center",
       "sourceType": "VENUE_SOURCE_PACKET",
       "revision": "Technical information packet",
-      "availabilityState": "MISSING",
-      "controllingStatus": "REFERENCE",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": [
         "t-mobile-center"
       ],
-      "notes": "Declared source file was not located in the repo, source-assets/files, local controlled-source folders, or mounted workspace search.",
-      "knownConflictFlags": [
-        "SOURCE_FILE_NOT_LOCATED"
-      ]
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Existing authored geometry remains estimated until extraction and reconciliation are approved.",
+      "knownConflictFlags": []
     },
     {
       "id": "desert-diamond-arena-tech-pack-2023",
@@ -122,7 +114,7 @@
     },
     {
       "id": "gainbridge-fieldhouse-tech-pack-2026",
-      "filename": "gainbridge-fieldhouse.pdf",
+      "filename": "gainbridge_fieldhouse_indianapolis_in.pdf",
       "venueSlug": "gainbridge-fieldhouse",
       "sourceType": "VENUE_TECH_PACK",
       "revision": "Updated 2026-01-09",
@@ -131,42 +123,38 @@
       "referencedBy": [
         "gainbridge-fieldhouse"
       ],
-      "notes": "Controlled local source was located outside the repo under its venue-issued filename. The repo-safe expected filename is retained here.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Extraction and seed reconciliation remain pending.",
       "knownConflictFlags": []
     },
     {
       "id": "giant-center-source-pack",
-      "filename": "giant-center.pdf",
+      "filename": "giant_center_hershey_pa.pdf",
       "venueSlug": "giant-center",
       "sourceType": "VENUE_SOURCE_PACKET",
-      "availabilityState": "MISSING",
-      "controllingStatus": "REFERENCE",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": [
         "giant-center"
       ],
-      "notes": "Declared source file was not located in the repo, source-assets/files, local controlled-source folders, or mounted workspace search.",
-      "knownConflictFlags": [
-        "SOURCE_FILE_NOT_LOCATED"
-      ]
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Extraction and seed reconciliation remain pending.",
+      "knownConflictFlags": []
     },
     {
       "id": "target-center-source-pack",
-      "filename": "target-center.pdf",
+      "filename": "target_center_minneapolis_mn.pdf",
       "venueSlug": "target-center",
       "sourceType": "VENUE_SOURCE_PACKET",
-      "availabilityState": "MISSING",
-      "controllingStatus": "REFERENCE",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": [
         "target-center"
       ],
-      "notes": "Declared source file was not located in the repo, source-assets/files, local controlled-source folders, or mounted workspace search. Unrelated demo material was not substituted.",
-      "knownConflictFlags": [
-        "SOURCE_FILE_NOT_LOCATED"
-      ]
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Extraction and seed reconciliation remain pending.",
+      "knownConflictFlags": []
     },
     {
       "id": "red-rocks-amphitheatre-guide-2017",
-      "filename": "red-rocks.pdf",
+      "filename": "red_rocks_amphitheatre_morrison_co.pdf",
       "venueSlug": "red-rocks",
       "sourceType": "VENUE_MANUAL",
       "revision": "2017 Rev. 3/15/2017",
@@ -175,7 +163,7 @@
       "referencedBy": [
         "red-rocks"
       ],
-      "notes": "Controlled local source was located outside the repo, but the route record keeps it stale until a current venue source is filed.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot, but the route record keeps it stale until a current venue source is filed.",
       "knownConflictFlags": [
         "STALE_SOURCE"
       ]
@@ -470,7 +458,7 @@
       "currentValue": "85 ft",
       "provenanceStatus": "ESTIMATE",
       "confidence": "LOW",
-      "sourceFile": "gainbridge-fieldhouse.pdf",
+      "sourceFile": "gainbridge_fieldhouse_indianapolis_in.pdf",
       "sourceId": "gainbridge-fieldhouse-tech-pack-2026",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -484,7 +472,7 @@
       "currentValue": "200 ft",
       "provenanceStatus": "ESTIMATE",
       "confidence": "LOW",
-      "sourceFile": "gainbridge-fieldhouse.pdf",
+      "sourceFile": "gainbridge_fieldhouse_indianapolis_in.pdf",
       "sourceId": "gainbridge-fieldhouse-tech-pack-2026",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -500,9 +488,9 @@
       "confidence": "LOW",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared Van Andel source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered Van Andel source remains unresolved; treat authored geometry as an estimate until the grid-height conflict is reconciled. Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -514,9 +502,9 @@
       "confidence": "LOW",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared Van Andel source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered Van Andel source remains unresolved; treat authored geometry as an estimate until the grid-height conflict is reconciled. Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -528,9 +516,9 @@
       "confidence": "LOW",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared Van Andel source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered Van Andel source remains unresolved; treat authored geometry as an estimate until the grid-height conflict is reconciled. Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -542,9 +530,9 @@
       "confidence": "LOW",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared Van Andel source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered Van Andel source remains unresolved; treat authored geometry as an estimate until the grid-height conflict is reconciled. Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -556,9 +544,9 @@
       "confidence": "LOW",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared Van Andel source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered Van Andel source remains unresolved; treat authored geometry as an estimate until the grid-height conflict is reconciled. Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -570,9 +558,9 @@
       "confidence": "LOW",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared Van Andel source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered Van Andel source remains unresolved; treat authored geometry as an estimate until the grid-height conflict is reconciled. Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -584,9 +572,9 @@
       "confidence": "LOW",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared Van Andel source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered Van Andel source remains unresolved; treat authored geometry as an estimate until the grid-height conflict is reconciled. Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -598,9 +586,9 @@
       "confidence": "LOW",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared Van Andel source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered Van Andel source remains unresolved; treat authored geometry as an estimate until the grid-height conflict is reconciled. Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -612,9 +600,9 @@
       "confidence": "LOW",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared Van Andel source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered Van Andel source remains unresolved; treat authored geometry as an estimate until the grid-height conflict is reconciled. Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -626,9 +614,9 @@
       "confidence": "LOW",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared Van Andel source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered Van Andel source remains unresolved; treat authored geometry as an estimate until the grid-height conflict is reconciled. Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -640,9 +628,9 @@
       "confidence": "LOW",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared Van Andel source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered Van Andel source remains unresolved; treat authored geometry as an estimate until the grid-height conflict is reconciled. Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -654,9 +642,9 @@
       "confidence": "LOW",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared Van Andel source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered Van Andel source remains unresolved; treat authored geometry as an estimate until the grid-height conflict is reconciled. Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -668,9 +656,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Five docks; Dock 5 door 20 ft x 18 ft Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Five docks; Dock 5 door 20 ft x 18 ft Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -682,9 +670,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Secure gated horseshoe lot Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Secure gated horseshoe lot Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -696,9 +684,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "House PA obstruction 22 ft off center Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "House PA obstruction 22 ft off center Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -710,9 +698,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "House PA obstruction 22 ft off center Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "House PA obstruction 22 ft off center Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -724,9 +712,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "85 ft x 200 ft estimate Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "85 ft x 200 ft estimate Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -738,9 +726,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Court center Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Court center Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -752,9 +740,9 @@
       "confidence": "CONFLICT",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "84 ft 7 in / 86 ft unresolved grid-height references Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "84 ft 7 in / 86 ft unresolved grid-height references Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -766,9 +754,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "van_andel_arena_grand_rapids_mi.pdf",
       "sourceId": "van-andel-arena-source-2026",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "65 ft centerhung trim reference Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED, UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "65 ft centerhung trim reference Flags: UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT."
     },
     {
       "venue": "Van Andel Arena",
@@ -862,11 +850,11 @@
       "currentValue": "85 ft",
       "provenanceStatus": "ESTIMATE",
       "confidence": "LOW",
-      "sourceFile": "giant-center.pdf",
+      "sourceFile": "giant_center_hershey_pa.pdf",
       "sourceId": "giant-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Placeholder planning envelope only; not a verified venue measurement. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Placeholder planning envelope only; not a verified venue measurement."
     },
     {
       "venue": "GIANT Center",
@@ -876,11 +864,11 @@
       "currentValue": "200 ft",
       "provenanceStatus": "ESTIMATE",
       "confidence": "LOW",
-      "sourceFile": "giant-center.pdf",
+      "sourceFile": "giant_center_hershey_pa.pdf",
       "sourceId": "giant-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Placeholder planning envelope only; not a verified venue measurement. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Placeholder planning envelope only; not a verified venue measurement."
     },
     {
       "venue": "Spectrum Center",
@@ -890,7 +878,7 @@
       "currentValue": "85 ft",
       "provenanceStatus": "REFERENCE",
       "confidence": "MEDIUM",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -904,7 +892,7 @@
       "currentValue": "200 ft",
       "provenanceStatus": "REFERENCE",
       "confidence": "MEDIUM",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -918,7 +906,7 @@
       "currentValue": "107 ft",
       "provenanceStatus": "REFERENCE",
       "confidence": "MEDIUM",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -932,7 +920,7 @@
       "currentValue": "130 ft",
       "provenanceStatus": "REFERENCE",
       "confidence": "MEDIUM",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -946,7 +934,7 @@
       "currentValue": "75 ft",
       "provenanceStatus": "REFERENCE",
       "confidence": "MEDIUM",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -960,7 +948,7 @@
       "currentValue": "4",
       "provenanceStatus": "REFERENCE",
       "confidence": "MEDIUM",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -974,7 +962,7 @@
       "currentValue": "150,000 lb",
       "provenanceStatus": "REFERENCE",
       "confidence": "MEDIUM",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -988,7 +976,7 @@
       "currentValue": "5 ft",
       "provenanceStatus": "REFERENCE",
       "confidence": "MEDIUM",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -1002,7 +990,7 @@
       "currentValue": "x -34 ft, z -93 ft, 18 ft x 22 ft",
       "provenanceStatus": "VERIFIED",
       "confidence": "VERIFIED",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -1016,7 +1004,7 @@
       "currentValue": "x 24 ft, z -91 ft, 24 ft x 26 ft x 10 ft",
       "provenanceStatus": "CALIBRATED PLANNING",
       "confidence": "CALIBRATED PLANNING",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -1030,7 +1018,7 @@
       "currentValue": "x -40 ft, z -64 ft, 5 ft x 55 ft",
       "provenanceStatus": "CALIBRATED PLANNING",
       "confidence": "CALIBRATED PLANNING",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -1044,7 +1032,7 @@
       "currentValue": "x 40 ft, z -64 ft, 5 ft x 55 ft",
       "provenanceStatus": "CALIBRATED PLANNING",
       "confidence": "CALIBRATED PLANNING",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -1058,7 +1046,7 @@
       "currentValue": "85 ft x 200 ft",
       "provenanceStatus": "CALIBRATED PLANNING",
       "confidence": "CALIBRATED PLANNING",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -1072,7 +1060,7 @@
       "currentValue": "Venue anchor",
       "provenanceStatus": "CALIBRATED PLANNING",
       "confidence": "CALIBRATED PLANNING",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -1086,7 +1074,7 @@
       "currentValue": "107 ft AFF",
       "provenanceStatus": "ENGINEERING CONFIRMATION REQUIRED",
       "confidence": "ENGINEERING CONFIRMATION REQUIRED",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -1100,7 +1088,7 @@
       "currentValue": "Planning obstruction",
       "provenanceStatus": "ENGINEERING CONFIRMATION REQUIRED",
       "confidence": "ENGINEERING CONFIRMATION REQUIRED",
-      "sourceFile": "2025 Spectrum Center Production Guide.pdf",
+      "sourceFile": "spectrum_center_charlotte_nc.pdf",
       "sourceId": "spectrum-center-production-guide-2025",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
@@ -1198,11 +1186,11 @@
       "currentValue": "85 ft",
       "provenanceStatus": "ESTIMATE",
       "confidence": "LOW",
-      "sourceFile": "target-center.pdf",
+      "sourceFile": "target_center_minneapolis_mn.pdf",
       "sourceId": "target-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Placeholder planning envelope only; not a verified venue measurement. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Placeholder planning envelope only; not a verified venue measurement."
     },
     {
       "venue": "Target Center",
@@ -1212,11 +1200,11 @@
       "currentValue": "200 ft",
       "provenanceStatus": "ESTIMATE",
       "confidence": "LOW",
-      "sourceFile": "target-center.pdf",
+      "sourceFile": "target_center_minneapolis_mn.pdf",
       "sourceId": "target-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Placeholder planning envelope only; not a verified venue measurement. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Placeholder planning envelope only; not a verified venue measurement."
     },
     {
       "venue": "T-Mobile Center",
@@ -1228,9 +1216,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1242,9 +1230,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1256,9 +1244,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1270,9 +1258,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1284,9 +1272,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1298,9 +1286,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1312,9 +1300,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1326,9 +1314,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1340,9 +1328,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1354,9 +1342,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1368,9 +1356,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1382,9 +1370,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1396,9 +1384,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1410,9 +1398,9 @@
       "confidence": "LOW",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled. Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
     },
     {
       "venue": "T-Mobile Center",
@@ -1424,9 +1412,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Six dock levelers; 200 ft push Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Six dock levelers; 200 ft push"
     },
     {
       "venue": "T-Mobile Center",
@@ -1438,9 +1426,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Five star rooms; four production offices Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Five star rooms; four production offices"
     },
     {
       "venue": "T-Mobile Center",
@@ -1452,9 +1440,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Dock power services Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Dock power services"
     },
     {
       "venue": "T-Mobile Center",
@@ -1466,9 +1454,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "85 ft x 235 ft estimate; 19,975 sq ft reference Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "85 ft x 235 ft estimate; 19,975 sq ft reference"
     },
     {
       "venue": "T-Mobile Center",
@@ -1480,9 +1468,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "Court center Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "Court center"
     },
     {
       "venue": "T-Mobile Center",
@@ -1494,9 +1482,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "98 ft AFF estimate Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "98 ft AFF estimate"
     },
     {
       "venue": "T-Mobile Center",
@@ -1508,9 +1496,9 @@
       "confidence": "UNVERIFIED",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
-      "sourceAvailability": "MISSING",
-      "controllingStatus": "REFERENCE",
-      "note": "76 ft trim; 32 ft top / 24 ft bottom estimate Source availability is MISSING. Flags: SOURCE_FILE_NOT_LOCATED."
+      "sourceAvailability": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "note": "76 ft trim; 32 ft top / 24 ft bottom estimate"
     },
     {
       "venue": "T-Mobile Center",
@@ -1982,7 +1970,7 @@
       "currentValue": "85 ft",
       "provenanceStatus": "ESTIMATE",
       "confidence": "LOW",
-      "sourceFile": "red-rocks.pdf",
+      "sourceFile": "red_rocks_amphitheatre_morrison_co.pdf",
       "sourceId": "red-rocks-amphitheatre-guide-2017",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "REFERENCE",
@@ -1996,7 +1984,7 @@
       "currentValue": "200 ft",
       "provenanceStatus": "ESTIMATE",
       "confidence": "LOW",
-      "sourceFile": "red-rocks.pdf",
+      "sourceFile": "red_rocks_amphitheatre_morrison_co.pdf",
       "sourceId": "red-rocks-amphitheatre-guide-2017",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "REFERENCE",

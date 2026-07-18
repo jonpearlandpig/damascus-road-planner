@@ -5,7 +5,7 @@ const hebGeometry: VenueGeometry = { floorWidthFt: 85, floorLengthFt: 250, lowSt
 const tMobileGeometry: VenueGeometry = { floorWidthFt: 85, floorLengthFt: 235, lowSteelFt: 98, centerhungBottomFt: 76, centerhungDiameterFt: 32, dockCount: 6, pushDistanceFt: 200, endStageRiggingLb: 150000, centerStageRiggingLb: 124000, totalGridRiggingLb: 450000, houseStageWidthFt: 72, houseStageDepthFt: 60, houseStageMinHeightFt: 4, houseStageMaxHeightFt: 6.5 };
 const desertDiamondGeometry: VenueGeometry = { floorWidthFt: 85, floorLengthFt: 200, lowSteelFt: 100, centerhungBottomFt: 58, centerhungDiameterFt: 32, dockCount: 5, pushDistanceFt: 70, endStageRiggingLb: 125000, centerStageRiggingLb: 90000, houseStageWidthFt: 60, houseStageDepthFt: 48, houseStageMinHeightFt: 4, houseStageMaxHeightFt: 6, egressClearanceFt: 7.5 };
 const tMobileFile = 't_mobile_center_kansas_city_mo.pdf';
-const tMobileUnavailableSource = venueSource(tMobileFile, 'Venue geometry seed', 'Technical information source not located', 'Authored planning geometry retained with source unavailable', 'UNVERIFIED');
+const tMobileRegisteredSource = venueSource(tMobileFile, 'Venue geometry seed', 'Technical information source registered', 'Authored planning geometry retained pending extraction', 'UNVERIFIED');
 
 export const waveOneB: VenueTwin[] = [
   {
@@ -27,18 +27,18 @@ export const waveOneB: VenueTwin[] = [
   },
   {
     slug: 't-mobile-center', name: 'T-Mobile Center', city: 'Kansas City', state: 'MO', showDate: '2027-04-25',
-    sourceScore: 0, sourceYear: 'Technical pack missing', sourceFile: tMobileFile, fidelity: 'L0 SOURCE', sourceStatus: 'MISSING', cadStatus: 'REQUESTED',
+    sourceScore: 0, sourceYear: 'Technical pack registered', sourceFile: tMobileFile, fidelity: 'L0 SOURCE', sourceStatus: 'READY', cadStatus: 'REQUESTED',
     riggingConfidence: 'UNVERIFIED', logisticsConfidence: 'UNVERIFIED', pmOpen: 8, tmOpen: 5,
-    keyStrength: 'Authored planning seed retained, but the declared venue source file was not located in this workspace.',
-    missingInputs: ['Refile declared venue source packet', 'Native rigging CAD', 'Current seating manifest', 'Current labor rates'], detailed: true,
+    keyStrength: 'Filed venue source is registered; authored planning seed remains estimated until extraction and approval.',
+    missingInputs: ['Extract and reconcile filed venue source packet', 'Native rigging CAD', 'Current seating manifest', 'Current labor rates'], detailed: true,
     geometry: tMobileGeometry,
-    geometryProvenance: geometryProvenance(tMobileGeometry, 'ESTIMATE', 'LOW', tMobileUnavailableSource, 'Declared T-Mobile Center source file was not located in this workspace; treat authored geometry as an estimate until refiled.'),
+    geometryProvenance: geometryProvenance(tMobileGeometry, 'ESTIMATE', 'LOW', tMobileRegisteredSource, 'Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled.'),
     zones: [
-      { id: 'tmobile-docks', label: 'Six loading docks', kind: 'dock', xFt: -28, zFt: -111, widthFt: 42, depthFt: 20, layer: 'logistics', source: venueSource(tMobileFile, 'Loading Docks', 'Technical information source not located', 'Six dock levelers; 200 ft push', 'UNVERIFIED') },
-      { id: 'tmobile-boh', label: 'Star rooms + production offices', kind: 'boh', xFt: 28, zFt: -102, widthFt: 34, depthFt: 32, heightFt: 12, layer: 'backstage', source: venueSource(tMobileFile, 'Dressing Rooms', 'Technical information source not located', 'Five star rooms; four production offices', 'UNVERIFIED') },
-      { id: 'tmobile-shore', label: 'Dock shore / media power', kind: 'power', xFt: -34, zFt: -94, widthFt: 8, depthFt: 8, layer: 'production', source: venueSource(tMobileFile, 'Shore & Media Power', 'Technical information source not located', 'Dock power services', 'UNVERIFIED') },
+      { id: 'tmobile-docks', label: 'Six loading docks', kind: 'dock', xFt: -28, zFt: -111, widthFt: 42, depthFt: 20, layer: 'logistics', source: venueSource(tMobileFile, 'Loading Docks', 'Technical information source registered', 'Six dock levelers; 200 ft push', 'UNVERIFIED') },
+      { id: 'tmobile-boh', label: 'Star rooms + production offices', kind: 'boh', xFt: 28, zFt: -102, widthFt: 34, depthFt: 32, heightFt: 12, layer: 'backstage', source: venueSource(tMobileFile, 'Dressing Rooms', 'Technical information source registered', 'Five star rooms; four production offices', 'UNVERIFIED') },
+      { id: 'tmobile-shore', label: 'Dock shore / media power', kind: 'power', xFt: -34, zFt: -94, widthFt: 8, depthFt: 8, layer: 'production', source: venueSource(tMobileFile, 'Shore & Media Power', 'Technical information source registered', 'Dock power services', 'UNVERIFIED') },
     ],
-    objects: baseObjects(tMobileFile, 'Technical information source not located', '85 ft x 235 ft estimate; 19,975 sq ft reference', '98 ft AFF estimate', '76 ft trim; 32 ft top / 24 ft bottom estimate', 'UNVERIFIED', 'UNVERIFIED', 'UNVERIFIED'),
+    objects: baseObjects(tMobileFile, 'Technical information source registered', '85 ft x 235 ft estimate; 19,975 sq ft reference', '98 ft AFF estimate', '76 ft trim; 32 ft top / 24 ft bottom estimate', 'UNVERIFIED', 'UNVERIFIED', 'UNVERIFIED'),
   },
   {
     slug: 'desert-diamond-arena', name: 'Desert Diamond Arena', city: 'Glendale', state: 'AZ', showDate: '2027-05-01',

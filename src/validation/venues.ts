@@ -169,7 +169,7 @@ function validateSpectrumDistinctions(venues: VenueTwin[], errors: ValidationIss
     errors.push(issue('venues.spectrum-center', 'Spectrum Center record is required'));
     return;
   }
-  if (spectrum.sourceFile !== '2025 Spectrum Center Production Guide.pdf') errors.push(issue('venues.spectrum-center.sourceFile', 'Spectrum source file label changed unexpectedly'));
+  if (spectrum.sourceFile !== 'spectrum_center_charlotte_nc.pdf') errors.push(issue('venues.spectrum-center.sourceFile', 'Spectrum source file label changed unexpectedly'));
   if (spectrum.sourceYear !== '2025 production guide') errors.push(issue('venues.spectrum-center.sourceYear', 'Spectrum source year label changed unexpectedly'));
   if (spectrum.riggingConfidence !== 'ENGINEERING CONFIRMATION REQUIRED') errors.push(issue('venues.spectrum-center.riggingConfidence', 'Spectrum rigging confidence distinction must remain visible'));
   if (spectrum.logisticsConfidence !== 'CALIBRATED PLANNING') errors.push(issue('venues.spectrum-center.logisticsConfidence', 'Spectrum logistics confidence distinction must remain visible'));

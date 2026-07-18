@@ -4,14 +4,14 @@
   "assets": [
     {
       "id": "spectrum-center-production-guide-2025",
-      "filename": "2025 Spectrum Center Production Guide.pdf",
+      "filename": "spectrum_center_charlotte_nc.pdf",
       "venueSlug": "spectrum-center",
       "sourceType": "VENUE_PRODUCTION_GUIDE",
       "revision": "2025 production guide",
       "availabilityState": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
       "referencedBy": ["spectrum-center"],
-      "notes": "Exact controlled source file was located outside the repo. It remains uncommitted under the source-assets/files privacy boundary.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. It remains uncommitted under the source-assets/files privacy boundary.",
       "knownConflictFlags": []
     },
     {
@@ -23,7 +23,7 @@
       "availabilityState": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
       "referencedBy": ["bok-center"],
-      "notes": "A venue-issued manual was located outside the repo under a noncanonical local filename. The repo-safe expected filename is retained here.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. It remains uncommitted under the source-assets/files privacy boundary.",
       "knownConflictFlags": []
     },
     {
@@ -35,7 +35,7 @@
       "availabilityState": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
       "referencedBy": ["dickies-arena"],
-      "notes": "Exact controlled source file was located outside the repo. It remains uncommitted under the source-assets/files privacy boundary.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. It remains uncommitted under the source-assets/files privacy boundary.",
       "knownConflictFlags": []
     },
     {
@@ -44,11 +44,11 @@
       "venueSlug": "van-andel-arena",
       "sourceType": "VENUE_SOURCE_PACKET",
       "revision": "January 1, 2026",
-      "availabilityState": "MISSING",
-      "controllingStatus": "REFERENCE",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": ["van-andel-arena"],
-      "notes": "Declared source file was not located in the repo, source-assets/files, local controlled-source folders, or mounted workspace search. Height conflict remains unresolved.",
-      "knownConflictFlags": ["SOURCE_FILE_NOT_LOCATED", "UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT"]
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Height conflict remains unresolved and must not be promoted to approved geometry.",
+      "knownConflictFlags": ["UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT"]
     },
     {
       "id": "heb-center-technical-manual-2024",
@@ -59,7 +59,7 @@
       "availabilityState": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
       "referencedBy": ["heb-center"],
-      "notes": "A 2024 technical manual was located outside the repo under a noncanonical local filename. The repo-safe expected filename is retained here.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. It remains uncommitted under the source-assets/files privacy boundary.",
       "knownConflictFlags": []
     },
     {
@@ -68,11 +68,11 @@
       "venueSlug": "t-mobile-center",
       "sourceType": "VENUE_SOURCE_PACKET",
       "revision": "Technical information packet",
-      "availabilityState": "MISSING",
-      "controllingStatus": "REFERENCE",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": ["t-mobile-center"],
-      "notes": "Declared source file was not located in the repo, source-assets/files, local controlled-source folders, or mounted workspace search.",
-      "knownConflictFlags": ["SOURCE_FILE_NOT_LOCATED"]
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Existing authored geometry remains estimated until extraction and reconciliation are approved.",
+      "knownConflictFlags": []
     },
     {
       "id": "desert-diamond-arena-tech-pack-2023",
@@ -88,48 +88,48 @@
     },
     {
       "id": "gainbridge-fieldhouse-tech-pack-2026",
-      "filename": "gainbridge-fieldhouse.pdf",
+      "filename": "gainbridge_fieldhouse_indianapolis_in.pdf",
       "venueSlug": "gainbridge-fieldhouse",
       "sourceType": "VENUE_TECH_PACK",
       "revision": "Updated 2026-01-09",
       "availabilityState": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
       "referencedBy": ["gainbridge-fieldhouse"],
-      "notes": "Controlled local source was located outside the repo under its venue-issued filename. The repo-safe expected filename is retained here.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Extraction and seed reconciliation remain pending.",
       "knownConflictFlags": []
     },
     {
       "id": "giant-center-source-pack",
-      "filename": "giant-center.pdf",
+      "filename": "giant_center_hershey_pa.pdf",
       "venueSlug": "giant-center",
       "sourceType": "VENUE_SOURCE_PACKET",
-      "availabilityState": "MISSING",
-      "controllingStatus": "REFERENCE",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": ["giant-center"],
-      "notes": "Declared source file was not located in the repo, source-assets/files, local controlled-source folders, or mounted workspace search.",
-      "knownConflictFlags": ["SOURCE_FILE_NOT_LOCATED"]
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Extraction and seed reconciliation remain pending.",
+      "knownConflictFlags": []
     },
     {
       "id": "target-center-source-pack",
-      "filename": "target-center.pdf",
+      "filename": "target_center_minneapolis_mn.pdf",
       "venueSlug": "target-center",
       "sourceType": "VENUE_SOURCE_PACKET",
-      "availabilityState": "MISSING",
-      "controllingStatus": "REFERENCE",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
       "referencedBy": ["target-center"],
-      "notes": "Declared source file was not located in the repo, source-assets/files, local controlled-source folders, or mounted workspace search. Unrelated demo material was not substituted.",
-      "knownConflictFlags": ["SOURCE_FILE_NOT_LOCATED"]
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Extraction and seed reconciliation remain pending.",
+      "knownConflictFlags": []
     },
     {
       "id": "red-rocks-amphitheatre-guide-2017",
-      "filename": "red-rocks.pdf",
+      "filename": "red_rocks_amphitheatre_morrison_co.pdf",
       "venueSlug": "red-rocks",
       "sourceType": "VENUE_MANUAL",
       "revision": "2017 Rev. 3/15/2017",
       "availabilityState": "AVAILABLE_EXTERNAL",
       "controllingStatus": "REFERENCE",
       "referencedBy": ["red-rocks"],
-      "notes": "Controlled local source was located outside the repo, but the route record keeps it stale until a current venue source is filed.",
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot, but the route record keeps it stale until a current venue source is filed.",
       "knownConflictFlags": ["STALE_SOURCE"]
     }
   ]

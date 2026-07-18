@@ -1,7 +1,7 @@
 import type { VenueGeometry, VenueTwin } from '../types';
 import { baseObjects, geometryProvenance, venueSource } from '../helpers';
 
-const spectrumGuide = '2025 Spectrum Center Production Guide.pdf';
+const spectrumGuide = 'spectrum_center_charlotte_nc.pdf';
 const spectrumGeometry: VenueGeometry = { floorWidthFt: 85, floorLengthFt: 200, lowSteelFt: 107, highSteelFt: 130, centerhungBottomFt: 75, dockCount: 4, endStageRiggingLb: 150000, egressClearanceFt: 5 };
 const bokGeometry: VenueGeometry = { floorWidthFt: 85, floorLengthFt: 200, lowSteelFt: 90, centerhungBottomFt: 75, centerhungDiameterFt: 46.67, dockCount: 2, endStageRiggingLb: 150000, centerStageRiggingLb: 120000, houseStageWidthFt: 60, houseStageDepthFt: 40 };
 
