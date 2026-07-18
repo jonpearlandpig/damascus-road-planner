@@ -33,7 +33,7 @@ describe('planner geometry, state, and command foundation', () => {
     expect(bStage?.position).toMatchObject({ xFt: 0, zFt: 0 });
     expect(bStageCenterPlacementStatus(spectrum).status).toBe('REFERENCE');
     expect(bStageCenterPlacementStatus(vanAndel).status).toBe('CONFLICT');
-    expect(bStageCenterPlacementStatus(tMobile).status).toBe('ESTIMATE');
+    expect(bStageCenterPlacementStatus(tMobile).status).toBe('REFERENCE');
   });
 
   it('moves, locks, duplicates, deletes, and preserves undo/redo history', () => {

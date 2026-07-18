@@ -156,6 +156,7 @@ export interface VenueTwin {
   tmOpen: number;
   geometry: VenueGeometry;
   geometryProvenance: VenueGeometryProvenance;
+  approvedReviewFactIds?: Partial<Record<keyof VenueGeometry | string, string>>;
   zones: OperationalZone[];
   objects: SceneObjectRecord[];
   keyStrength: string;

@@ -6,6 +6,7 @@ import { venues } from '../data/venues';
 import { venueBrowserRows } from '../planner/venueAdapter';
 import { venueTypes, type VenueType } from '../planner/types';
 import { ConfidenceBadge } from './ConfidenceBadge';
+import { SourceReviewPanel } from './SourceReviewPanel';
 import { SourceStatusMatrix } from './SourceStatusMatrix';
 
 export function Dashboard() {
@@ -23,6 +24,7 @@ export function Dashboard() {
       </header>
       <section className="summary-strip"><div><Map size={18} /><span>Route stops</span><strong>{venues.length}</strong></div><div><Building2 size={18} /><span>Source packages</span><strong>{ready}</strong></div><div><TriangleAlert size={18} /><span>Missing sources</span><strong>{missing}</strong></div><div><CalendarDays size={18} /><span>Run</span><strong>Apr 8-May 8</strong></div></section>
       <SourceStatusMatrix />
+      <SourceReviewPanel />
       <section className="dashboard-section">
         <div className="section-heading">
           <div><span className="eyebrow">VENUE BROWSER</span><h2>{visibleRows.length} venue records</h2></div>

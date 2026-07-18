@@ -5,7 +5,7 @@ const hebGeometry: VenueGeometry = { floorWidthFt: 85, floorLengthFt: 250, lowSt
 const tMobileGeometry: VenueGeometry = { floorWidthFt: 85, floorLengthFt: 235, lowSteelFt: 98, centerhungBottomFt: 76, centerhungDiameterFt: 32, dockCount: 6, pushDistanceFt: 200, endStageRiggingLb: 150000, centerStageRiggingLb: 124000, totalGridRiggingLb: 450000, houseStageWidthFt: 72, houseStageDepthFt: 60, houseStageMinHeightFt: 4, houseStageMaxHeightFt: 6.5 };
 const desertDiamondGeometry: VenueGeometry = { floorWidthFt: 85, floorLengthFt: 200, lowSteelFt: 100, centerhungBottomFt: 58, centerhungDiameterFt: 32, dockCount: 5, pushDistanceFt: 70, endStageRiggingLb: 125000, centerStageRiggingLb: 90000, houseStageWidthFt: 60, houseStageDepthFt: 48, houseStageMinHeightFt: 4, houseStageMaxHeightFt: 6, egressClearanceFt: 7.5 };
 const tMobileFile = 't_mobile_center_kansas_city_mo.pdf';
-const tMobileRegisteredSource = venueSource(tMobileFile, 'Venue geometry seed', 'Technical information source registered', 'Authored planning geometry retained pending extraction', 'UNVERIFIED');
+const tMobileRegisteredSource = venueSource(tMobileFile, 'Venue source review', 'Technical information source registered', 'Approved page-level reference facts', 'CALIBRATED PLANNING');
 
 export const waveOneB: VenueTwin[] = [
   {
@@ -16,6 +16,15 @@ export const waveOneB: VenueTwin[] = [
     missingInputs: ['Exact dock-to-stage push', 'Separate current rigging pack', 'Native venue CAD'], detailed: true,
     geometry: hebGeometry,
     geometryProvenance: geometryProvenance(hebGeometry, 'REFERENCE', 'MEDIUM', venueSource('heb_center_cedar_park_tx.pdf', 'Venue geometry seed', '2024', 'Authored source-backed geometry', 'CALIBRATED PLANNING'), 'Source-backed planning geometry; confirm before final operations.'),
+    approvedReviewFactIds: {
+      floorWidthFt: 'heb-end-stage-floor-width-85',
+      floorLengthFt: 'heb-end-stage-floor-length-250',
+      lowSteelFt: 'heb-low-steel-50',
+      endStageRiggingLb: 'heb-end-stage-rigging-150000',
+      centerStageRiggingLb: 'heb-center-stage-rigging-125000',
+      houseStageWidthFt: 'heb-house-stage-width-60',
+      houseStageDepthFt: 'heb-house-stage-depth-48',
+    },
     zones: [
       { id: 'heb-west-dock', label: 'West loading dock', kind: 'dock', xFt: -34, zFt: -116, widthFt: 25, depthFt: 22, layer: 'logistics', source: venueSource('heb_center_cedar_park_tx.pdf', 'Loading Dock', '2024', 'West-side loading dock') },
       { id: 'heb-fire-lane', label: 'Required dock fire lane', kind: 'egress', xFt: 0, zFt: -121, widthFt: 14, depthFt: 35, layer: 'safety', source: venueSource('heb_center_cedar_park_tx.pdf', 'Loading Dock', '2024', 'Vehicles must fit within red fire lane') },
@@ -27,12 +36,24 @@ export const waveOneB: VenueTwin[] = [
   },
   {
     slug: 't-mobile-center', name: 'T-Mobile Center', city: 'Kansas City', state: 'MO', showDate: '2027-04-25',
-    sourceScore: 0, sourceYear: 'Technical pack registered', sourceFile: tMobileFile, fidelity: 'L0 SOURCE', sourceStatus: 'READY', cadStatus: 'REQUESTED',
-    riggingConfidence: 'UNVERIFIED', logisticsConfidence: 'UNVERIFIED', pmOpen: 8, tmOpen: 5,
-    keyStrength: 'Filed venue source is registered; authored planning seed remains estimated until extraction and approval.',
-    missingInputs: ['Extract and reconcile filed venue source packet', 'Native rigging CAD', 'Current seating manifest', 'Current labor rates'], detailed: true,
+    sourceScore: 64, sourceYear: 'Technical information packet', sourceFile: tMobileFile, fidelity: 'L0 SOURCE', sourceStatus: 'READY', cadStatus: 'REQUESTED',
+    riggingConfidence: 'ENGINEERING CONFIRMATION REQUIRED', logisticsConfidence: 'CALIBRATED PLANNING', pmOpen: 6, tmOpen: 3,
+    keyStrength: 'Filed venue source now has approved floor, loading, scoreboard, and rigging-load reference facts.',
+    missingInputs: ['Visible issue date', 'Native rigging CAD', 'Current seating manifest', 'Current labor rates'], detailed: true,
     geometry: tMobileGeometry,
-    geometryProvenance: geometryProvenance(tMobileGeometry, 'ESTIMATE', 'LOW', tMobileRegisteredSource, 'Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled.'),
+    geometryProvenance: geometryProvenance(tMobileGeometry, 'REFERENCE', 'HIGH', tMobileRegisteredSource, 'Approved venue review facts are REFERENCE because no visible issue date was found.'),
+    approvedReviewFactIds: {
+      floorWidthFt: 'tmobile-floor-width-85',
+      floorLengthFt: 'tmobile-floor-length-235',
+      lowSteelFt: 'tmobile-low-steel-98',
+      centerhungBottomFt: 'tmobile-scoreboard-bottom-76',
+      centerhungDiameterFt: 'tmobile-scoreboard-top-diameter-32',
+      dockCount: 'tmobile-docks-6',
+      pushDistanceFt: 'tmobile-push-distance-200',
+      endStageRiggingLb: 'tmobile-end-stage-rigging-150000',
+      centerStageRiggingLb: 'tmobile-center-stage-rigging-124000',
+      totalGridRiggingLb: 'tmobile-total-grid-rigging-450000',
+    },
     zones: [
       { id: 'tmobile-docks', label: 'Six loading docks', kind: 'dock', xFt: -28, zFt: -111, widthFt: 42, depthFt: 20, layer: 'logistics', source: venueSource(tMobileFile, 'Loading Docks', 'Technical information source registered', 'Six dock levelers; 200 ft push', 'UNVERIFIED') },
       { id: 'tmobile-boh', label: 'Star rooms + production offices', kind: 'boh', xFt: 28, zFt: -102, widthFt: 34, depthFt: 32, heightFt: 12, layer: 'backstage', source: venueSource(tMobileFile, 'Dressing Rooms', 'Technical information source registered', 'Five star rooms; four production offices', 'UNVERIFIED') },
@@ -48,6 +69,16 @@ export const waveOneB: VenueTwin[] = [
     missingInputs: ['Current 2026/27 revision', 'Native arena CAD', 'Current seating manifest'], detailed: true,
     geometry: desertDiamondGeometry,
     geometryProvenance: geometryProvenance(desertDiamondGeometry, 'REFERENCE', 'LOW', venueSource('desert_diamond_arena_glendale_az.pdf', 'Venue geometry seed', 'May 2023', 'Authored source-backed geometry from stale source', 'CALIBRATED PLANNING'), 'Source-backed planning geometry from a stale source; refresh before final operations.'),
+    approvedReviewFactIds: {
+      lowSteelFt: 'dda-low-steel-100',
+      centerhungBottomFt: 'dda-scoreboard-bottom-58',
+      dockCount: 'dda-docks-5',
+      pushDistanceFt: 'dda-push-distance-70',
+      endStageRiggingLb: 'dda-end-stage-rigging-125000',
+      centerStageRiggingLb: 'dda-center-stage-rigging-90000',
+      houseStageWidthFt: 'dda-house-stage-width-60',
+      houseStageDepthFt: 'dda-house-stage-depth-48',
+    },
     zones: [
       { id: 'dda-docks', label: 'Recessed dock / five bays', kind: 'dock', xFt: -28, zFt: -94, widthFt: 38, depthFt: 20, layer: 'logistics', source: venueSource('desert_diamond_arena_glendale_az.pdf', 'Loading Dock Info', 'May 2023', 'Five docks plus roll-up; 70′ push') },
       { id: 'dda-lot-e', label: 'Lot E overflow', kind: 'parking', xFt: 31, zFt: -96, widthFt: 32, depthFt: 22, layer: 'logistics', source: venueSource('desert_diamond_arena_glendale_az.pdf', 'Parking', 'May 2023', 'Truck/bus overflow in Lot E') },

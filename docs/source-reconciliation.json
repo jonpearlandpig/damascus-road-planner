@@ -176,13 +176,13 @@
       "category": "geometry",
       "field": "floorWidthFt",
       "currentValue": "85 ft",
-      "provenanceStatus": "REFERENCE",
-      "confidence": "MEDIUM",
+      "provenanceStatus": "ESTIMATE",
+      "confidence": "LOW",
       "sourceFile": "bok_center_tulsa_ok.pdf",
       "sourceId": "bok-center-production-manual-undated",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Source-backed planning geometry; confirm before final operations."
+      "note": "Rejected by venue review as an unsupported seed envelope."
     },
     {
       "venue": "BOK Center",
@@ -190,13 +190,13 @@
       "category": "geometry",
       "field": "floorLengthFt",
       "currentValue": "200 ft",
-      "provenanceStatus": "REFERENCE",
-      "confidence": "MEDIUM",
+      "provenanceStatus": "ESTIMATE",
+      "confidence": "LOW",
       "sourceFile": "bok_center_tulsa_ok.pdf",
       "sourceId": "bok-center-production-manual-undated",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Source-backed planning geometry; confirm before final operations."
+      "note": "Rejected by venue review as an unsupported seed envelope."
     },
     {
       "venue": "BOK Center",
@@ -205,12 +205,12 @@
       "field": "lowSteelFt",
       "currentValue": "90 ft",
       "provenanceStatus": "REFERENCE",
-      "confidence": "MEDIUM",
+      "confidence": "HIGH",
       "sourceFile": "bok_center_tulsa_ok.pdf",
       "sourceId": "bok-center-production-manual-undated",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Source-backed planning geometry; confirm before final operations."
+      "note": "Approved by fact bok-low-steel-90."
     },
     {
       "venue": "BOK Center",
@@ -219,12 +219,12 @@
       "field": "centerhungBottomFt",
       "currentValue": "75 ft",
       "provenanceStatus": "REFERENCE",
-      "confidence": "MEDIUM",
+      "confidence": "HIGH",
       "sourceFile": "bok_center_tulsa_ok.pdf",
       "sourceId": "bok-center-production-manual-undated",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Source-backed planning geometry; confirm before final operations."
+      "note": "Approved by fact bok-scoreboard-bottom-75."
     },
     {
       "venue": "BOK Center",
@@ -238,21 +238,21 @@
       "sourceId": "bok-center-production-manual-undated",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Source-backed planning geometry; confirm before final operations."
+      "note": "Width-only scoreboard bay dimension; north-south depth is 37 ft in the review record."
     },
     {
       "venue": "BOK Center",
       "venueSlug": "bok-center",
       "category": "geometry",
       "field": "dockCount",
-      "currentValue": "2",
+      "currentValue": "3",
       "provenanceStatus": "REFERENCE",
-      "confidence": "MEDIUM",
+      "confidence": "HIGH",
       "sourceFile": "bok_center_tulsa_ok.pdf",
       "sourceId": "bok-center-production-manual-undated",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Source-backed planning geometry; confirm before final operations."
+      "note": "Approved by fact bok-production-docks-3."
     },
     {
       "venue": "BOK Center",
@@ -261,12 +261,12 @@
       "field": "endStageRiggingLb",
       "currentValue": "150,000 lb",
       "provenanceStatus": "REFERENCE",
-      "confidence": "MEDIUM",
+      "confidence": "HIGH",
       "sourceFile": "bok_center_tulsa_ok.pdf",
       "sourceId": "bok-center-production-manual-undated",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Source-backed planning geometry; confirm before final operations."
+      "note": "Approved by fact bok-end-stage-rigging-150000."
     },
     {
       "venue": "BOK Center",
@@ -275,40 +275,40 @@
       "field": "centerStageRiggingLb",
       "currentValue": "120,000 lb",
       "provenanceStatus": "REFERENCE",
-      "confidence": "MEDIUM",
+      "confidence": "HIGH",
       "sourceFile": "bok_center_tulsa_ok.pdf",
       "sourceId": "bok-center-production-manual-undated",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Source-backed planning geometry; confirm before final operations."
+      "note": "Approved by fact bok-center-stage-rigging-120000."
     },
     {
       "venue": "BOK Center",
       "venueSlug": "bok-center",
       "category": "geometry",
       "field": "houseStageWidthFt",
-      "currentValue": "60 ft",
+      "currentValue": "56 ft",
       "provenanceStatus": "REFERENCE",
-      "confidence": "MEDIUM",
+      "confidence": "HIGH",
       "sourceFile": "bok_center_tulsa_ok.pdf",
       "sourceId": "bok-center-production-manual-undated",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Source-backed planning geometry; confirm before final operations."
+      "note": "Approved by fact bok-house-stage-max-width-56."
     },
     {
       "venue": "BOK Center",
       "venueSlug": "bok-center",
       "category": "geometry",
       "field": "houseStageDepthFt",
-      "currentValue": "40 ft",
+      "currentValue": "80 ft",
       "provenanceStatus": "REFERENCE",
-      "confidence": "MEDIUM",
+      "confidence": "HIGH",
       "sourceFile": "bok_center_tulsa_ok.pdf",
       "sourceId": "bok-center-production-manual-undated",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Source-backed planning geometry; confirm before final operations."
+      "note": "Approved by fact bok-house-stage-max-depth-80."
     },
     {
       "venue": "BOK Center",
@@ -1212,13 +1212,13 @@
       "category": "geometry",
       "field": "floorWidthFt",
       "currentValue": "85 ft",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1226,13 +1226,13 @@
       "category": "geometry",
       "field": "floorLengthFt",
       "currentValue": "235 ft",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1240,13 +1240,13 @@
       "category": "geometry",
       "field": "lowSteelFt",
       "currentValue": "98 ft",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1254,13 +1254,13 @@
       "category": "geometry",
       "field": "centerhungBottomFt",
       "currentValue": "76 ft",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1268,13 +1268,13 @@
       "category": "geometry",
       "field": "centerhungDiameterFt",
       "currentValue": "32 ft",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1282,13 +1282,13 @@
       "category": "geometry",
       "field": "dockCount",
       "currentValue": "6",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1296,13 +1296,13 @@
       "category": "geometry",
       "field": "pushDistanceFt",
       "currentValue": "200 ft",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1310,13 +1310,13 @@
       "category": "geometry",
       "field": "endStageRiggingLb",
       "currentValue": "150,000 lb",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1324,13 +1324,13 @@
       "category": "geometry",
       "field": "centerStageRiggingLb",
       "currentValue": "124,000 lb",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1338,13 +1338,13 @@
       "category": "geometry",
       "field": "totalGridRiggingLb",
       "currentValue": "450,000 lb",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1352,13 +1352,13 @@
       "category": "geometry",
       "field": "houseStageWidthFt",
       "currentValue": "72 ft",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1366,13 +1366,13 @@
       "category": "geometry",
       "field": "houseStageDepthFt",
       "currentValue": "60 ft",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1380,13 +1380,13 @@
       "category": "geometry",
       "field": "houseStageMinHeightFt",
       "currentValue": "4 ft",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",
@@ -1394,13 +1394,13 @@
       "category": "geometry",
       "field": "houseStageMaxHeightFt",
       "currentValue": "6.5 ft",
-      "provenanceStatus": "ESTIMATE",
-      "confidence": "LOW",
+      "provenanceStatus": "REFERENCE",
+      "confidence": "HIGH",
       "sourceFile": "t_mobile_center_kansas_city_mo.pdf",
       "sourceId": "t-mobile-center-source-pack",
       "sourceAvailability": "AVAILABLE_EXTERNAL",
       "controllingStatus": "CONTROLLING",
-      "note": "Registered T-Mobile Center source requires extraction and approval; treat authored geometry as an estimate until reconciled."
+      "note": "Approved venue review facts are REFERENCE because no visible issue date was found."
     },
     {
       "venue": "T-Mobile Center",

@@ -105,9 +105,28 @@ test.describe('route browser smoke', () => {
     await page.getByRole('button', { name: 'Missing CAD' }).click();
     await expect(page.locator('.source-matrix__row')).toHaveCount(19);
 
-    await page.getByRole('button', { name: 'Conflict' }).click();
+    await page.getByLabel('Source status filters').getByRole('button', { name: 'Conflict', exact: true }).click();
     await expect(page.locator('.source-matrix__row')).toHaveCount(1);
     await expect(page.getByRole('table', { name: '19-show source completion matrix' }).getByText('Van Andel Arena')).toBeVisible();
+  });
+
+  test('venue source review panel exposes approvals, blockers, and filters', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+
+    await expect(page.getByRole('heading', { name: 'Venue source review approvals' })).toBeVisible();
+    await expect(page.locator('.source-review-table__row')).toHaveCount(11);
+    await expect(page.getByRole('table', { name: 'Venue source review approval matrix' }).getByText('BOK Center')).toBeVisible();
+    await expect(page.getByText('Venue source review is blocked.').first()).toBeVisible();
+    await expect(page.getByRole('button', { name: /Approve Floor to rigging grid bottom steel/ })).toBeEnabled();
+
+    await page.getByLabel('Venue review filters').getByRole('button', { name: 'CONFLICT', exact: true }).click();
+    await expect(page.locator('.source-review-table__row')).toHaveCount(1);
+    await expect(page.getByRole('table', { name: 'Venue source review approval matrix' }).getByText('Van Andel Arena')).toBeVisible();
+
+    await page.getByLabel('Venue review filters').getByRole('button', { name: 'READY', exact: true }).click();
+    await expect(page.locator('.source-review-table__row')).toHaveCount(3);
+    await expect(page.getByRole('table', { name: 'Venue source review approval matrix' }).getByText('Spectrum Center')).toBeVisible();
   });
 
   test('unknown venue falls back to the dashboard', async ({ page }) => {

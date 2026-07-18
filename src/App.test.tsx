@@ -31,6 +31,9 @@ describe('App route smoke coverage', () => {
     expect(screen.getByText('19 venue records')).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '19-show source status' })).toBeInTheDocument();
     expect(screen.getByRole('table', { name: '19-show source completion matrix' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Venue source review approvals' })).toBeInTheDocument();
+    expect(screen.getByRole('table', { name: 'Venue source review approval matrix' })).toBeInTheDocument();
+    expect(screen.getByText('90 approved')).toBeInTheDocument();
     expect(screen.getAllByText('Spectrum Center').length).toBeGreaterThan(0);
     expect(screen.getByText('Playoff Contingency — Venue TBD')).toBeInTheDocument();
   });
