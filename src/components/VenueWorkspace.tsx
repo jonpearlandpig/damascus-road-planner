@@ -15,6 +15,11 @@ const layers: Array<{ key: LayerKey; label: string; icon: typeof Eye }> = [
   { key: 'sources', label: 'Sources', icon: FileText }, { key: 'issues', label: 'Open issues', icon: ClipboardList },
 ];
 
+function initialSelectedObject(): string | undefined {
+  if (typeof window === 'undefined' || !window.matchMedia) return 'center-court';
+  return window.matchMedia('(min-width: 861px)').matches ? 'center-court' : undefined;
+}
+
 function zoneToRecord(venue: VenueTwin, id: string): SceneObjectRecord | undefined {
   const zone = venue.zones.find((item) => item.id === id);
   if (!zone) return undefined;
@@ -27,7 +32,7 @@ function SceneFallback({ venue }: { venue: VenueTwin }) {
 
 export function VenueWorkspace({ venue }: { venue: VenueTwin }) {
   const [activeLayers, setActiveLayers] = useState<Set<string>>(new Set(['overview', 'production', 'rigging', 'logistics', 'backstage', 'safety']));
-  const [selectedId, setSelectedId] = useState<string | undefined>('center-court');
+  const [selectedId, setSelectedId] = useState<string | undefined>(initialSelectedObject);
   const [mobileLayersOpen, setMobileLayersOpen] = useState(false);
   const selectedRecord = useMemo(() => venue.objects.find((record) => record.id === selectedId) ?? (selectedId ? zoneToRecord(venue, selectedId) : undefined), [selectedId, venue]);
 

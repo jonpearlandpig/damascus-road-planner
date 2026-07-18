@@ -20,13 +20,20 @@ npm run dev
 npm run typecheck
 npm run lint
 npm run validate
+npm run reconcile:sources
 npm run test:run
+npm run test:e2e:install
+npm run test:e2e
 npm run build
 npm run audit
 npm run check
 ```
 
 `npm run check` is the local non-interactive quality gate used by CI: typecheck, lint, venue validation, gear-pack validation, tests, and production build.
+
+`npm run reconcile:sources` regenerates `docs/source-reconciliation.json`. `npm run validate` checks that the report matches the current venue seeds and `source-assets/manifest.json`.
+
+`npm run test:e2e` runs Playwright browser smoke coverage against Vite preview. Run `npm run test:e2e:install` once per machine to install Chromium.
 
 ## Source assets
 
