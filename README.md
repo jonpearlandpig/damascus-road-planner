@@ -2,7 +2,22 @@
 
 Interactive venue digital-twin planning application for the Spring 2027 Damascus Road Tour.
 
-The application is built through GitHub, deployed on Vercel, and designed to use the existing Supabase project for structured venue, source, geometry, placement, and operational records.
+## Current scope
+
+- 19-stop route control room
+- Interactive, source-backed venue workspaces for Spectrum Center, BOK Center, Dickies Arena, Van Andel Arena, H-E-B Center, T-Mobile Center, and Desert Diamond Arena
+- Independent DRT production package with center-court B-stage anchoring
+- Confidence, authority, revision, source-lineage, PM/TM action, and comparison interfaces
+- Desktop-first workspace with mobile inspection mode
+
+## Development
+
+```bash
+npm install
+npm run dev
+npm run build
+npm run lint
+```
 
 ## Trust boundary
 
