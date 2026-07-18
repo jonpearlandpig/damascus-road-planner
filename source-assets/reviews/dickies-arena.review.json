@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "dickies-arena",
+  "sourceIdsReviewed": ["dickies-arena-tech-pack-2026"],
+  "reviewDate": "2026-07-18",
+  "sourceRevision": "Revised 2026",
+  "pageCount": 34,
+  "pageCountSource": "CONNECTOR_TEXT_SEGMENT_ESTIMATE",
+  "documentSections": {
+    "coverTitlePage": "FOUND",
+    "revisionOrIssueDate": "FOUND",
+    "tableOfContents": "FOUND",
+    "floorPlans": "FOUND",
+    "riggingInformation": "FOUND",
+    "roofOrSteelDiagrams": "FOUND",
+    "seatingConfigurations": "FOUND",
+    "loadingInformation": "FOUND",
+    "stageOrEndStageInformation": "FOUND",
+    "productionRestrictions": "FOUND"
+  },
+  "extractedFacts": [
+    {
+      "id": "dickies-building-length-430",
+      "field": "buildingLengthFt",
+      "label": "Building length",
+      "category": "floor",
+      "originalValue": "430",
+      "originalUnit": "ft",
+      "normalizedValue": 430,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "dickies-arena-tech-pack-2026",
+          "page": 3,
+          "section": "Facts and Figures",
+          "excerpt": "Building dimensions are listed as 430 long x 310 wide.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dickies-building-width-310",
+      "field": "buildingWidthFt",
+      "label": "Building width",
+      "category": "floor",
+      "originalValue": "310",
+      "originalUnit": "ft",
+      "normalizedValue": 310,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "dickies-arena-tech-pack-2026",
+          "page": 3,
+          "section": "Facts and Figures",
+          "excerpt": "Building dimensions are listed as 430 long x 310 wide.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dickies-event-docks-5",
+      "field": "dockCount",
+      "label": "Event-use loading docks",
+      "category": "loading",
+      "originalValue": "5",
+      "originalUnit": "count",
+      "normalizedValue": 5,
+      "normalizedUnit": "count",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 count",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "dickies-arena-tech-pack-2026",
+          "page": 8,
+          "section": "Loading Docks",
+          "excerpt": "Loading section lists 6 main docks with 5 available for event use all day.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dickies-push-distance-175",
+      "field": "pushDistanceFt",
+      "label": "Push to arena floor",
+      "category": "loading",
+      "originalValue": "175",
+      "originalUnit": "ft",
+      "normalizedValue": 175,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "dickies-arena-tech-pack-2026",
+          "page": 8,
+          "section": "Loading Docks",
+          "excerpt": "Approximate push to the start of the arena floor is 175 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dickies-stage-opening-width-18-5",
+      "field": "stageEndOpeningWidthFt",
+      "label": "South-end back wall opening width",
+      "category": "stage",
+      "originalValue": "18 ft 6 in",
+      "originalUnit": "ft",
+      "normalizedValue": 18.5,
+      "normalizedUnit": "ft",
+      "conversionMethod": "feet-and-inches",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "dickies-arena-tech-pack-2026",
+          "page": 9,
+          "section": "Stage End Opening",
+          "excerpt": "South end back wall opening is 18 ft 6 in wide x 36 ft high.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dickies-stage-opening-height-36",
+      "field": "stageEndOpeningHeightFt",
+      "label": "South-end back wall opening height",
+      "category": "stage",
+      "originalValue": "36",
+      "originalUnit": "ft",
+      "normalizedValue": 36,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "dickies-arena-tech-pack-2026",
+          "page": 9,
+          "section": "Stage End Opening",
+          "excerpt": "South end back wall opening is 18 ft 6 in wide x 36 ft high.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dickies-house-stage-width-80",
+      "field": "houseStageWidthFt",
+      "label": "StageRight maximum width",
+      "category": "stage",
+      "originalValue": "80",
+      "originalUnit": "ft",
+      "normalizedValue": 80,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "dickies-arena-tech-pack-2026",
+          "page": 10,
+          "section": "Staging",
+          "excerpt": "StageRight staging can be configured up to 80 wide x 40 deep.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dickies-house-stage-depth-40",
+      "field": "houseStageDepthFt",
+      "label": "StageRight maximum depth",
+      "category": "stage",
+      "originalValue": "40",
+      "originalUnit": "ft",
+      "normalizedValue": 40,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "dickies-arena-tech-pack-2026",
+          "page": 10,
+          "section": "Staging",
+          "excerpt": "StageRight staging can be configured up to 80 wide x 40 deep.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dickies-total-rigging-200000",
+      "field": "totalGridRiggingLb",
+      "label": "Building total rigging load",
+      "category": "roofRigging",
+      "originalValue": "200000",
+      "originalUnit": "lb",
+      "normalizedValue": 200000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "dickies-arena-tech-pack-2026",
+          "page": 15,
+          "section": "Rigging",
+          "excerpt": "Building total rigging load is listed as 200,000 lb.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dickies-scoreboard-concert-trim-80",
+      "field": "centerhungBottomFt",
+      "label": "Standard concert video-board trim",
+      "category": "overheadObstruction",
+      "originalValue": "80",
+      "originalUnit": "ft",
+      "normalizedValue": 80,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "dickies-arena-tech-pack-2026",
+          "page": 15,
+          "section": "Rigging",
+          "excerpt": "Video board standard concert trim is listed as 80 ft with max trim 89 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dickies-seeded-floor-envelope-85x200",
+      "field": "floorEnvelopeFt",
+      "label": "Seeded 85 x 200 floor envelope",
+      "category": "floor",
+      "originalValue": "85 x 200",
+      "originalUnit": "ft",
+      "normalizedValue": null,
+      "normalizedUnit": "ft",
+      "conversionMethod": "not-source-supported",
+      "roundingPrecision": "n/a",
+      "reviewState": "REJECTED",
+      "measurementStatus": "ESTIMATE",
+      "confidence": "LOW",
+      "evidence": [
+        {
+          "sourceId": "dickies-arena-tech-pack-2026",
+          "page": 3,
+          "section": "Facts and Figures",
+          "excerpt": "Building dimensions are stated, but event-floor width and length are not exposed in text extraction.",
+          "extractionMethod": "TEXT"
+        }
+      ],
+      "rejectedReason": "Building dimensions do not approve the venue-native event floor envelope."
+    }
+  ],
+  "approvedFactIds": [
+    "dickies-building-length-430",
+    "dickies-building-width-310",
+    "dickies-event-docks-5",
+    "dickies-push-distance-175",
+    "dickies-stage-opening-width-18-5",
+    "dickies-stage-opening-height-36",
+    "dickies-house-stage-width-80",
+    "dickies-house-stage-depth-40",
+    "dickies-total-rigging-200000",
+    "dickies-scoreboard-concert-trim-80"
+  ],
+  "conflicts": [],
+  "rejectedInterpretations": ["dickies-seeded-floor-envelope-85x200"],
+  "missingRequiredGeometry": ["floorWidthFt", "floorLengthFt", "nativeFloorBoundary", "lowSteelFt"],
+  "modelReadiness": "BLOCKED",
+  "reviewerNotes": [
+    "The source supports loading, staging, building-size, video-board trim, and total rigging load facts.",
+    "Event-floor width/length and low-steel trim were not exposed as text-backed facts."
+  ],
+  "validationStatus": "PASS"
+}

@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "gainbridge-fieldhouse",
+  "sourceIdsReviewed": ["gainbridge-fieldhouse-tech-pack-2026"],
+  "reviewDate": "2026-07-18",
+  "sourceRevision": "Snapshot metadata: Updated 2026-01-09; PDF title text: Updated 23 August 2023",
+  "pageCount": 7,
+  "pageCountSource": "PDF_PAGE_TREE",
+  "documentSections": {
+    "coverTitlePage": "FOUND",
+    "revisionOrIssueDate": "FOUND",
+    "tableOfContents": "MISSING",
+    "floorPlans": "FOUND",
+    "riggingInformation": "FOUND",
+    "roofOrSteelDiagrams": "MISSING",
+    "seatingConfigurations": "FOUND",
+    "loadingInformation": "FOUND",
+    "stageOrEndStageInformation": "FOUND",
+    "productionRestrictions": "FOUND"
+  },
+  "extractedFacts": [
+    {
+      "id": "gainbridge-roof-height-upstage-125",
+      "field": "roofHeightUpstageFt",
+      "label": "Arched beam roof height at upstage edge",
+      "category": "roofRigging",
+      "originalValue": "125",
+      "originalUnit": "ft",
+      "normalizedValue": 125,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "gainbridge-fieldhouse-tech-pack-2026",
+          "page": 5,
+          "section": "Rigging",
+          "excerpt": "Arched beam roof height ranges from 125 ft at the upstage edge to 150 ft at center.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "gainbridge-roof-height-center-150",
+      "field": "roofHeightCenterFt",
+      "label": "Arched beam roof height at center",
+      "category": "roofRigging",
+      "originalValue": "150",
+      "originalUnit": "ft",
+      "normalizedValue": 150,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "gainbridge-fieldhouse-tech-pack-2026",
+          "page": 5,
+          "section": "Rigging",
+          "excerpt": "Arched beam roof height ranges from 125 ft at the upstage edge to 150 ft at center.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "gainbridge-grid-capacity-200000",
+      "field": "totalGridRiggingLb",
+      "label": "Maximum grid weight",
+      "category": "roofRigging",
+      "originalValue": "200000",
+      "originalUnit": "lb",
+      "normalizedValue": 200000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "gainbridge-fieldhouse-tech-pack-2026",
+          "page": 5,
+          "section": "Rigging",
+          "excerpt": "Maximum grid weight is stated as 200,000 lb.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "gainbridge-scoreboard-bottom-110",
+      "field": "centerhungBottomFt",
+      "label": "Center-hung scoreboard floor-to-bottom trim",
+      "category": "overheadObstruction",
+      "originalValue": "110",
+      "originalUnit": "ft",
+      "normalizedValue": 110,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "gainbridge-fieldhouse-tech-pack-2026",
+          "page": 5,
+          "section": "Rigging",
+          "excerpt": "Center-hung scoreboard trims at 110 ft floor to bottom.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "gainbridge-docks-4",
+      "field": "dockCount",
+      "label": "Loading dock labels",
+      "category": "loading",
+      "originalValue": "Dock 1 through Dock 4",
+      "originalUnit": "count",
+      "normalizedValue": 4,
+      "normalizedUnit": "count",
+      "conversionMethod": "labeled-count",
+      "roundingPrecision": "1 count",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "gainbridge-fieldhouse-tech-pack-2026",
+          "page": 4,
+          "section": "Loading dock diagram",
+          "excerpt": "Loading dock diagram labels Dock 1, Dock 2, Dock 3, and Dock 4 plus ramp.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "gainbridge-seeded-floor-envelope-85x200",
+      "field": "floorEnvelopeFt",
+      "label": "Seeded 85 x 200 floor envelope",
+      "category": "floor",
+      "originalValue": "85 x 200",
+      "originalUnit": "ft",
+      "normalizedValue": null,
+      "normalizedUnit": "ft",
+      "conversionMethod": "not-source-supported",
+      "roundingPrecision": "n/a",
+      "reviewState": "REJECTED",
+      "measurementStatus": "ESTIMATE",
+      "confidence": "LOW",
+      "evidence": [
+        {
+          "sourceId": "gainbridge-fieldhouse-tech-pack-2026",
+          "page": 3,
+          "section": "Floor and seating pages",
+          "excerpt": "Reviewed text exposed seating/floor references but no explicit event-floor width and length.",
+          "extractionMethod": "TEXT"
+        }
+      ],
+      "rejectedReason": "The source packet does not provide a source-backed venue-native floor envelope."
+    }
+  ],
+  "approvedFactIds": [
+    "gainbridge-roof-height-upstage-125",
+    "gainbridge-roof-height-center-150",
+    "gainbridge-grid-capacity-200000",
+    "gainbridge-scoreboard-bottom-110",
+    "gainbridge-docks-4"
+  ],
+  "conflicts": [],
+  "rejectedInterpretations": ["gainbridge-seeded-floor-envelope-85x200"],
+  "missingRequiredGeometry": ["floorWidthFt", "floorLengthFt", "nativeFloorBoundary", "nativeRiggingCad"],
+  "modelReadiness": "BLOCKED",
+  "reviewerNotes": [
+    "The source contains useful rigging, scoreboard, and loading facts.",
+    "Snapshot metadata and visible PDF revision text differ; both are preserved."
+  ],
+  "validationStatus": "PASS"
+}

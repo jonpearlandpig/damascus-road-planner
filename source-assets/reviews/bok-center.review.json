@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "bok-center",
+  "sourceIdsReviewed": ["bok-center-production-manual-undated"],
+  "reviewDate": "2026-07-18",
+  "sourceRevision": "Undated production manual",
+  "pageCount": 11,
+  "pageCountSource": "PDF_PAGE_TREE",
+  "documentSections": {
+    "coverTitlePage": "FOUND",
+    "revisionOrIssueDate": "MISSING",
+    "tableOfContents": "FOUND",
+    "floorPlans": "MISSING",
+    "riggingInformation": "FOUND",
+    "roofOrSteelDiagrams": "FOUND",
+    "seatingConfigurations": "FOUND",
+    "loadingInformation": "FOUND",
+    "stageOrEndStageInformation": "FOUND",
+    "productionRestrictions": "FOUND"
+  },
+  "extractedFacts": [
+    {
+      "id": "bok-low-steel-90",
+      "field": "lowSteelFt",
+      "label": "Floor to rigging grid bottom steel",
+      "category": "roofRigging",
+      "originalValue": "90",
+      "originalUnit": "ft",
+      "normalizedValue": 90,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "bok-center-production-manual-undated",
+          "page": 9,
+          "section": "Rigging Grid",
+          "excerpt": "Floor to Rigging Grid - 90 ft from floor to bottom of steel.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "bok-scoreboard-bottom-75",
+      "field": "centerhungBottomFt",
+      "label": "Scoreboard bottom trim",
+      "category": "overheadObstruction",
+      "originalValue": "75",
+      "originalUnit": "ft",
+      "normalizedValue": 75,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "bok-center-production-manual-undated",
+          "page": 9,
+          "section": "Rigging Grid",
+          "excerpt": "Scoreboard hangs 15 ft below rigging grid, 75 ft from floor to bottom of scoreboard.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "bok-scoreboard-width-46-67",
+      "field": "centerhungWidthFt",
+      "label": "Scoreboard bay east-west width",
+      "category": "overheadObstruction",
+      "originalValue": "46 ft 8 in",
+      "originalUnit": "ft",
+      "normalizedValue": 46.67,
+      "normalizedUnit": "ft",
+      "conversionMethod": "feet-and-inches",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "bok-center-production-manual-undated",
+          "page": 9,
+          "section": "Rigging Grid",
+          "excerpt": "Scoreboard Bay Dimensions: 46'-8\" east-west and 37' north-south.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "bok-scoreboard-depth-37",
+      "field": "centerhungDepthFt",
+      "label": "Scoreboard bay north-south depth",
+      "category": "overheadObstruction",
+      "originalValue": "37",
+      "originalUnit": "ft",
+      "normalizedValue": 37,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "bok-center-production-manual-undated",
+          "page": 9,
+          "section": "Rigging Grid",
+          "excerpt": "Scoreboard Bay Dimensions: 46'-8\" east-west and 37' north-south.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "bok-end-stage-rigging-150000",
+      "field": "endStageRiggingLb",
+      "label": "End-stage total rigging load",
+      "category": "roofRigging",
+      "originalValue": "150000",
+      "originalUnit": "lb",
+      "normalizedValue": 150000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "bok-center-production-manual-undated",
+          "page": 10,
+          "section": "Rigging",
+          "excerpt": "Total rigging load for an end stage event may not exceed 150,000 pounds.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "bok-center-stage-rigging-120000",
+      "field": "centerStageRiggingLb",
+      "label": "Center-stage total rigging load",
+      "category": "roofRigging",
+      "originalValue": "120000",
+      "originalUnit": "lb",
+      "normalizedValue": 120000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "bok-center-production-manual-undated",
+          "page": 10,
+          "section": "Rigging",
+          "excerpt": "Total rigging load for a center stage event may not exceed 120,000 pounds.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "bok-production-docks-3",
+      "field": "dockCount",
+      "label": "Production loading docks with levelers",
+      "category": "loading",
+      "originalValue": "3",
+      "originalUnit": "count",
+      "normalizedValue": 3,
+      "normalizedUnit": "count",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 count",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "bok-center-production-manual-undated",
+          "page": 10,
+          "section": "Load in and out",
+          "excerpt": "BOK Center has 3 loading docks with levelers plus separate ramp and service dock references.",
+          "extractionMethod": "TEXT"
+        }
+      ],
+      "supersedes": ["seed.dockCount.2"]
+    },
+    {
+      "id": "bok-house-stage-max-width-56",
+      "field": "houseStageWidthFt",
+      "label": "StageRight maximum stage width",
+      "category": "stage",
+      "originalValue": "56",
+      "originalUnit": "ft",
+      "normalizedValue": 56,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "bok-center-production-manual-undated",
+          "page": 10,
+          "section": "Staging",
+          "excerpt": "StageRight stage sizes range up to 56 x 80.",
+          "extractionMethod": "TEXT"
+        }
+      ],
+      "supersedes": ["seed.houseStageWidthFt.60"]
+    },
+    {
+      "id": "bok-house-stage-max-depth-80",
+      "field": "houseStageDepthFt",
+      "label": "StageRight maximum stage depth",
+      "category": "stage",
+      "originalValue": "80",
+      "originalUnit": "ft",
+      "normalizedValue": 80,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "bok-center-production-manual-undated",
+          "page": 10,
+          "section": "Staging",
+          "excerpt": "StageRight stage sizes range up to 56 x 80.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "bok-seeded-floor-envelope-85x200",
+      "field": "floorEnvelopeFt",
+      "label": "Seeded 85 x 200 floor envelope",
+      "category": "floor",
+      "originalValue": "85 x 200",
+      "originalUnit": "ft",
+      "normalizedValue": null,
+      "normalizedUnit": "ft",
+      "conversionMethod": "not-source-supported",
+      "roundingPrecision": "n/a",
+      "reviewState": "REJECTED",
+      "measurementStatus": "ESTIMATE",
+      "confidence": "LOW",
+      "evidence": [
+        {
+          "sourceId": "bok-center-production-manual-undated",
+          "page": 9,
+          "section": "Rigging Grid",
+          "excerpt": "Reviewed rigging and stage pages did not state an arena floor width or length.",
+          "extractionMethod": "TEXT"
+        }
+      ],
+      "rejectedReason": "The checked-in seed floor envelope is not supported by the reviewed PDF text."
+    }
+  ],
+  "approvedFactIds": [
+    "bok-low-steel-90",
+    "bok-scoreboard-bottom-75",
+    "bok-scoreboard-width-46-67",
+    "bok-scoreboard-depth-37",
+    "bok-end-stage-rigging-150000",
+    "bok-center-stage-rigging-120000",
+    "bok-production-docks-3",
+    "bok-house-stage-max-width-56",
+    "bok-house-stage-max-depth-80"
+  ],
+  "conflicts": [],
+  "rejectedInterpretations": ["bok-seeded-floor-envelope-85x200"],
+  "missingRequiredGeometry": ["floorWidthFt", "floorLengthFt", "nativeFloorBoundary", "nativeRiggingCad"],
+  "modelReadiness": "BLOCKED",
+  "reviewerNotes": [
+    "The source supports overhead, rigging load, dock, and house-stage facts.",
+    "Venue-native floor dimensions remain missing; the 85 x 200 seed must stay estimate-only."
+  ],
+  "validationStatus": "PASS"
+}

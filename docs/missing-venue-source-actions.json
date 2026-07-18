@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-18T00:00:00.000Z",
+  "generatedFrom": "checked-in Drive source snapshot",
+  "summary": {
+    "actions": 8,
+    "venueTbd": 1,
+    "missingSourceFolders": 8
+  },
+  "rows": [
+    {
+      "routePosition": 2,
+      "date": "2027-04-09",
+      "market": "St. Louis",
+      "venue": "Chaifetz Arena",
+      "venueSlug": "chaifetz-arena",
+      "sourceFolderFound": "No",
+      "overallSourceStatus": "Blocked",
+      "priority": "P1",
+      "requestedDocuments": [
+        "current venue technical packet",
+        "floor or seating plan",
+        "rigging plot or overhead limits",
+        "native CAD if available"
+      ],
+      "publicTemporaryAcceptable": true,
+      "action": "Create 01 SOURCE DOCUMENTS folder and file the current venue technical packet plus rigging/floor references."
+    },
+    {
+      "routePosition": 5,
+      "date": "2027-04-13",
+      "market": "Toronto",
+      "venue": "Coca-Cola Coliseum",
+      "venueSlug": "coca-cola-coliseum",
+      "sourceFolderFound": "No",
+      "overallSourceStatus": "Blocked",
+      "priority": "P1",
+      "requestedDocuments": [
+        "current venue technical packet",
+        "floor or seating plan",
+        "rigging plot or overhead limits",
+        "native CAD if available"
+      ],
+      "publicTemporaryAcceptable": true,
+      "action": "Create 01 SOURCE DOCUMENTS folder and file current venue tech, rigging, and floor references."
+    },
+    {
+      "routePosition": 6,
+      "date": "2027-04-15",
+      "market": "Worcester",
+      "venue": "DCU Center",
+      "venueSlug": "dcu-center",
+      "sourceFolderFound": "No",
+      "overallSourceStatus": "Blocked",
+      "priority": "P1",
+      "requestedDocuments": [
+        "current venue technical packet",
+        "floor or seating plan",
+        "rigging plot or overhead limits",
+        "native CAD if available"
+      ],
+      "publicTemporaryAcceptable": true,
+      "action": "Create 01 SOURCE DOCUMENTS folder and file current venue tech, rigging, and floor references."
+    },
+    {
+      "routePosition": 9,
+      "date": "2027-04-18",
+      "market": "Atlanta/Duluth",
+      "venue": "Gas South Arena",
+      "venueSlug": "gas-south-arena",
+      "sourceFolderFound": "No",
+      "overallSourceStatus": "Blocked",
+      "priority": "P1",
+      "requestedDocuments": [
+        "current venue technical packet",
+        "floor or seating plan",
+        "rigging plot or overhead limits",
+        "native CAD if available"
+      ],
+      "publicTemporaryAcceptable": true,
+      "action": "Create 01 SOURCE DOCUMENTS folder and file current venue tech, rigging, and floor references."
+    },
+    {
+      "routePosition": 10,
+      "date": "2027-04-23",
+      "market": "Chicago/Hoffman Estates",
+      "venue": "NOW Arena",
+      "venueSlug": "now-arena",
+      "sourceFolderFound": "No",
+      "overallSourceStatus": "Blocked",
+      "priority": "P1",
+      "requestedDocuments": [
+        "current venue technical packet",
+        "floor or seating plan",
+        "rigging plot or overhead limits",
+        "native CAD if available"
+      ],
+      "publicTemporaryAcceptable": true,
+      "action": "Create 01 SOURCE DOCUMENTS folder and file current venue tech, rigging, and floor references."
+    },
+    {
+      "routePosition": 13,
+      "date": "2027-04-28",
+      "market": "Los Angeles",
+      "venue": "Playoff Contingency — Venue TBD",
+      "venueSlug": "los-angeles-contingency",
+      "sourceFolderFound": "No",
+      "overallSourceStatus": "TBD",
+      "priority": "P0",
+      "requestedDocuments": [
+        "Venue identity authority",
+        "current venue technical packet once venue is assigned",
+        "floor plan",
+        "rigging or overhead limits"
+      ],
+      "publicTemporaryAcceptable": false,
+      "action": "Confirm venue before creating a real venue slug or attaching Honda Center sources."
+    },
+    {
+      "routePosition": 14,
+      "date": "2027-04-29",
+      "market": "Los Angeles/Anaheim",
+      "venue": "Honda Center",
+      "venueSlug": "honda-center",
+      "sourceFolderFound": "No",
+      "overallSourceStatus": "Blocked",
+      "priority": "P1",
+      "requestedDocuments": [
+        "current venue technical packet",
+        "floor or seating plan",
+        "rigging plot or overhead limits",
+        "native CAD if available"
+      ],
+      "publicTemporaryAcceptable": true,
+      "action": "Create 01 SOURCE DOCUMENTS folder and file Honda Center source documents; do not reuse contingency sources."
+    },
+    {
+      "routePosition": 15,
+      "date": "2027-04-30",
+      "market": "San Diego",
+      "venue": "Viejas Arena",
+      "venueSlug": "viejas-arena",
+      "sourceFolderFound": "No",
+      "overallSourceStatus": "Blocked",
+      "priority": "P1",
+      "requestedDocuments": [
+        "current venue technical packet",
+        "floor or seating plan",
+        "rigging plot or overhead limits",
+        "native CAD if available"
+      ],
+      "publicTemporaryAcceptable": true,
+      "action": "Create 01 SOURCE DOCUMENTS folder and file current venue tech, rigging, and floor references."
+    }
+  ]
+}

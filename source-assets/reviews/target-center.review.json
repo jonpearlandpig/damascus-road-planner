@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "target-center",
+  "sourceIdsReviewed": ["target-center-source-pack"],
+  "reviewDate": "2026-07-18",
+  "sourceRevision": "2023 Technical Packet",
+  "pageCount": 8,
+  "pageCountSource": "PDF_PAGE_TREE",
+  "documentSections": {
+    "coverTitlePage": "FOUND",
+    "revisionOrIssueDate": "FOUND",
+    "tableOfContents": "MISSING",
+    "floorPlans": "FOUND",
+    "riggingInformation": "FOUND",
+    "roofOrSteelDiagrams": "MISSING",
+    "seatingConfigurations": "FOUND",
+    "loadingInformation": "FOUND",
+    "stageOrEndStageInformation": "FOUND",
+    "productionRestrictions": "FOUND"
+  },
+  "extractedFacts": [
+    {
+      "id": "target-open-steel-100",
+      "field": "lowSteelFt",
+      "label": "Rigging open steel height",
+      "category": "roofRigging",
+      "originalValue": "100",
+      "originalUnit": "ft",
+      "normalizedValue": 100,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "target-center-source-pack",
+          "page": 3,
+          "section": "Building Specs",
+          "excerpt": "Rigging section lists open steel at 100 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "target-end-stage-rigging-125000",
+      "field": "endStageRiggingLb",
+      "label": "South-end rigging load limit",
+      "category": "roofRigging",
+      "originalValue": "125000",
+      "originalUnit": "lb",
+      "normalizedValue": 125000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "target-center-source-pack",
+          "page": 3,
+          "section": "Building Specs",
+          "excerpt": "Load limit is 125,000 lb for south end, in the round, and north end.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "target-docks-3",
+      "field": "dockCount",
+      "label": "Truck docks with levelers",
+      "category": "loading",
+      "originalValue": "3",
+      "originalUnit": "count",
+      "normalizedValue": 3,
+      "normalizedUnit": "count",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 count",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "target-center-source-pack",
+          "page": 3,
+          "section": "Building Specs",
+          "excerpt": "Truck dock location lists 3 docks with levelers.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "target-stage-min-height-4",
+      "field": "houseStageMinHeightFt",
+      "label": "House stage minimum height",
+      "category": "stage",
+      "originalValue": "4",
+      "originalUnit": "ft",
+      "normalizedValue": 4,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "target-center-source-pack",
+          "page": 4,
+          "section": "Staging",
+          "excerpt": "Staging is adjustable from 4 ft to 6 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "target-stage-max-height-6",
+      "field": "houseStageMaxHeightFt",
+      "label": "House stage maximum height",
+      "category": "stage",
+      "originalValue": "6",
+      "originalUnit": "ft",
+      "normalizedValue": 6,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "target-center-source-pack",
+          "page": 4,
+          "section": "Staging",
+          "excerpt": "Staging is adjustable from 4 ft to 6 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "target-centerhung-height-18",
+      "field": "centerhungHeightFt",
+      "label": "Centerhung display height",
+      "category": "overheadObstruction",
+      "originalValue": "18",
+      "originalUnit": "ft",
+      "normalizedValue": 18,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "target-center-source-pack",
+          "page": 4,
+          "section": "Centerhung",
+          "excerpt": "Centerhung displays are approximately 18 high x 33 wide.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "target-centerhung-width-33",
+      "field": "centerhungWidthFt",
+      "label": "Centerhung display width",
+      "category": "overheadObstruction",
+      "originalValue": "33",
+      "originalUnit": "ft",
+      "normalizedValue": 33,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "target-center-source-pack",
+          "page": 4,
+          "section": "Centerhung",
+          "excerpt": "Centerhung displays are approximately 18 high x 33 wide.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "target-seeded-floor-envelope-85x200",
+      "field": "floorEnvelopeFt",
+      "label": "Seeded 85 x 200 floor envelope",
+      "category": "floor",
+      "originalValue": "85 x 200",
+      "originalUnit": "ft",
+      "normalizedValue": null,
+      "normalizedUnit": "ft",
+      "conversionMethod": "not-source-supported",
+      "roundingPrecision": "n/a",
+      "reviewState": "REJECTED",
+      "measurementStatus": "ESTIMATE",
+      "confidence": "LOW",
+      "evidence": [
+        {
+          "sourceId": "target-center-source-pack",
+          "page": 3,
+          "section": "Building Specs",
+          "excerpt": "Reviewed building specs do not state an event floor width and length.",
+          "extractionMethod": "TEXT"
+        }
+      ],
+      "rejectedReason": "The current PDF text does not approve a source-backed floor envelope."
+    }
+  ],
+  "approvedFactIds": [
+    "target-open-steel-100",
+    "target-end-stage-rigging-125000",
+    "target-docks-3",
+    "target-stage-min-height-4",
+    "target-stage-max-height-6",
+    "target-centerhung-height-18",
+    "target-centerhung-width-33"
+  ],
+  "conflicts": [],
+  "rejectedInterpretations": ["target-seeded-floor-envelope-85x200"],
+  "missingRequiredGeometry": ["floorWidthFt", "floorLengthFt", "nativeFloorBoundary", "centerhungBottomFt", "nativeRiggingCad"],
+  "modelReadiness": "BLOCKED",
+  "reviewerNotes": [
+    "Rigging, stage, centerhung display size, and loading facts are source-backed.",
+    "Venue-native floor dimensions and centerhung trim height remain missing."
+  ],
+  "validationStatus": "PASS"
+}

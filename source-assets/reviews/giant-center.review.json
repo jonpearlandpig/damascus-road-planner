@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "giant-center",
+  "sourceIdsReviewed": ["giant-center-source-pack"],
+  "reviewDate": "2026-07-18",
+  "sourceRevision": "Source packet registered without visible revision date",
+  "pageCount": 2,
+  "pageCountSource": "CONNECTOR_TEXT_SEGMENT_ESTIMATE",
+  "documentSections": {
+    "coverTitlePage": "FOUND",
+    "revisionOrIssueDate": "MISSING",
+    "tableOfContents": "MISSING",
+    "floorPlans": "FOUND",
+    "riggingInformation": "FOUND",
+    "roofOrSteelDiagrams": "MISSING",
+    "seatingConfigurations": "FOUND",
+    "loadingInformation": "FOUND",
+    "stageOrEndStageInformation": "FOUND",
+    "productionRestrictions": "FOUND"
+  },
+  "extractedFacts": [
+    {
+      "id": "giant-floor-width-85",
+      "field": "floorWidthFt",
+      "label": "Arena floor width",
+      "category": "floor",
+      "originalValue": "85",
+      "originalUnit": "ft",
+      "normalizedValue": 85,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "giant-center-source-pack",
+          "page": 1,
+          "section": "Floor",
+          "excerpt": "Floor section lists length 200 and width 85.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "giant-floor-length-200",
+      "field": "floorLengthFt",
+      "label": "Arena floor length",
+      "category": "floor",
+      "originalValue": "200",
+      "originalUnit": "ft",
+      "normalizedValue": 200,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "giant-center-source-pack",
+          "page": 1,
+          "section": "Floor",
+          "excerpt": "Floor section lists length 200 and width 85.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "giant-low-steel-88",
+      "field": "lowSteelFt",
+      "label": "Floor to low steel",
+      "category": "roofRigging",
+      "originalValue": "88",
+      "originalUnit": "ft",
+      "normalizedValue": 88,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "giant-center-source-pack",
+          "page": 1,
+          "section": "Rigging",
+          "excerpt": "Rigging section lists floor to low steel as 88 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "giant-point-load-5000",
+      "field": "pointLoadLb",
+      "label": "Limit per rigging point",
+      "category": "roofRigging",
+      "originalValue": "5000",
+      "originalUnit": "lb",
+      "normalizedValue": 5000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "giant-center-source-pack",
+          "page": 1,
+          "section": "Rigging",
+          "excerpt": "Rigging section lists limit per point as 5,000 lb.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "giant-house-stage-width-80",
+      "field": "houseStageWidthFt",
+      "label": "Portable stage width",
+      "category": "stage",
+      "originalValue": "80",
+      "originalUnit": "ft",
+      "normalizedValue": 80,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "giant-center-source-pack",
+          "page": 1,
+          "section": "Stage",
+          "excerpt": "Portable StageRight stage is listed as 80 wide x 40 deep.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "giant-house-stage-depth-40",
+      "field": "houseStageDepthFt",
+      "label": "Portable stage depth",
+      "category": "stage",
+      "originalValue": "40",
+      "originalUnit": "ft",
+      "normalizedValue": 40,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "giant-center-source-pack",
+          "page": 1,
+          "section": "Stage",
+          "excerpt": "Portable StageRight stage is listed as 80 wide x 40 deep.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "giant-truck-positions-3",
+      "field": "truckPositionCount",
+      "label": "Trucks at load-in",
+      "category": "loading",
+      "originalValue": "3",
+      "originalUnit": "count",
+      "normalizedValue": 3,
+      "normalizedUnit": "count",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 count",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "giant-center-source-pack",
+          "page": 1,
+          "section": "Load in",
+          "excerpt": "Load-in section lists number of trucks as 3 and distance to stage as 50 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "giant-push-distance-50",
+      "field": "pushDistanceFt",
+      "label": "Distance from load-in to stage",
+      "category": "loading",
+      "originalValue": "50",
+      "originalUnit": "ft",
+      "normalizedValue": 50,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "giant-center-source-pack",
+          "page": 1,
+          "section": "Load in",
+          "excerpt": "Load-in section lists number of trucks as 3 and distance to stage as 50 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    }
+  ],
+  "approvedFactIds": [
+    "giant-floor-width-85",
+    "giant-floor-length-200",
+    "giant-low-steel-88",
+    "giant-point-load-5000",
+    "giant-house-stage-width-80",
+    "giant-house-stage-depth-40",
+    "giant-truck-positions-3",
+    "giant-push-distance-50"
+  ],
+  "conflicts": [],
+  "rejectedInterpretations": [],
+  "missingRequiredGeometry": ["centerhungOrObstructionProfile", "nativeRiggingCad"],
+  "modelReadiness": "PARTIAL",
+  "reviewerNotes": [
+    "The source text supports a basic 85 x 200 arena floor and low-steel reference.",
+    "Diagram-native overhead obstruction data and CAD remain missing."
+  ],
+  "validationStatus": "PASS"
+}

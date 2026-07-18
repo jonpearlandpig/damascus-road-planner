@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "red-rocks",
+  "sourceIdsReviewed": ["red-rocks-amphitheatre-guide-2017"],
+  "reviewDate": "2026-07-18",
+  "sourceRevision": "Rev. 3/15/2017",
+  "pageCount": 37,
+  "pageCountSource": "TABLE_OF_CONTENTS",
+  "documentSections": {
+    "coverTitlePage": "FOUND",
+    "revisionOrIssueDate": "FOUND",
+    "tableOfContents": "FOUND",
+    "floorPlans": "FOUND",
+    "riggingInformation": "MISSING",
+    "roofOrSteelDiagrams": "NOT_APPLICABLE",
+    "seatingConfigurations": "FOUND",
+    "loadingInformation": "FOUND",
+    "stageOrEndStageInformation": "FOUND",
+    "productionRestrictions": "FOUND"
+  },
+  "extractedFacts": [
+    {
+      "id": "redrocks-open-air-amphitheatre",
+      "field": "venueType",
+      "label": "Open-air amphitheatre classification",
+      "category": "venueIdentity",
+      "originalValue": "Open-air amphitheatre",
+      "originalUnit": "text",
+      "normalizedValue": null,
+      "normalizedUnit": "text",
+      "conversionMethod": "classification",
+      "roundingPrecision": "n/a",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "red-rocks-amphitheatre-guide-2017",
+          "page": 4,
+          "section": "General Information",
+          "excerpt": "Guide describes the venue as an open-air amphitheatre.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "redrocks-loading-section-present",
+      "field": "loadingInformation",
+      "label": "Truck loading section present",
+      "category": "loading",
+      "originalValue": "Truck loading/load in section",
+      "originalUnit": "text",
+      "normalizedValue": null,
+      "normalizedUnit": "text",
+      "conversionMethod": "section-presence",
+      "roundingPrecision": "n/a",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "red-rocks-amphitheatre-guide-2017",
+          "page": 15,
+          "section": "Truck Loading/Load In",
+          "excerpt": "Table of contents and extracted text expose a Truck Loading/Load In section.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "redrocks-seeded-arena-envelope-85x200",
+      "field": "floorEnvelopeFt",
+      "label": "Seeded arena-style 85 x 200 envelope",
+      "category": "floor",
+      "originalValue": "85 x 200",
+      "originalUnit": "ft",
+      "normalizedValue": null,
+      "normalizedUnit": "ft",
+      "conversionMethod": "not-source-supported",
+      "roundingPrecision": "n/a",
+      "reviewState": "REJECTED",
+      "measurementStatus": "ESTIMATE",
+      "confidence": "LOW",
+      "evidence": [
+        {
+          "sourceId": "red-rocks-amphitheatre-guide-2017",
+          "page": 27,
+          "section": "Stage diagram",
+          "excerpt": "Diagram headings are present, but extraction does not provide reliable arena-style dimensions.",
+          "extractionMethod": "TEXT"
+        }
+      ],
+      "rejectedReason": "This amphitheatre cannot inherit the generic arena floor envelope."
+    },
+    {
+      "id": "redrocks-rigging-grid-missing",
+      "field": "lowSteelFt",
+      "label": "Arena low-steel grid",
+      "category": "roofRigging",
+      "originalValue": "not present",
+      "originalUnit": "text",
+      "normalizedValue": null,
+      "normalizedUnit": "ft",
+      "conversionMethod": "not-applicable",
+      "roundingPrecision": "n/a",
+      "reviewState": "NOT_APPLICABLE",
+      "measurementStatus": "MISSING",
+      "confidence": "UNKNOWN",
+      "evidence": [
+        {
+          "sourceId": "red-rocks-amphitheatre-guide-2017",
+          "page": 1,
+          "section": "Guide scope",
+          "excerpt": "The source is an amphitheatre guide, not an arena rigging-grid packet.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    }
+  ],
+  "approvedFactIds": ["redrocks-open-air-amphitheatre", "redrocks-loading-section-present"],
+  "conflicts": [],
+  "rejectedInterpretations": ["redrocks-seeded-arena-envelope-85x200"],
+  "missingRequiredGeometry": ["currentRevision", "venueNativeStageBoundary", "riggingOrOverheadLimits", "accessPathDimensions"],
+  "modelReadiness": "BLOCKED",
+  "reviewerNotes": [
+    "Do not force arena floor, low-steel, or centerhung fields onto Red Rocks.",
+    "A current venue-native amphitheatre stage plot is required before DRT fit work."
+  ],
+  "validationStatus": "PASS"
+}

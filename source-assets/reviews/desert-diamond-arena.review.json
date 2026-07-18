@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "desert-diamond-arena",
+  "sourceIdsReviewed": ["desert-diamond-arena-tech-pack-2023"],
+  "reviewDate": "2026-07-18",
+  "sourceRevision": "May 2023",
+  "pageCount": 17,
+  "pageCountSource": "TABLE_OF_CONTENTS",
+  "documentSections": {
+    "coverTitlePage": "FOUND",
+    "revisionOrIssueDate": "FOUND",
+    "tableOfContents": "FOUND",
+    "floorPlans": "FOUND",
+    "riggingInformation": "FOUND",
+    "roofOrSteelDiagrams": "FOUND",
+    "seatingConfigurations": "FOUND",
+    "loadingInformation": "FOUND",
+    "stageOrEndStageInformation": "FOUND",
+    "productionRestrictions": "FOUND"
+  },
+  "extractedFacts": [
+    {
+      "id": "dda-low-steel-100",
+      "field": "lowSteelFt",
+      "label": "Floor to low steel",
+      "category": "roofRigging",
+      "originalValue": "100",
+      "originalUnit": "ft",
+      "normalizedValue": 100,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "desert-diamond-arena-tech-pack-2023",
+          "page": 5,
+          "section": "Venue Info",
+          "excerpt": "Rigging lists 100 ft floor to low steel and no high-steel hangs.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dda-end-stage-rigging-125000",
+      "field": "endStageRiggingLb",
+      "label": "End-stage rigging capacity",
+      "category": "roofRigging",
+      "originalValue": "125000",
+      "originalUnit": "lb",
+      "normalizedValue": 125000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "desert-diamond-arena-tech-pack-2023",
+          "page": 6,
+          "section": "Arena Specs",
+          "excerpt": "Arena specs list 125k end-stage capacity and 90k center-stage capacity.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dda-center-stage-rigging-90000",
+      "field": "centerStageRiggingLb",
+      "label": "Center-stage rigging capacity",
+      "category": "roofRigging",
+      "originalValue": "90000",
+      "originalUnit": "lb",
+      "normalizedValue": 90000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "desert-diamond-arena-tech-pack-2023",
+          "page": 6,
+          "section": "Arena Specs",
+          "excerpt": "Arena specs list 125k end-stage capacity and 90k center-stage capacity.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dda-scoreboard-bottom-58",
+      "field": "centerhungBottomFt",
+      "label": "Centerhung bottom at max trim",
+      "category": "overheadObstruction",
+      "originalValue": "58",
+      "originalUnit": "ft",
+      "normalizedValue": 58,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "desert-diamond-arena-tech-pack-2023",
+          "page": 6,
+          "section": "Arena Specs",
+          "excerpt": "Centerhung trim is 58 ft to bottom at maximum trim.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dda-docks-5",
+      "field": "dockCount",
+      "label": "Loading dock count",
+      "category": "loading",
+      "originalValue": "5",
+      "originalUnit": "count",
+      "normalizedValue": 5,
+      "normalizedUnit": "count",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 count",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "desert-diamond-arena-tech-pack-2023",
+          "page": 4,
+          "section": "Loading Dock Info",
+          "excerpt": "Loading section lists 5 docks with levelers plus one rollup ramp.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dda-push-distance-70",
+      "field": "pushDistanceFt",
+      "label": "Dock to upstage-center push",
+      "category": "loading",
+      "originalValue": "70",
+      "originalUnit": "ft",
+      "normalizedValue": 70,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "desert-diamond-arena-tech-pack-2023",
+          "page": 4,
+          "section": "Loading Dock Info",
+          "excerpt": "Push distance from loading dock to upstage center is 70 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dda-house-stage-width-60",
+      "field": "houseStageWidthFt",
+      "label": "House stage width",
+      "category": "stage",
+      "originalValue": "60",
+      "originalUnit": "ft",
+      "normalizedValue": 60,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "desert-diamond-arena-tech-pack-2023",
+          "page": 5,
+          "section": "Venue Info",
+          "excerpt": "StageRight house stage is listed as 60 x 48 and 4 ft to 6 ft high.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dda-house-stage-depth-48",
+      "field": "houseStageDepthFt",
+      "label": "House stage depth",
+      "category": "stage",
+      "originalValue": "48",
+      "originalUnit": "ft",
+      "normalizedValue": 48,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "desert-diamond-arena-tech-pack-2023",
+          "page": 5,
+          "section": "Venue Info",
+          "excerpt": "StageRight house stage is listed as 60 x 48 and 4 ft to 6 ft high.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "dda-seeded-floor-envelope-85x200",
+      "field": "floorEnvelopeFt",
+      "label": "Seeded 85 x 200 floor envelope",
+      "category": "floor",
+      "originalValue": "85 x 200",
+      "originalUnit": "ft",
+      "normalizedValue": null,
+      "normalizedUnit": "ft",
+      "conversionMethod": "not-source-supported",
+      "roundingPrecision": "n/a",
+      "reviewState": "REJECTED",
+      "measurementStatus": "ESTIMATE",
+      "confidence": "LOW",
+      "evidence": [
+        {
+          "sourceId": "desert-diamond-arena-tech-pack-2023",
+          "page": 5,
+          "section": "Venue Info",
+          "excerpt": "Reviewed pages state floor load, surface, and staging but not width and length.",
+          "extractionMethod": "TEXT"
+        }
+      ],
+      "rejectedReason": "The stale source does not provide an explicit arena floor width and length."
+    }
+  ],
+  "approvedFactIds": [
+    "dda-low-steel-100",
+    "dda-end-stage-rigging-125000",
+    "dda-center-stage-rigging-90000",
+    "dda-scoreboard-bottom-58",
+    "dda-docks-5",
+    "dda-push-distance-70",
+    "dda-house-stage-width-60",
+    "dda-house-stage-depth-48"
+  ],
+  "conflicts": [],
+  "rejectedInterpretations": ["dda-seeded-floor-envelope-85x200"],
+  "missingRequiredGeometry": ["currentRevision", "floorWidthFt", "floorLengthFt", "nativeFloorBoundary", "nativeRiggingCad"],
+  "modelReadiness": "BLOCKED",
+  "reviewerNotes": [
+    "The May 2023 packet is stale and may be used as reference only.",
+    "The checked-in 85 x 200 planning envelope remains unapproved."
+  ],
+  "validationStatus": "PASS"
+}
