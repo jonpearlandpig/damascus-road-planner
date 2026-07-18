@@ -22,6 +22,7 @@
     "validate:reconciliation": "tsx scripts/reconcile-sources.ts --check",
     "reconcile:sources": "tsx scripts/reconcile-sources.ts",
     "audit": "npm audit --omit=dev --audit-level=moderate",
+    "test:planner": "vitest run src/planner",
     "check": "npm run typecheck && npm run lint && npm run validate && npm run test:run && npm run build",
     "preview": "vite preview"
   },

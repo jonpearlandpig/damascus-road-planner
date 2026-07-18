@@ -4,8 +4,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 
 vi.mock('./components/VenueScene', () => ({
-  VenueScene: ({ venue, onSelect }: { venue: { name: string }; onSelect: (id: string) => void }) => (
-    <button type="button" onClick={() => onSelect('venue-floor')}>
+  VenueScene: ({ venue, onAction }: { venue: { name: string }; onAction: (action: { type: string; id?: string }) => void }) => (
+    <button type="button" onClick={() => onAction({ type: 'selectObject', id: 'venue-floor' })}>
       Scene mock for {venue.name}
     </button>
   ),
@@ -45,11 +45,10 @@ describe('App route smoke coverage', () => {
 
     expect(await screen.findByRole('heading', { name: 'Spectrum Center' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Scene mock for Spectrum Center' })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: 'True center court' })).toBeInTheDocument();
+    expect(screen.getAllByRole('heading', { name: 'DRT B stage' }).length).toBeGreaterThan(0);
     expect(screen.getByText('CALIBRATED PLANNING')).toBeInTheDocument();
-    expect(screen.getByText('B-stage default center is locked to this venue anchor.')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Saved views coming soon' })).toBeDisabled();
-    expect(screen.getByRole('button', { name: 'Measure tool coming soon' })).toBeDisabled();
+    expect(screen.getByRole('button', { name: 'Toggle measurement tool' })).toBeEnabled();
+    expect(screen.getByRole('button', { name: 'Save scene locally' })).toBeEnabled();
   });
 
   it('falls back to the dashboard for an unknown venue', async () => {

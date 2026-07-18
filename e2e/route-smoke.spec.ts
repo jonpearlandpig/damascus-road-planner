@@ -35,10 +35,12 @@ async function expectCanvasLoaded(page: Page) {
   await expect(page.locator('.scene-shell--loading')).toHaveCount(0, { timeout: 20_000 });
   const canvas = page.locator('.scene-shell canvas');
   await expect(canvas).toBeVisible({ timeout: 20_000 });
-  await expect.poll(async () => canvas.evaluate((element) => {
-    const rect = element.getBoundingClientRect();
-    return rect.width > 240 && rect.height > 240;
-  })).toBe(true);
+  await expect.poll(async () => {
+    return canvas.evaluate((element) => {
+      const rect = element.getBoundingClientRect();
+      return rect.width > 240 && rect.height > 240;
+    });
+  }, { timeout: 20_000 }).toBe(true);
 }
 
 test.describe('route browser smoke', () => {
@@ -59,9 +61,10 @@ test.describe('route browser smoke', () => {
     await page.goto('/venues/spectrum-center');
     await expect(page.getByRole('heading', { name: 'Spectrum Center' })).toBeVisible();
     await expectCanvasLoaded(page);
-    await expect(page.getByRole('button', { name: 'Saved views coming soon' })).toBeDisabled();
-    await expect(page.getByRole('button', { name: 'Measure tool coming soon' })).toBeDisabled();
-    await expect(page.getByText('Available external').first()).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Toggle measurement tool' })).toBeEnabled();
+    await expect(page.getByRole('button', { name: 'Save scene locally' })).toBeEnabled();
+    await expect(page.getByRole('region', { name: 'Persistent measurement readout' })).toBeVisible();
+    await expect(page.getByText('SOURCE INTEGRITY')).toBeVisible();
     await expectNoDocumentOverflow(page);
   });
 
