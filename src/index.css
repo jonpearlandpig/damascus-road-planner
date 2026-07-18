@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 :root {
-  font-family: 'Archivo', system-ui, sans-serif;
+  --font-sans: 'Archivo', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  font-family: var(--font-sans);
   color: #172b3a;
   background: #e9e2d3;
   font-synthesis: none;
@@ -15,7 +17,6 @@
   --fire: #db9843;
   --muted: #6e756f;
   --line: rgba(24, 52, 73, 0.18);
-  --mono: 'IBM Plex Mono', monospace;
 }
 
 * { box-sizing: border-box; }
@@ -94,6 +95,7 @@ button { color: inherit; }
 .layer-rail__status p { font: 0.58rem/1.45 var(--mono); color: #72766e; }
 .workspace-main { min-width: 0; min-height: 0; position: relative; display: flex; flex-direction: column; }
 .scene-shell { flex: 1; min-height: 0; position: relative; }
+.scene-shell--loading { display: grid; place-items: center; color: #5f6b68; font: 0.72rem var(--mono); }
 .scene-shell canvas { display: block; }
 .scene-watermark { position: absolute; left: 14px; top: 12px; padding: 0.35rem 0.5rem; background: rgba(244, 239, 228, 0.86); border: 1px solid var(--line); font: 0.56rem var(--mono); letter-spacing: 0.08em; color: #6f6254; pointer-events: none; }
 .bottom-control-bar { min-height: 58px; display: flex; align-items: stretch; background: var(--paper); border-top: 1px solid var(--line); }
@@ -101,6 +103,8 @@ button { color: inherit; }
 .bottom-control-bar span { font: 0.53rem var(--mono); color: #7b7c73; text-transform: uppercase; }
 .bottom-control-bar strong { font-size: 0.7rem; color: var(--navy); }
 .bottom-control-bar button { display: flex; align-items: center; gap: 0.45rem; font-size: 0.68rem; color: #52605e; cursor: pointer; }
+.bottom-control-bar button:disabled { cursor: not-allowed; color: #858982; background: rgba(24, 52, 73, 0.03); }
+.bottom-control-bar button small { font: 0.52rem var(--mono); text-transform: uppercase; color: #8b8e85; }
 .source-drawer { background: #fbf8ef; border-left: 1px solid var(--line); overflow-y: auto; }
 .drawer-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 1rem; border-bottom: 1px solid var(--line); }
 .drawer-header h2 { margin: 0.25rem 0 0; font-size: 1.35rem; line-height: 1.05; color: var(--navy); }
@@ -125,7 +129,7 @@ button { color: inherit; }
 .comparison-table th { position: sticky; top: 0; background: var(--navy); color: #f2e7d2; padding: 0.8rem; text-align: left; font: 0.58rem var(--mono); letter-spacing: 0.06em; text-transform: uppercase; }
 .comparison-table td { padding: 0.9rem 0.8rem; border-bottom: 1px solid var(--line); font: 0.72rem var(--mono); color: #465451; vertical-align: top; }
 .comparison-table tr:last-child td { border-bottom: 0; }
-.comparison-table td:first-child { font-family: 'Archivo', sans-serif; font-weight: 700; color: var(--navy); }
+.comparison-table td:first-child { font-family: var(--font-sans); font-weight: 700; color: var(--navy); }
 .comparison-table a { display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: none; }
 .comparison-table small { display: block; margin-top: 0.25rem; color: #818177; font: 0.57rem var(--mono); }
 
