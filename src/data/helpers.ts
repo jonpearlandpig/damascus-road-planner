@@ -1,12 +1,12 @@
 import type { ConfidenceState, SceneObjectRecord, SourceRef, TourPackage, VenueTwin } from './types';
 
 export const tourSource: SourceRef = {
-  file: 'Damascus Road Planner — stored design configuration',
-  section: 'DRT production package v12',
-  revision: 'Working geometry — July 17, 2026',
+  file: 'JQ 2026 — AKB / Damascus Road MASTER editable Rev D',
+  section: 'Verified Facts + current design master',
+  revision: 'Working geometry — 2026-07-17',
   originalValue: '78′ × 42′ deck; 35′-4″ prow; 26′ B-stage',
   confidence: 'CALIBRATED PLANNING',
-  authority: 'TOUR ISSUED',
+  authority: 'MANAGEMENT CONFIRMED',
 };
 
 export function venueSource(file: string, section: string, revision: string, value: string, confidence: ConfidenceState = 'VERIFIED'): SourceRef {
@@ -14,7 +14,7 @@ export function venueSource(file: string, section: string, revision: string, val
 }
 
 export const drtPackage: TourPackage = {
-  id: 'drt-v12', revision: 'Working v12', name: 'Damascus Road Tour Production Package',
+  id: 'drt-current-working', revision: 'AKB working geometry — 2026-07-17', name: 'Damascus Road Tour Production Package',
   deckWidthFt: 78, deckDepthFt: 42, deckHeightFt: 5.5,
   prowBaseFt: 50, prowVertexDepthFt: 25, prowHeightFt: 35 + 4 / 12,
   centerThrustWidthFt: 6, centerThrustLengthFt: 42,
@@ -29,7 +29,7 @@ export function baseObjects(file: string, revision: string, floor: string, grid:
     { id: 'grid-plane', label: 'Rigging / low-steel reference', category: 'rigging', value: grid, source: venueSource(file, 'Rigging information', revision, grid, gridConfidence) },
     { id: 'scoreboard', label: 'Centerhung / overhead obstruction', category: 'rigging', value: scoreboard, source: venueSource(file, 'Centerhung / scoreboard', revision, scoreboard, 'ENGINEERING CONFIRMATION REQUIRED') },
     { id: 'drt-stage', label: 'DRT main stage', category: 'production', dimensions: '78′ × 42′ × 5′-6″', source: tourSource },
-    { id: 'drt-bstage', label: 'DRT B-stage', category: 'production', dimensions: '26′ diameter', notes: 'Default center is true center court.', source: tourSource },
+    { id: 'drt-bstage', label: 'DRT B-stage', category: 'production', dimensions: '26′ diameter', notes: 'Default center is true center court. Current master includes a Q-tail design element; final fabrication geometry remains design-controlled.', source: tourSource },
   ];
 }
 
