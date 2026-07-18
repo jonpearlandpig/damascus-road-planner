@@ -31,4 +31,5 @@ export const venues: VenueTwin[] = [
   map['heb-center'], map['dickies-arena'],
 ];
 
+export const venueMap = Object.fromEntries(venues.map((venue) => [venue.slug, venue])) as Record<string, VenueTwin>;
 export const comparisonVenues = ['dickies-arena', 'van-andel-arena', 'heb-center', 't-mobile-center', 'desert-diamond-arena'].map((slug) => map[slug]);
