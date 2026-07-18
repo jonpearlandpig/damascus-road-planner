@@ -4,6 +4,8 @@ Venue PDFs, CAD, rigging documents, and source packets are intentionally not fab
 
 Use `source-assets/manifest.json` to declare every expected source filename referenced by authored venue data. If a source document is available locally for validation or review, place it under `source-assets/files/`; that directory is ignored by git so private or licensed documents are not published accidentally.
 
+Use `source-assets/drive-inventory/jq-spring-2027-source-snapshot.json` for the checked-in 19-show Drive inventory snapshot. That file stores stable Drive metadata and source states only; it does not store access tokens, expiring download URLs, or raw venue PDFs.
+
 Availability states are machine-checked:
 
 - `AVAILABLE_LOCAL`: exact expected file is present under ignored `source-assets/files/`.
