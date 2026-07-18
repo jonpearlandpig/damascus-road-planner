@@ -12,12 +12,25 @@ Interactive venue digital-twin planning application for the Spring 2027 Damascus
 
 ## Development
 
+Supported runtime: Node 22 (`.nvmrc`).
+
 ```bash
-npm install
+npm ci
 npm run dev
-npm run build
+npm run typecheck
 npm run lint
+npm run validate
+npm run test:run
+npm run build
+npm run audit
+npm run check
 ```
+
+`npm run check` is the local non-interactive quality gate used by CI: typecheck, lint, venue validation, gear-pack validation, tests, and production build.
+
+## Source assets
+
+Venue source PDFs and CAD files are tracked by filename in `source-assets/manifest.json`. Do not fabricate or commit placeholder source documents. If controlled source files are available locally, place them under `source-assets/files/`; that directory is ignored by git.
 
 ## Trust boundary
 
