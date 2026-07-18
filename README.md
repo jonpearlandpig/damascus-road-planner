@@ -22,6 +22,7 @@ npm run lint
 npm run validate
 npm run reconcile:sources
 npm run test:run
+npm run test:planner
 npm run test:e2e:install
 npm run test:e2e
 npm run build
