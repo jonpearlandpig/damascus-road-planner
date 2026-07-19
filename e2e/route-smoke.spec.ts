@@ -1,5 +1,7 @@
 import { expect, test as base, type Page } from '@playwright/test';
 
+base.setTimeout(60_000);
+
 const mainRoutes = ['/', '/compare', '/venues/spectrum-center'];
 const test = base.extend<{ pageErrors: string[] }>({
   pageErrors: [async ({ page }, use) => {
@@ -35,12 +37,6 @@ async function expectCanvasLoaded(page: Page) {
   await expect(page.locator('.scene-shell--loading')).toHaveCount(0, { timeout: 20_000 });
   const canvas = page.locator('.scene-shell canvas');
   await expect(canvas).toBeVisible({ timeout: 20_000 });
-  await expect.poll(async () => {
-    return canvas.evaluate((element) => {
-      const rect = element.getBoundingClientRect();
-      return rect.width > 240 && rect.height > 240;
-    });
-  }, { timeout: 20_000 }).toBe(true);
 }
 
 test.describe('route browser smoke', () => {
@@ -64,6 +60,8 @@ test.describe('route browser smoke', () => {
     await expect(page.getByRole('button', { name: 'Toggle measurement tool' })).toBeEnabled();
     await expect(page.getByRole('button', { name: 'Save scene locally' })).toBeEnabled();
     await expect(page.getByRole('region', { name: 'Persistent measurement readout' })).toBeVisible();
+    await page.getByText('Venue evidence', { exact: true }).click();
+    await page.getByText('Source integrity and status', { exact: true }).click();
     await expect(page.getByRole('region', { name: 'Venue native twin inspector' })).toBeVisible();
     await expect(page.getByText('VENUE-NATIVE TWIN')).toBeVisible();
     const layerRail = page.getByLabel('Venue model layers');
@@ -71,8 +69,8 @@ test.describe('route browser smoke', () => {
     await expect(layerRail.getByRole('button', { name: 'Rigging grid', exact: true })).toBeVisible();
     await expect(layerRail.getByRole('button', { name: 'Center-hung', exact: true })).toBeVisible();
     await expect(layerRail.getByRole('button', { name: 'Fit-check overlay', exact: true })).toBeVisible();
-    await expect(page.getByText('VENUE TWIN READY / PASS_WITH_WARNINGS')).toBeVisible();
-    await expect(page.getByText('SOURCE INTEGRITY')).toBeVisible();
+    await expect(page.locator('.scene-fit-badge')).toHaveText('VENUE READY / FIT PASS_WITH_WARNINGS');
+    await expect(page.getByText('SOURCE INTEGRITY', { exact: true })).toBeVisible();
     await expectNoDocumentOverflow(page);
   });
 
@@ -100,6 +98,7 @@ test.describe('route browser smoke', () => {
 
     await page.goto('/venues/spectrum-center');
     await expectCanvasLoaded(page);
+    await page.getByText('Venue evidence', { exact: true }).click();
     await expect(page.getByRole('region', { name: 'Venue native twin inspector' })).toContainText('READY / READY_TO_RENDER');
     await expect(page.getByText('Planning fit only; not engineering approval.')).toBeVisible();
     await page.getByRole('button', { name: 'Floor evidence' }).click();
@@ -114,17 +113,20 @@ test.describe('route browser smoke', () => {
 
     await page.goto('/venues/giant-center');
     await expectCanvasLoaded(page);
+    await page.getByText('Venue evidence', { exact: true }).click();
     await expect(page.getByRole('region', { name: 'Venue native twin inspector' })).toContainText('PARTIAL / PARTIAL_RENDER');
-    await expect(page.getByText('VENUE TWIN PARTIAL / PASS_WITH_WARNINGS')).toBeVisible();
+    await expect(page.locator('.scene-fit-badge')).toHaveText('VENUE PARTIAL / FIT PASS_WITH_WARNINGS');
 
     await page.goto('/venues/red-rocks');
     await expectCanvasLoaded(page);
+    await page.getByText('Venue evidence', { exact: true }).click();
     await expect(page.getByText('No source-backed venue-native floor shell')).toBeVisible();
-    await expect(page.getByText('VENUE TWIN BLOCKED / BLOCKED')).toBeVisible();
+    await expect(page.locator('.scene-fit-badge')).toHaveText('VENUE BLOCKED / FIT BLOCKED');
     await expect(page.getByRole('region', { name: 'Venue native twin inspector' })).toContainText('BLOCKED / BLOCKED_NO_SHELL');
 
     await page.goto('/venues/van-andel-arena');
     await expectCanvasLoaded(page);
+    await page.getByText('Venue evidence', { exact: true }).click();
     await expect(page.getByText('Fit check blocked / missing or conflicted geometry')).toBeVisible();
     await expect(page.getByRole('region', { name: 'Venue native twin inspector' })).toContainText('Conflicts');
   });

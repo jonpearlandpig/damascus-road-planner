@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
@@ -46,13 +46,17 @@ describe('App route smoke coverage', () => {
     expect(screen.getByRole('link', { name: /Dickies Arena/ })).toBeInTheDocument();
   });
 
-  it('renders a venue workspace with selected source lineage', async () => {
+  it('renders a venue workspace with a safe unselected, locked production seed', async () => {
     renderRoute('/venues/spectrum-center');
 
     expect(await screen.findByRole('heading', { name: 'Spectrum Center' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Scene mock for Spectrum Center' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'No object selected' })).toBeInTheDocument();
+    fireEvent.click(screen.getByText('Scene hierarchy'));
+    const bStageNode = screen.getByRole('button', { name: /DRT B stage.*locked/i });
+    fireEvent.click(bStageNode);
     expect(screen.getAllByRole('heading', { name: 'DRT B stage' }).length).toBeGreaterThan(0);
-    expect(screen.getByText('CALIBRATED PLANNING')).toBeInTheDocument();
+    expect(screen.getByText('Locked. Unlock deliberately before transforming.')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Toggle measurement tool' })).toBeEnabled();
     expect(screen.getByRole('button', { name: 'Save scene locally' })).toBeEnabled();
   });

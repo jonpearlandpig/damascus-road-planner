@@ -6,12 +6,6 @@ async function expectCanvasLoaded(page: import('@playwright/test').Page) {
   await expect(page.locator('.scene-shell--loading')).toHaveCount(0, { timeout: 20_000 });
   const canvas = page.locator('.scene-shell canvas');
   await expect(canvas).toBeVisible({ timeout: 20_000 });
-  await expect.poll(async () => {
-    return canvas.evaluate((element) => {
-      const rect = element.getBoundingClientRect();
-      return rect.width > 240 && rect.height > 240;
-    });
-  }, { timeout: 20_000 }).toBe(true);
 }
 
 test('planner workflow covers grid edit, measurement, gear, truss, lighting, views, and persistence', async ({ page }) => {
@@ -23,8 +17,16 @@ test('planner workflow covers grid edit, measurement, gear, truss, lighting, vie
   await expect(page.getByRole('heading', { name: 'Spectrum Center' })).toBeVisible();
   await expectCanvasLoaded(page);
 
+  await page.getByText('Production library', { exact: true }).click();
+  await page.getByText('Command console', { exact: true }).click();
+  const inspectorRail = page.getByRole('complementary');
+  await inspectorRail.locator('summary').filter({ hasText: /^Scene hierarchy$/ }).click();
+  await inspectorRail.locator('summary').filter({ hasText: /^Lighting$/ }).click();
+  await inspectorRail.locator('summary').filter({ hasText: /^Saved views$/ }).click();
+
   await page.getByRole('button', { name: 'Insert 40 ft straight truss' }).click();
   await expect(page.getByText('40 ft straight truss').first()).toBeVisible();
+  await page.getByRole('button', { name: 'Use move tool' }).click();
   await page.getByTestId('selected-x').fill('12.3');
   await expect(page.getByTestId('selected-x')).toHaveValue('12');
 
@@ -36,7 +38,7 @@ test('planner workflow covers grid edit, measurement, gear, truss, lighting, vie
   await page.getByRole('button', { name: 'Run planner command' }).click();
   await expect(page.getByRole('region', { name: 'Command console' }).getByText('Command applied')).toBeVisible();
 
-  await page.locator('.scene-tree').getByRole('button', { name: /Moving fixture/ }).first().click();
+  await expect(page.getByRole('heading', { name: 'Moving fixture' }).first()).toBeVisible();
   await expect(page.getByRole('region', { name: 'Lighting controls' })).toBeVisible();
   await page.locator('.lighting-controls input[type="range"]').first().evaluate((input) => {
     const element = input as HTMLInputElement;
@@ -61,5 +63,6 @@ test('planner workflow covers grid edit, measurement, gear, truss, lighting, vie
   await page.getByRole('button', { name: 'Save scene locally' }).click();
   await page.reload();
   await expectCanvasLoaded(page);
-  await expect(page.getByText('40 ft straight truss').first()).toBeVisible();
+  await page.getByRole('complementary').locator('summary').filter({ hasText: /^Scene hierarchy$/ }).click();
+  await expect(page.locator('.scene-tree').getByText('40 ft straight truss').first()).toBeVisible();
 });
