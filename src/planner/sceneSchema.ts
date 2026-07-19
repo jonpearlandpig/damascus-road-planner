@@ -1,9 +1,8 @@
-import { drtPackage } from '../data/venues';
 import type { VenueTwin } from '../data/types';
-import { deriveDrtProductionGeometry } from '../geometry/drt';
+import { buildDrtScene } from '../production/drt/buildDrtScene';
+import { DRT_SEED_VERSION } from '../production/drt/canonicalGeometry';
 import { gearPackReferences } from './gearAdapter';
-import { getObjectDefinition, plannerObjectDefinitions } from './objectLibrary';
-import { snapAndConstrain } from './snapping';
+import { plannerObjectDefinitions } from './objectLibrary';
 import { bStageCenterPlacementStatus } from './venueAdapter';
 import { bStagePlacementForVenue, floorBoundsForVenue } from '../venue-twins/adapters';
 import { PLANNER_SCHEMA_VERSION, SOURCE_RECONCILIATION_VERSION, type ObjectDefinition, type PlacedObject, type PlannerScene, type PlannerSceneSnapshot, type ScenePosition } from './types';
@@ -26,6 +25,11 @@ export function objectFromDefinition(definition: ObjectDefinition, id: string, p
   return {
     id,
     definitionId: definition.id,
+    geometryClass: definition.geometryClass ?? 'PLANNING_SCENE',
+    geometryStatus: definition.geometryStatus ?? 'UNRESOLVED',
+    placementStatus: definition.placementStatus ?? 'UNRESOLVED',
+    designDecisionId: definition.designDecisionId,
+    editable: definition.editable ?? true,
     label: definition.label,
     category: definition.category,
     dimensions: definition.dimensionsFt,
@@ -49,12 +53,6 @@ export function objectFromDefinition(definition: ObjectDefinition, id: string, p
   };
 }
 
-function createSeedObject(definitionId: string, id: string, position: ScenePosition, rotationYDeg = 0, warnings: string[] = []): PlacedObject {
-  const definition = getObjectDefinition(definitionId);
-  if (!definition) throw new Error(`Missing planner object definition: ${definitionId}`);
-  return objectFromDefinition(definition, id, position, rotationYDeg, warnings);
-}
-
 export function snapshotScene(scene: PlannerScene): PlannerSceneSnapshot {
   return {
     name: scene.name,
@@ -68,51 +66,18 @@ export function snapshotScene(scene: PlannerScene): PlannerSceneSnapshot {
 
 export function createInitialPlannerScene(venue: VenueTwin): PlannerScene {
   const timestamp = nowIso();
-  const drt = deriveDrtProductionGeometry(drtPackage);
   const bStageStatus = bStageCenterPlacementStatus(venue);
   const bStagePlacement = bStagePlacementForVenue(venue);
   const venueFloorBounds = floorBoundsForVenue(venue);
-  const baseObjects: PlacedObject[] = [
-    createSeedObject('drt-main-stage', 'drt-main-stage', { xFt: 0, yFt: drtPackage.deckHeightFt / 2, zFt: drt.stageCenterZFt }),
-    createSeedObject('drt-center-thrust', 'drt-center-thrust', {
-      xFt: 0,
-      yFt: drtPackage.deckHeightFt / 2,
-      zFt: drt.stageCenterZFt + drtPackage.deckDepthFt / 2 + drtPackage.centerThrustLengthFt / 2,
-    }),
-    createSeedObject('drt-side-thrust', 'drt-side-thrust-sl', {
-      xFt: drt.sideThrusts[0].xFt,
-      yFt: drtPackage.deckHeightFt / 2,
-      zFt: drt.sideThrusts[0].zFt,
-    }, drt.sideThrusts[0].rotationYRad * 180 / Math.PI),
-    createSeedObject('drt-side-thrust', 'drt-side-thrust-sr', {
-      xFt: drt.sideThrusts[1].xFt,
-      yFt: drtPackage.deckHeightFt / 2,
-      zFt: drt.sideThrusts[1].zFt,
-    }, drt.sideThrusts[1].rotationYRad * 180 / Math.PI),
-    createSeedObject('drt-b-stage', 'drt-b-stage', { ...bStagePlacement.position, yFt: drtPackage.deckHeightFt / 2 }, 0, [bStageStatus.note, bStagePlacement.note]),
-    createSeedObject('drt-monolith', 'drt-monolith', {
-      xFt: 0,
-      yFt: drtPackage.deckHeightFt + drtPackage.prowHeightFt / 2,
-      zFt: drt.prowMidZFt,
-    }),
-  ];
-
-  const lowFogDefinition = getObjectDefinition('low-fog-machine');
-  if (!lowFogDefinition) throw new Error('Missing low-fog definition');
-  const lowFogXs = [-18, -6, 6, 18];
-  for (const [index, xFt] of lowFogXs.entries()) {
-    baseObjects.push(objectFromDefinition(lowFogDefinition, `drt-low-fog-${index + 1}`, { xFt, yFt: lowFogDefinition.dimensionsFt.heightFt / 2, zFt: drt.stageCenterZFt - 9 }, 0, [
-      'Default DRT seed includes four low fog units as planning-only atmosphere objects.',
-    ]));
-  }
-
-  const snappedObjects = baseObjects.map((object) => ({
-    ...object,
-    position: snapAndConstrain(object.position, object.dimensions, { widthFt: venueFloorBounds.widthFt, lengthFt: venueFloorBounds.lengthFt }, 1),
-  }));
+  const canonicalObjects = buildDrtScene({
+    bStagePosition: bStagePlacement.position,
+    bStagePlacementStatus: bStageStatus.status,
+    bStageNotes: [bStageStatus.note, bStagePlacement.note],
+  });
 
   return {
     schemaVersion: PLANNER_SCHEMA_VERSION,
+    drtSeedVersion: DRT_SEED_VERSION,
     id: `${venue.slug}-planner-scene`,
     name: `${venue.name} DRT planning scene`,
     venueSlug: venue.slug,
@@ -120,18 +85,57 @@ export function createInitialPlannerScene(venue: VenueTwin): PlannerScene {
     gearPackReferences: gearPackReferences(),
     createdAt: timestamp,
     modifiedAt: timestamp,
-    selectedObjectId: 'drt-b-stage',
+    selectedObjectId: undefined,
     grid: { visible: true, majorFt: 5, minorFt: 1, snapFt: 1, rotationIncrementDeg: 15 },
     camera: { mode: 'FREE_ORBIT', projection: 'PERSPECTIVE' },
-    objects: snappedObjects,
+    objects: canonicalObjects,
     measurements: [],
     savedViews: [],
     revisions: [],
     warningLog: [
       'Planning model only. Rigging loads and capacities require venue and licensed engineering approval.',
       `Venue boundary source for initial DRT placement: ${venueFloorBounds.source}.`,
-      ...snappedObjects.flatMap((object) => object.warnings),
+      ...canonicalObjects.flatMap((object) => object.warnings),
     ],
+  };
+}
+
+export function migratePlannerScene(value: unknown, venue: VenueTwin | undefined): { scene?: PlannerScene; errors: string[]; warnings: string[] } {
+  if (!value || typeof value !== 'object') return { errors: ['Scene import must be an object.'], warnings: [] };
+  const candidate = value as Partial<PlannerScene> & { schemaVersion?: number; objects?: Array<Partial<PlacedObject>> };
+  if (candidate.schemaVersion === PLANNER_SCHEMA_VERSION) return { scene: candidate as PlannerScene, errors: [], warnings: [] };
+  if (candidate.schemaVersion !== 1) return { errors: [`Unsupported scene schema version ${String(candidate.schemaVersion)}.`], warnings: [] };
+  if (!venue || venue.slug !== candidate.venueSlug) return { errors: ['Version 1 scene migration requires a known matching venue.'], warnings: [] };
+
+  const fresh = createInitialPlannerScene(venue);
+  const canonicalIds = new Set(fresh.objects.map((object) => object.id));
+  const migratedUserObjects = (candidate.objects ?? [])
+    .filter((object): object is PlacedObject => Boolean(object.id && object.definitionId && !canonicalIds.has(object.id)))
+    .map((object) => ({
+      ...object,
+      canonicalGeometryId: undefined,
+      geometryClass: 'PLANNING_SCENE' as const,
+      geometryStatus: object.dimensionStatus === 'REFERENCE' ? 'REFERENCE' as const : 'UNRESOLVED' as const,
+      placementStatus: 'UNRESOLVED' as const,
+      editable: true,
+    }));
+
+  return {
+    scene: {
+      ...fresh,
+      ...candidate,
+      schemaVersion: PLANNER_SCHEMA_VERSION,
+      drtSeedVersion: DRT_SEED_VERSION,
+      selectedObjectId: undefined,
+      objects: [...fresh.objects, ...migratedUserObjects],
+      modifiedAt: nowIso(),
+      warningLog: [
+        ...(candidate.warningLog ?? []),
+        `Scene migrated from schema 1 to ${PLANNER_SCHEMA_VERSION}; canonical DRT geometry was refreshed to ${DRT_SEED_VERSION}.`,
+      ],
+    },
+    errors: [],
+    warnings: [`Migrated schema 1 scene to ${PLANNER_SCHEMA_VERSION} and refreshed the canonical DRT seed.`],
   };
 }
 
@@ -140,6 +144,7 @@ export function validatePlannerScene(value: unknown): { valid: boolean; scene?: 
   if (!value || typeof value !== 'object') return { valid: false, errors: ['Scene import must be an object.'] };
   const scene = value as PlannerScene;
   if (scene.schemaVersion !== PLANNER_SCHEMA_VERSION) errors.push(`Unsupported scene schema version ${String(scene.schemaVersion)}.`);
+  if (scene.drtSeedVersion !== DRT_SEED_VERSION) errors.push(`Unsupported DRT seed version ${String(scene.drtSeedVersion)}.`);
   if (!scene.id || !scene.venueSlug) errors.push('Scene id and venue slug are required.');
   if (!Array.isArray(scene.objects)) errors.push('Scene objects array is required.');
   for (const [index, object] of (scene.objects ?? []).entries()) {
@@ -148,6 +153,8 @@ export function validatePlannerScene(value: unknown): { valid: boolean; scene?: 
       errors.push(`Object ${object.id} references an unknown definition.`);
     }
     if (object.dimensionStatus === 'VERIFIED') errors.push(`Object ${object.id} cannot import as verified show geometry.`);
+    if (object.geometryClass === 'VENUE_NATIVE' || object.geometryClass === 'HOUSE_REFERENCE') errors.push(`Object ${object.id} cannot import venue or house-reference geometry as editable scene state.`);
+    if (object.geometryClass === 'DRT_TOURING_PRODUCTION' && !object.canonicalGeometryId) errors.push(`DRT object ${object.id} is missing its canonical geometry id.`);
   }
   return { valid: errors.length === 0, scene: errors.length === 0 ? scene : undefined, errors };
 }

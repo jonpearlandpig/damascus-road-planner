@@ -1,6 +1,6 @@
 import type { MeasurementStatus, SourceAssetAvailabilityState, SourceAssetControllingStatus, SourceAssetType, VenueTwin } from '../data/types';
 
-export const PLANNER_SCHEMA_VERSION = 1;
+export const PLANNER_SCHEMA_VERSION = 2;
 export const SOURCE_RECONCILIATION_VERSION = '2026-07-18';
 
 export const COORDINATE_CONVENTION = {
@@ -109,9 +109,12 @@ export const plannerObjectCategories = [
 ] as const;
 export type PlannerObjectCategory = (typeof plannerObjectCategories)[number];
 
-export type PlannerObjectShape = 'box' | 'cylinder' | 'truss' | 'fixture' | 'fog' | 'screen';
+export type PlannerObjectShape = 'box' | 'cylinder' | 'truss' | 'fixture' | 'fog' | 'screen' | 'monolith' | 'b-stage';
 export type SnapBehavior = 'GRID_LOCKED' | 'TRUSS_LOCKED' | 'VENUE_CENTER_LOCKED';
 export type MountingType = 'floor' | 'ground-supported' | 'hanging' | 'truss-mounted' | 'planning-only' | 'custom';
+export type PlannerTool = 'SELECT' | 'MOVE' | 'ROTATE' | 'MEASURE' | 'PAN';
+export type GeometryClass = 'VENUE_NATIVE' | 'HOUSE_REFERENCE' | 'DRT_TOURING_PRODUCTION' | 'PLANNING_SCENE';
+export type GeometryStatus = 'APPROVED' | 'AUTHORED' | 'REFERENCE' | 'UNRESOLVED';
 
 export interface GearPackReference {
   packId: string;
@@ -141,6 +144,11 @@ export interface ObjectDefinition {
   allowedParentTypes: PlannerObjectCategory[];
   planningOnly: boolean;
   warning?: string;
+  geometryClass?: GeometryClass;
+  geometryStatus?: GeometryStatus;
+  placementStatus?: GeometryStatus;
+  designDecisionId?: string;
+  editable?: boolean;
 }
 
 export interface TrussState {
@@ -180,6 +188,12 @@ export interface AtmosphereState {
 export interface PlacedObject {
   id: string;
   definitionId: string;
+  canonicalGeometryId?: string;
+  geometryClass: GeometryClass;
+  geometryStatus: GeometryStatus;
+  placementStatus: GeometryStatus;
+  designDecisionId?: string;
+  editable: boolean;
   label: string;
   category: PlannerObjectCategory;
   dimensions: SceneDimensions;
@@ -277,10 +291,12 @@ export interface PlannerCameraState {
   mode: PlannerViewMode;
   projection: CameraProjection;
   activeSavedViewId?: string;
+  resetSequence?: number;
 }
 
 export interface PlannerScene {
   schemaVersion: typeof PLANNER_SCHEMA_VERSION;
+  drtSeedVersion: string;
   id: string;
   name: string;
   venueSlug: string;

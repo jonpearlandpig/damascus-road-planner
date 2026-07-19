@@ -1,4 +1,5 @@
-import { validatePlannerScene } from './sceneSchema';
+import { venueMap } from '../data/venues';
+import { migratePlannerScene, validatePlannerScene } from './sceneSchema';
 import type { PlannerScene } from './types';
 
 const storagePrefix = 'drt-planner-scene:';
@@ -66,8 +67,11 @@ export function exportSceneJson(scene: PlannerScene): string {
 export function importSceneJson(raw: string): { scene?: PlannerScene; errors: string[] } {
   try {
     const parsed = JSON.parse(raw) as unknown;
-    const result = validatePlannerScene(parsed);
-    return { scene: result.scene, errors: result.errors };
+    const venueSlug = parsed && typeof parsed === 'object' && 'venueSlug' in parsed ? String(parsed.venueSlug) : '';
+    const migration = migratePlannerScene(parsed, venueMap[venueSlug]);
+    if (!migration.scene) return { errors: migration.errors };
+    const result = validatePlannerScene(migration.scene);
+    return { scene: result.scene, errors: [...migration.warnings, ...result.errors] };
   } catch (error) {
     return { errors: [error instanceof Error ? error.message : 'Scene JSON could not be parsed.'] };
   }

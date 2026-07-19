@@ -1,4 +1,5 @@
 import type { TourPackage } from '../data/types';
+import { canonicalDrtDerived, canonicalDrtPackage } from '../production/drt/canonicalGeometry';
 
 export interface DerivedDrtGeometry {
   stageCenterZFt: number;
@@ -36,16 +37,16 @@ export function assertDrtPackageInvariants(pkg: TourPackage): void {
     invariant(typeof pkg[field] === 'number' && pkg[field] > 0, `${field} must be a positive number`);
   }
 
-  invariant(pkg.deckWidthFt === 78, 'main deck width remains 78 ft');
-  invariant(pkg.deckDepthFt === 42, 'main deck depth remains 42 ft');
-  invariant(pkg.deckHeightFt === 5.5, 'main deck height remains 5 ft 6 in');
-  invariant(pkg.prowBaseFt === 50, 'prow base remains 50 ft');
-  invariant(pkg.prowVertexDepthFt === 25, 'prow vertex depth remains 25 ft');
-  invariant(pkg.centerThrustWidthFt === 6, 'center thrust width remains 6 ft');
-  invariant(pkg.centerThrustLengthFt === 42, 'center thrust length remains 42 ft');
-  invariant(pkg.sideThrustWidthFt === 5, 'side thrust width remains 5 ft');
-  invariant(pkg.sideThrustLengthFt === 32, 'side thrust length remains 32 ft');
-  invariant(pkg.bStageDiameterFt === 26, 'B-stage diameter remains 26 ft');
+  invariant(pkg.deckWidthFt === canonicalDrtPackage.deckWidthFt, 'main deck width matches the canonical module');
+  invariant(pkg.deckDepthFt === canonicalDrtPackage.deckDepthFt, 'main deck depth matches the canonical module');
+  invariant(pkg.deckHeightFt === canonicalDrtPackage.deckHeightFt, 'main deck height matches the canonical module');
+  invariant(pkg.prowBaseFt === canonicalDrtPackage.prowBaseFt, 'monolith base matches the canonical module');
+  invariant(pkg.prowVertexDepthFt === canonicalDrtPackage.prowVertexDepthFt, 'monolith vertex depth matches the canonical module');
+  invariant(pkg.centerThrustWidthFt === canonicalDrtPackage.centerThrustWidthFt, 'center thrust width matches the canonical module');
+  invariant(pkg.centerThrustLengthFt === canonicalDrtPackage.centerThrustLengthFt, 'center thrust length matches the canonical module');
+  invariant(pkg.sideThrustWidthFt === canonicalDrtPackage.sideThrustWidthFt, 'side thrust width matches the canonical module');
+  invariant(pkg.sideThrustLengthFt === canonicalDrtPackage.sideThrustLengthFt, 'side thrust length matches the canonical module');
+  invariant(pkg.bStageDiameterFt === canonicalDrtPackage.bStageDiameterFt, 'B-stage diameter matches the canonical module');
 }
 
 export function deriveDrtProductionGeometry(pkg: TourPackage): DerivedDrtGeometry {
@@ -57,7 +58,7 @@ export function deriveDrtProductionGeometry(pkg: TourPackage): DerivedDrtGeometr
   const prowFaceLengthFt = Math.hypot(prowHalfBaseFt, pkg.prowVertexDepthFt);
   const prowFaceAngleRad = Math.atan2(prowHalfBaseFt, pkg.prowVertexDepthFt);
   const prowMidZFt = upstageEdgeZFt + pkg.prowVertexDepthFt / 2;
-  const sideThrustZFt = stageCenterZFt + 35.9;
+  const sideThrustZFt = canonicalDrtDerived.sideThrusts[0].zFt;
 
   invariant(stageCenterZFt < 0, 'main stage remains upstage of center court');
   invariant(sideThrustZFt < 0, 'side thrust centers remain upstage of center court');
@@ -74,8 +75,7 @@ export function deriveDrtProductionGeometry(pkg: TourPackage): DerivedDrtGeometr
     prowMidZFt,
     bStageCenterZFt: 0,
     sideThrusts: [
-      { side: -1, xFt: -23.8, zFt: sideThrustZFt, rotationYRad: -0.649 },
-      { side: 1, xFt: 23.8, zFt: sideThrustZFt, rotationYRad: 0.649 },
+      ...canonicalDrtDerived.sideThrusts,
     ],
   };
 }

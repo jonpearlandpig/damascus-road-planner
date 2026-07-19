@@ -1,5 +1,4 @@
-import { drtPackage } from '../data/venues';
-import { deriveDrtProductionGeometry } from '../geometry/drt';
+import { canonicalDrtGeometry, canonicalDrtPackage } from '../production/drt/canonicalGeometry';
 import { gearDefinitions } from './gearAdapter';
 import type { ObjectDefinition, PlannerObjectCategory, SceneDimensions } from './types';
 
@@ -37,41 +36,33 @@ function definition(
     allowedParentTypes: options.allowedParentTypes ?? [],
     planningOnly: options.planningOnly ?? true,
     warning: options.warning ?? planningWarning,
+    geometryClass: options.geometryClass,
+    geometryStatus: options.geometryStatus,
+    placementStatus: options.placementStatus,
+    designDecisionId: options.designDecisionId,
+    editable: options.editable,
   };
 }
 
-const drt = deriveDrtProductionGeometry(drtPackage);
+const canonicalDrtDefinitions = [...new Map(canonicalDrtGeometry.objects.map((object) => [
+  object.definitionId,
+  definition(object.definitionId, object.label, object.category, object.dimensions, object.color, object.shape, {
+    dimensionStatus: object.dimensionStatus,
+    mountingType: 'floor',
+    sourceLabel: object.sourceLabel,
+    snapBehavior: object.snapBehavior,
+    planningOnly: true,
+    warning: object.notes.join(' '),
+    geometryClass: 'DRT_TOURING_PRODUCTION',
+    geometryStatus: object.status,
+    placementStatus: object.placementStatus,
+    designDecisionId: object.designDecisionId,
+    editable: true,
+  }),
+])).values()];
 
 export const plannerObjectDefinitions: ObjectDefinition[] = [
-  definition('drt-main-stage', 'DRT main stage', 'Main stage', dims(drtPackage.deckWidthFt, drtPackage.deckDepthFt, drtPackage.deckHeightFt), '#1c2f3f', 'box', {
-    dimensionStatus: 'REFERENCE',
-    mountingType: 'floor',
-    sourceLabel: 'DRT authored production geometry',
-    planningOnly: true,
-    warning: 'Planning geometry only. Does not establish structural approval or load capacity.',
-  }),
-  definition('drt-center-thrust', 'DRT center thrust', 'Thrusts', dims(drtPackage.centerThrustWidthFt, drtPackage.centerThrustLengthFt, drtPackage.deckHeightFt), '#a96d33', 'box', {
-    dimensionStatus: 'REFERENCE',
-    mountingType: 'floor',
-    sourceLabel: 'DRT authored production geometry',
-  }),
-  definition('drt-side-thrust', 'DRT side thrust', 'Thrusts', dims(drtPackage.sideThrustWidthFt, drtPackage.sideThrustLengthFt, drtPackage.deckHeightFt), '#81522c', 'box', {
-    dimensionStatus: 'REFERENCE',
-    mountingType: 'floor',
-    sourceLabel: 'DRT authored production geometry',
-    warning: 'AKB dimensions are retained; unresolved master-scale mismatch remains a planning warning.',
-  }),
-  definition('drt-b-stage', 'DRT B stage', 'B stage', dims(drtPackage.bStageDiameterFt, drtPackage.bStageDiameterFt, drtPackage.deckHeightFt), '#c28542', 'cylinder', {
-    dimensionStatus: 'REFERENCE',
-    mountingType: 'floor',
-    sourceLabel: 'DRT authored production geometry',
-    snapBehavior: 'VENUE_CENTER_LOCKED',
-  }),
-  definition('drt-monolith', 'DRT monolith / prow volume', 'Scenic elements', dims(drtPackage.prowBaseFt, drtPackage.prowVertexDepthFt, drtPackage.prowHeightFt), '#d7c8a5', 'screen', {
-    dimensionStatus: 'REFERENCE',
-    mountingType: 'floor',
-    sourceLabel: 'DRT authored production geometry',
-  }),
+  ...canonicalDrtDefinitions,
   definition('stage-deck-4x8', '4 ft x 8 ft stage deck', 'Stage decks', dims(4, 8, 1), '#273f4e'),
   definition('riser-8x8', '8 ft x 8 ft riser', 'Risers', dims(8, 8, 2), '#394f58'),
   definition('stairs-4x8', 'Stage stair unit', 'Stairs', dims(4, 8, 3), '#6e604b'),
@@ -113,10 +104,6 @@ export const plannerObjectDefinitions: ObjectDefinition[] = [
   definition('sub-stack', 'Sub stack', 'Subs', dims(6, 4, 3), '#27343b', 'box'),
   definition('monitor-world', 'Monitor world', 'Monitor world', dims(12, 10, 4), '#384c46', 'box'),
   definition('backline-riser', 'Backline position', 'Backline', dims(10, 8, 3), '#5c5347', 'box'),
-  definition('low-fog-machine', 'Low fog unit', 'Low fog', dims(2, 2, 2), '#7ca4aa', 'fog', {
-    mountingType: 'floor',
-    warning: 'Low fog planning preview only. Confirm ventilation, fire/life-safety, and venue approval.',
-  }),
   definition('hazer-unit', 'Hazer unit', 'Hazers', dims(2, 2, 2), '#9ba8a3', 'fog', {
     mountingType: 'floor',
     warning: 'Haze planning preview only. Confirm fire/life-safety, detector isolation process, and venue approval.',
@@ -137,14 +124,10 @@ export function definitionsForCategory(category: PlannerObjectCategory): ObjectD
 }
 
 export function defaultPositionForDefinition(definitionItem: ObjectDefinition) {
-  if (definitionItem.id === 'drt-main-stage') return { xFt: 0, yFt: drtPackage.deckHeightFt / 2, zFt: drt.stageCenterZFt };
-  if (definitionItem.id === 'drt-center-thrust') {
-    return { xFt: 0, yFt: drtPackage.deckHeightFt / 2, zFt: drt.stageCenterZFt + drtPackage.deckDepthFt / 2 + drtPackage.centerThrustLengthFt / 2 };
-  }
-  if (definitionItem.id === 'drt-b-stage') return { xFt: 0, yFt: drtPackage.deckHeightFt / 2, zFt: 0 };
-  if (definitionItem.id === 'drt-monolith') return { xFt: 0, yFt: drtPackage.deckHeightFt + drtPackage.prowHeightFt / 2, zFt: drt.prowMidZFt };
-  if (definitionItem.category === 'Truss') return { xFt: 0, yFt: 24, zFt: drt.stageCenterZFt };
-  if (definitionItem.category === 'Lighting fixtures') return { xFt: 0, yFt: 22, zFt: drt.stageCenterZFt };
+  const canonicalObject = canonicalDrtGeometry.objects.find((object) => object.definitionId === definitionItem.id);
+  if (canonicalObject) return canonicalObject.position;
+  if (definitionItem.category === 'Truss') return { xFt: 0, yFt: 24, zFt: -canonicalDrtPackage.bStageLocalZFt };
+  if (definitionItem.category === 'Lighting fixtures') return { xFt: 0, yFt: 22, zFt: -canonicalDrtPackage.bStageLocalZFt };
   if (definitionItem.category === 'FOH') return { xFt: 0, yFt: 2, zFt: 56 };
   return { xFt: 0, yFt: Math.max(0, definitionItem.dimensionsFt.heightFt / 2), zFt: 0 };
 }
