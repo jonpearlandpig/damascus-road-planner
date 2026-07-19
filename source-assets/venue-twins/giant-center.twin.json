@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "giant-center",
+  "readiness": "PARTIAL",
+  "coordinateSystem": {
+    "origin": "REFERENCE_ORIGIN",
+    "originMethod": "DERIVED_FLOOR_CENTER",
+    "originLabel": "Derived event-floor center",
+    "originPoint": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "xAxis": "STAGE_LEFT_TO_STAGE_RIGHT",
+    "yAxis": "ELEVATION",
+    "zAxis": "UPSTAGE_TO_DOWNSTAGE",
+    "unit": "ft",
+    "evidenceMeasurementIds": [
+      "giant-floor-width-85",
+      "giant-floor-length-200"
+    ],
+    "warning": "Origin is the derived center of the approved event-floor rectangle; it is not a verified center-court point."
+  },
+  "floor": {
+    "boundary": {
+      "id": "giant-center-event-floor-boundary",
+      "points": [
+        {
+          "xFt": -42.5,
+          "zFt": -100
+        },
+        {
+          "xFt": 42.5,
+          "zFt": -100
+        },
+        {
+          "xFt": 42.5,
+          "zFt": 100
+        },
+        {
+          "xFt": -42.5,
+          "zFt": 100
+        }
+      ],
+      "derivationRule": "Derived rectangular event-floor boundary from approved floor width and length.",
+      "exactness": "DERIVED",
+      "renderState": "DERIVED",
+      "approvedMeasurementIds": [
+        "giant-floor-width-85",
+        "giant-floor-length-200"
+      ],
+      "participatesInFitCheck": true
+    },
+    "width": {
+      "value": 85,
+      "originalValue": "85",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "giant-floor-width-85",
+      "sourceId": "giant-center-source-pack",
+      "evidencePage": 1,
+      "status": "REFERENCE",
+      "confidence": "MEDIUM",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement giant-floor-width-85",
+      "participatesInFitCheck": true,
+      "evidence": [
+        {
+          "measurementId": "giant-floor-width-85",
+          "sourceId": "giant-center-source-pack",
+          "sourceTitle": "giant_center_hershey_pa.pdf",
+          "driveUrl": "https://drive.google.com/file/d/15xYCL0SmcTtNPC_mE1PVLttMmHNaXyF1",
+          "page": 1,
+          "section": "Floor",
+          "excerpt": "Floor section lists length 200 and width 85.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "length": {
+      "value": 200,
+      "originalValue": "200",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "giant-floor-length-200",
+      "sourceId": "giant-center-source-pack",
+      "evidencePage": 1,
+      "status": "REFERENCE",
+      "confidence": "MEDIUM",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement giant-floor-length-200",
+      "participatesInFitCheck": true,
+      "evidence": [
+        {
+          "measurementId": "giant-floor-length-200",
+          "sourceId": "giant-center-source-pack",
+          "sourceTitle": "giant_center_hershey_pa.pdf",
+          "driveUrl": "https://drive.google.com/file/d/15xYCL0SmcTtNPC_mE1PVLttMmHNaXyF1",
+          "page": 1,
+          "section": "Floor",
+          "excerpt": "Floor section lists length 200 and width 85.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "center": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "orientationDeg": 0,
+    "renderState": "DERIVED"
+  },
+  "rigging": {
+    "lowSteel": {
+      "value": 88,
+      "originalValue": "88",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "giant-low-steel-88",
+      "sourceId": "giant-center-source-pack",
+      "evidencePage": 1,
+      "status": "REFERENCE",
+      "confidence": "MEDIUM",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement giant-low-steel-88",
+      "participatesInFitCheck": true,
+      "evidence": [
+        {
+          "measurementId": "giant-low-steel-88",
+          "sourceId": "giant-center-source-pack",
+          "sourceTitle": "giant_center_hershey_pa.pdf",
+          "driveUrl": "https://drive.google.com/file/d/15xYCL0SmcTtNPC_mE1PVLttMmHNaXyF1",
+          "page": 1,
+          "section": "Rigging",
+          "excerpt": "Rigging section lists floor to low steel as 88 ft.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "noRigZones": [],
+    "renderState": "APPROVED"
+  },
+  "stageReference": {
+    "endStageDirection": "UPSTAGE",
+    "stageCenterline": {
+      "id": "giant-center-stage-centerline",
+      "start": {
+        "xFt": 0,
+        "zFt": -100
+      },
+      "end": {
+        "xFt": 0,
+        "zFt": 100
+      },
+      "derivationRule": "Derived from approved floor boundary dimensions and planner coordinate convention.",
+      "exactness": "DERIVED",
+      "approvedMeasurementIds": [
+        "giant-floor-width-85",
+        "giant-floor-length-200"
+      ],
+      "participatesInFitCheck": true
+    },
+    "maximumStageBounds": {
+      "id": "giant-center-maximum-house-stage",
+      "points": [
+        {
+          "xFt": -40,
+          "zFt": -20
+        },
+        {
+          "xFt": 40,
+          "zFt": -20
+        },
+        {
+          "xFt": 40,
+          "zFt": 20
+        },
+        {
+          "xFt": -40,
+          "zFt": 20
+        }
+      ],
+      "derivationRule": "Derived maximum house-stage rectangle from approved house-stage width and depth.",
+      "exactness": "REFERENCE_ONLY",
+      "renderState": "REFERENCE_ONLY",
+      "approvedMeasurementIds": [
+        "giant-house-stage-width-80",
+        "giant-house-stage-depth-40"
+      ],
+      "participatesInFitCheck": false
+    },
+    "renderState": "DERIVED",
+    "warning": "Stage direction follows the planner coordinate convention; no venue-specific stage-end orientation was approved."
+  },
+  "loading": {
+    "dockDirection": "UNKNOWN",
+    "renderState": "REFERENCE_ONLY",
+    "warning": "Loading facts are approved, but no source-backed dock coordinate or direction was available for native placement."
+  },
+  "evidence": {
+    "approvedMeasurementIds": [
+      "giant-floor-width-85",
+      "giant-floor-length-200",
+      "giant-low-steel-88",
+      "giant-house-stage-width-80",
+      "giant-house-stage-depth-40"
+    ],
+    "derivedGeometryIds": [
+      "giant-center-event-floor-boundary",
+      "giant-center-floor-center",
+      "giant-center-stage-centerline",
+      "giant-center-maximum-house-stage"
+    ],
+    "approximateGeometryIds": [],
+    "sourceIds": [
+      "giant-center-source-pack"
+    ],
+    "sourceTitles": [
+      "giant_center_hershey_pa.pdf"
+    ]
+  },
+  "diagnostics": {
+    "approvedMeasurementCount": 5,
+    "derivedGeometryCount": 4,
+    "approximateGeometryCount": 0,
+    "conflictCount": 0,
+    "missingCriticalFields": [
+      "centerhungOrObstructionProfile",
+      "nativeRiggingCad"
+    ],
+    "blockers": [
+      "Missing centerhungOrObstructionProfile",
+      "Missing nativeRiggingCad"
+    ],
+    "warnings": [
+      "Origin is the derived center of the approved event-floor rectangle; it is not a verified center-court point."
+    ],
+    "renderingStatus": "PARTIAL_RENDER"
+  },
+  "drtFit": {
+    "status": "PASS_WITH_WARNINGS",
+    "checkedFactIds": [
+      "giant-floor-width-85",
+      "giant-floor-length-200",
+      "giant-low-steel-88"
+    ],
+    "blockers": [],
+    "warnings": [
+      "Only 3.5 ft remains per side against the approved floor width.",
+      "Native CAD/rigging files remain requested before final operations."
+    ]
+  },
+  "generation": {
+    "generatorSchemaVersion": 1,
+    "sourceReviewDate": "2026-07-18",
+    "sourceRevision": "Source packet registered without visible revision date",
+    "reviewChecksum": "73824874db052922"
+  }
+}

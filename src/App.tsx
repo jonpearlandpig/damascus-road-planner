@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Navigate, Route, Routes, useParams } from 'react-router-dom';
 import { Dashboard } from './components/Dashboard';
-import { detailedVenueMap } from './data/venues';
+import { venueMap } from './data/venues';
 
 const Comparison = lazy(() => import('./components/Comparison').then((module) => ({ default: module.Comparison })));
 const VenueWorkspace = lazy(() => import('./components/VenueWorkspace').then((module) => ({ default: module.VenueWorkspace })));
@@ -17,7 +17,7 @@ function LoadingScreen() {
 
 function VenueRoute() {
   const { slug } = useParams();
-  const venue = slug ? detailedVenueMap[slug] : undefined;
+  const venue = slug ? venueMap[slug] : undefined;
   if (!venue) return <Navigate to="/" replace />;
   return <VenueWorkspace venue={venue} />;
 }

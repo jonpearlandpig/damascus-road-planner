@@ -1,6 +1,8 @@
 # Gear Pack Schema — TELAadvance (Canonical)
 One JSON file per department. Both products (Stage Builder projects + Planner/rider) read from here.
 
+Machine validation lives in `gear-packs/schema.json` and runs via `npm run validate:gear`.
+
 ## Anonymization rule (HARD)
 No band, tour, artist, manager, vendor, venue-contract, or quote-document names anywhere in
 these files or this repo. Source lineage uses "T.I." (TELA Intelligence) only. The crosswalk

@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-18",
+  "assets": [
+    {
+      "id": "spectrum-center-production-guide-2025",
+      "filename": "spectrum_center_charlotte_nc.pdf",
+      "venueSlug": "spectrum-center",
+      "sourceType": "VENUE_PRODUCTION_GUIDE",
+      "revision": "2025 production guide",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "referencedBy": ["spectrum-center"],
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. It remains uncommitted under the source-assets/files privacy boundary.",
+      "knownConflictFlags": []
+    },
+    {
+      "id": "bok-center-production-manual-undated",
+      "filename": "bok_center_tulsa_ok.pdf",
+      "venueSlug": "bok-center",
+      "sourceType": "VENUE_MANUAL",
+      "revision": "Undated production manual",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "referencedBy": ["bok-center"],
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. It remains uncommitted under the source-assets/files privacy boundary.",
+      "knownConflictFlags": []
+    },
+    {
+      "id": "dickies-arena-tech-pack-2026",
+      "filename": "dickies_arena_fort_worth_tx.pdf",
+      "venueSlug": "dickies-arena",
+      "sourceType": "VENUE_TECH_PACK",
+      "revision": "Revised 2026",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "referencedBy": ["dickies-arena"],
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. It remains uncommitted under the source-assets/files privacy boundary.",
+      "knownConflictFlags": []
+    },
+    {
+      "id": "van-andel-arena-source-2026",
+      "filename": "van_andel_arena_grand_rapids_mi.pdf",
+      "venueSlug": "van-andel-arena",
+      "sourceType": "VENUE_SOURCE_PACKET",
+      "revision": "January 1, 2026",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "referencedBy": ["van-andel-arena"],
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Height conflict remains unresolved and must not be promoted to approved geometry.",
+      "knownConflictFlags": ["UNRESOLVED_GRID_HEIGHT_84_FT_7_IN_VS_86_FT"]
+    },
+    {
+      "id": "heb-center-technical-manual-2024",
+      "filename": "heb_center_cedar_park_tx.pdf",
+      "venueSlug": "heb-center",
+      "sourceType": "VENUE_TECH_PACK",
+      "revision": "Technical Manual 2024",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "referencedBy": ["heb-center"],
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. It remains uncommitted under the source-assets/files privacy boundary.",
+      "knownConflictFlags": []
+    },
+    {
+      "id": "t-mobile-center-source-pack",
+      "filename": "t_mobile_center_kansas_city_mo.pdf",
+      "venueSlug": "t-mobile-center",
+      "sourceType": "VENUE_SOURCE_PACKET",
+      "revision": "Technical information packet",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "referencedBy": ["t-mobile-center"],
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Existing authored geometry remains estimated until extraction and reconciliation are approved.",
+      "knownConflictFlags": []
+    },
+    {
+      "id": "desert-diamond-arena-tech-pack-2023",
+      "filename": "desert_diamond_arena_glendale_az.pdf",
+      "venueSlug": "desert-diamond-arena",
+      "sourceType": "VENUE_TECH_PACK",
+      "revision": "May 2023",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "REFERENCE",
+      "referencedBy": ["desert-diamond-arena"],
+      "notes": "Controlled local source was located outside the repo, but the route record keeps it stale until a current 2026/27 revision is filed.",
+      "knownConflictFlags": ["STALE_SOURCE"]
+    },
+    {
+      "id": "gainbridge-fieldhouse-tech-pack-2026",
+      "filename": "gainbridge_fieldhouse_indianapolis_in.pdf",
+      "venueSlug": "gainbridge-fieldhouse",
+      "sourceType": "VENUE_TECH_PACK",
+      "revision": "Updated 2026-01-09",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "referencedBy": ["gainbridge-fieldhouse"],
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Extraction and seed reconciliation remain pending.",
+      "knownConflictFlags": []
+    },
+    {
+      "id": "giant-center-source-pack",
+      "filename": "giant_center_hershey_pa.pdf",
+      "venueSlug": "giant-center",
+      "sourceType": "VENUE_SOURCE_PACKET",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "referencedBy": ["giant-center"],
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Extraction and seed reconciliation remain pending.",
+      "knownConflictFlags": []
+    },
+    {
+      "id": "target-center-source-pack",
+      "filename": "target_center_minneapolis_mn.pdf",
+      "venueSlug": "target-center",
+      "sourceType": "VENUE_SOURCE_PACKET",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "CONTROLLING",
+      "referencedBy": ["target-center"],
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot. Extraction and seed reconciliation remain pending.",
+      "knownConflictFlags": []
+    },
+    {
+      "id": "red-rocks-amphitheatre-guide-2017",
+      "filename": "red_rocks_amphitheatre_morrison_co.pdf",
+      "venueSlug": "red-rocks",
+      "sourceType": "VENUE_MANUAL",
+      "revision": "2017 Rev. 3/15/2017",
+      "availabilityState": "AVAILABLE_EXTERNAL",
+      "controllingStatus": "REFERENCE",
+      "referencedBy": ["red-rocks"],
+      "notes": "Controlled Drive source is registered in the 19-show inventory snapshot, but the route record keeps it stale until a current venue source is filed.",
+      "knownConflictFlags": ["STALE_SOURCE"]
+    }
+  ]
+}

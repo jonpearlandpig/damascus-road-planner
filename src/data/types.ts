@@ -37,6 +37,56 @@ export interface SourceRef {
   authority: AuthorityState;
 }
 
+export type MeasurementStatus = 'VERIFIED' | 'REFERENCE' | 'ESTIMATE' | 'MISSING' | 'CONFLICT';
+export type MeasurementConfidence = 'HIGH' | 'MEDIUM' | 'LOW' | 'UNKNOWN';
+export type MeasurementUnit = 'ft' | 'lb' | 'count';
+
+export type SourceAssetAvailabilityState =
+  | 'AVAILABLE_LOCAL'
+  | 'AVAILABLE_EXTERNAL'
+  | 'REQUESTED'
+  | 'MISSING'
+  | 'SUPERSEDED'
+  | 'NOT_REQUIRED';
+
+export type SourceAssetControllingStatus = 'CONTROLLING' | 'REFERENCE' | 'SUPERSEDED' | 'NOT_REQUIRED';
+
+export type SourceAssetType =
+  | 'VENUE_PRODUCTION_GUIDE'
+  | 'VENUE_TECH_PACK'
+  | 'VENUE_MANUAL'
+  | 'VENUE_SOURCE_PACKET'
+  | 'CAD'
+  | 'RIGGING_PLOT';
+
+export interface SourceAssetManifestEntry {
+  id: string;
+  filename: string;
+  venueSlug: string;
+  sourceType: SourceAssetType;
+  revision?: string;
+  availabilityState: SourceAssetAvailabilityState;
+  controllingStatus: SourceAssetControllingStatus;
+  referencedBy: string[];
+  notes: string;
+  knownConflictFlags: string[];
+}
+
+export interface SourceAssetManifest {
+  version: 1;
+  updatedAt: string;
+  assets: SourceAssetManifestEntry[];
+}
+
+export interface SourcedMeasurement {
+  value: number;
+  unit: MeasurementUnit;
+  status: MeasurementStatus;
+  confidence: MeasurementConfidence;
+  source?: SourceRef;
+  note?: string;
+}
+
 export interface SceneObjectRecord {
   id: string;
   label: string;
@@ -73,6 +123,8 @@ export interface VenueGeometry {
   egressClearanceFt?: number;
 }
 
+export type VenueGeometryProvenance = Partial<Record<keyof VenueGeometry, SourcedMeasurement>>;
+
 export interface OperationalZone {
   id: string;
   label: string;
@@ -103,6 +155,8 @@ export interface VenueTwin {
   pmOpen: number;
   tmOpen: number;
   geometry: VenueGeometry;
+  geometryProvenance: VenueGeometryProvenance;
+  approvedReviewFactIds?: Partial<Record<keyof VenueGeometry | string, string>>;
   zones: OperationalZone[];
   objects: SceneObjectRecord[];
   keyStrength: string;

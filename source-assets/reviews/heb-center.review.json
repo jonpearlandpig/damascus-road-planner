@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "heb-center",
+  "sourceIdsReviewed": ["heb-center-technical-manual-2024"],
+  "reviewDate": "2026-07-18",
+  "sourceRevision": "2024 Technical Manual",
+  "pageCount": 24,
+  "pageCountSource": "CONNECTOR_TEXT_SEGMENT_ESTIMATE",
+  "documentSections": {
+    "coverTitlePage": "FOUND",
+    "revisionOrIssueDate": "FOUND",
+    "tableOfContents": "FOUND",
+    "floorPlans": "FOUND",
+    "riggingInformation": "FOUND",
+    "roofOrSteelDiagrams": "FOUND",
+    "seatingConfigurations": "FOUND",
+    "loadingInformation": "FOUND",
+    "stageOrEndStageInformation": "FOUND",
+    "productionRestrictions": "FOUND"
+  },
+  "extractedFacts": [
+    {
+      "id": "heb-end-stage-floor-width-85",
+      "field": "floorWidthFt",
+      "label": "End-stage floor width",
+      "category": "floor",
+      "originalValue": "85",
+      "originalUnit": "ft",
+      "normalizedValue": 85,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "heb-center-technical-manual-2024",
+          "page": 5,
+          "section": "Floor Size",
+          "excerpt": "End Stage floor size is listed as 250 x 85.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "heb-end-stage-floor-length-250",
+      "field": "floorLengthFt",
+      "label": "End-stage floor length",
+      "category": "floor",
+      "originalValue": "250",
+      "originalUnit": "ft",
+      "normalizedValue": 250,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "heb-center-technical-manual-2024",
+          "page": 5,
+          "section": "Floor Size",
+          "excerpt": "End Stage floor size is listed as 250 x 85.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "heb-low-steel-50",
+      "field": "lowSteelFt",
+      "label": "Low steel from floor",
+      "category": "roofRigging",
+      "originalValue": "50",
+      "originalUnit": "ft",
+      "normalizedValue": 50,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "heb-center-technical-manual-2024",
+          "page": 7,
+          "section": "Rigging Plot",
+          "excerpt": "Low steel is 50 ft from floor and approximately 49 ft 10 in over ice.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "heb-end-stage-rigging-150000",
+      "field": "endStageRiggingLb",
+      "label": "End-stage maximum rigging load",
+      "category": "roofRigging",
+      "originalValue": "150000",
+      "originalUnit": "lb",
+      "normalizedValue": 150000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "heb-center-technical-manual-2024",
+          "page": 7,
+          "section": "Rigging Plot",
+          "excerpt": "Maximum load is 125,000 lb center stage and 150,000 lb end stage.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "heb-center-stage-rigging-125000",
+      "field": "centerStageRiggingLb",
+      "label": "Center-stage maximum rigging load",
+      "category": "roofRigging",
+      "originalValue": "125000",
+      "originalUnit": "lb",
+      "normalizedValue": 125000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "heb-center-technical-manual-2024",
+          "page": 7,
+          "section": "Rigging Plot",
+          "excerpt": "Maximum load is 125,000 lb center stage and 150,000 lb end stage.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "heb-scoreboard-clearance-retracts",
+      "field": "centerhungRetraction",
+      "label": "Centerhung retraction above rigging steel",
+      "category": "overheadObstruction",
+      "originalValue": "retracts above rigging steel",
+      "originalUnit": "text",
+      "normalizedValue": null,
+      "normalizedUnit": "text",
+      "conversionMethod": "clearance-note",
+      "roundingPrecision": "n/a",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "heb-center-technical-manual-2024",
+          "page": 7,
+          "section": "Rigging Plot",
+          "excerpt": "Centerhung scoreboard retracts above rigging steel.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "heb-house-stage-width-60",
+      "field": "houseStageWidthFt",
+      "label": "StageRight maximum width",
+      "category": "stage",
+      "originalValue": "60",
+      "originalUnit": "ft",
+      "normalizedValue": 60,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "heb-center-technical-manual-2024",
+          "page": 10,
+          "section": "StageRight Staging",
+          "excerpt": "StageRight staging max is 60 x 48 with height 48 to 78 inches.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "heb-house-stage-depth-48",
+      "field": "houseStageDepthFt",
+      "label": "StageRight maximum depth",
+      "category": "stage",
+      "originalValue": "48",
+      "originalUnit": "ft",
+      "normalizedValue": 48,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "heb-center-technical-manual-2024",
+          "page": 10,
+          "section": "StageRight Staging",
+          "excerpt": "StageRight staging max is 60 x 48 with height 48 to 78 inches.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "heb-west-loading-dock",
+      "field": "loadingDockLocation",
+      "label": "West loading dock",
+      "category": "loading",
+      "originalValue": "West side loading dock",
+      "originalUnit": "text",
+      "normalizedValue": null,
+      "normalizedUnit": "text",
+      "conversionMethod": "location-note",
+      "roundingPrecision": "n/a",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "heb-center-technical-manual-2024",
+          "page": 12,
+          "section": "Loading Dock",
+          "excerpt": "Loading dock section locates the dock on the west side and requires vehicles within the fire lane.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    }
+  ],
+  "approvedFactIds": [
+    "heb-end-stage-floor-width-85",
+    "heb-end-stage-floor-length-250",
+    "heb-low-steel-50",
+    "heb-end-stage-rigging-150000",
+    "heb-center-stage-rigging-125000",
+    "heb-scoreboard-clearance-retracts",
+    "heb-house-stage-width-60",
+    "heb-house-stage-depth-48",
+    "heb-west-loading-dock"
+  ],
+  "conflicts": [],
+  "rejectedInterpretations": [],
+  "missingRequiredGeometry": ["nativeCad", "nativeRiggingCad"],
+  "modelReadiness": "READY",
+  "reviewerNotes": [
+    "The 2024 manual supports the end-stage floor envelope, low steel, rigging caps, house stage, and scoreboard clearance note.",
+    "Native CAD and a separate current rigging pack remain requested for final operations."
+  ],
+  "validationStatus": "PASS"
+}

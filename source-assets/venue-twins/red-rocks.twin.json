@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "red-rocks",
+  "readiness": "BLOCKED",
+  "coordinateSystem": {
+    "origin": "REFERENCE_ORIGIN",
+    "originMethod": "REFERENCE_ORIGIN_WITH_WARNING",
+    "originLabel": "Reference origin only",
+    "originPoint": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "xAxis": "STAGE_LEFT_TO_STAGE_RIGHT",
+    "yAxis": "ELEVATION",
+    "zAxis": "UPSTAGE_TO_DOWNSTAGE",
+    "unit": "ft",
+    "evidenceMeasurementIds": [],
+    "warning": "No approved venue-native origin exists; reference origin is shown only as a planning warning."
+  },
+  "evidence": {
+    "approvedMeasurementIds": [],
+    "derivedGeometryIds": [],
+    "approximateGeometryIds": [],
+    "sourceIds": [
+      "red-rocks-amphitheatre-guide-2017"
+    ],
+    "sourceTitles": [
+      "red_rocks_amphitheatre_morrison_co.pdf"
+    ]
+  },
+  "diagnostics": {
+    "approvedMeasurementCount": 0,
+    "derivedGeometryCount": 0,
+    "approximateGeometryCount": 0,
+    "conflictCount": 0,
+    "missingCriticalFields": [
+      "currentRevision",
+      "venueNativeStageBoundary",
+      "riggingOrOverheadLimits",
+      "accessPathDimensions"
+    ],
+    "blockers": [
+      "Missing currentRevision",
+      "Missing venueNativeStageBoundary",
+      "Missing riggingOrOverheadLimits",
+      "Missing accessPathDimensions"
+    ],
+    "warnings": [
+      "No approved venue-native origin exists; reference origin is shown only as a planning warning.",
+      "Blocked review records do not contribute controlling fit geometry."
+    ],
+    "renderingStatus": "BLOCKED_NO_SHELL"
+  },
+  "drtFit": {
+    "status": "BLOCKED",
+    "checkedFactIds": [],
+    "blockers": [
+      "Venue source review is blocked.",
+      "Approved floor width and length are required.",
+      "Venue requires an amphitheatre-native stage boundary instead of arena defaults."
+    ],
+    "warnings": [
+      "No approved low-steel, centerhung trim, or retraction clearance fact is available.",
+      "Source is stale or undated; keep final engineering confirmation open."
+    ]
+  },
+  "generation": {
+    "generatorSchemaVersion": 1,
+    "sourceReviewDate": "2026-07-18",
+    "sourceRevision": "Rev. 3/15/2017",
+    "reviewChecksum": "7b0a8d4abbc05fff"
+  }
+}

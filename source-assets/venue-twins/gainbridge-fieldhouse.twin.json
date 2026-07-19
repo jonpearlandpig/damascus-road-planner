@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "gainbridge-fieldhouse",
+  "readiness": "BLOCKED",
+  "coordinateSystem": {
+    "origin": "REFERENCE_ORIGIN",
+    "originMethod": "REFERENCE_ORIGIN_WITH_WARNING",
+    "originLabel": "Reference origin only",
+    "originPoint": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "xAxis": "STAGE_LEFT_TO_STAGE_RIGHT",
+    "yAxis": "ELEVATION",
+    "zAxis": "UPSTAGE_TO_DOWNSTAGE",
+    "unit": "ft",
+    "evidenceMeasurementIds": [],
+    "warning": "No approved venue-native origin exists; reference origin is shown only as a planning warning."
+  },
+  "obstructions": {
+    "centerHung": {
+      "id": "gainbridge-fieldhouse-centerhung",
+      "center": {
+        "xFt": 0,
+        "yFt": 110,
+        "zFt": 0
+      },
+      "dimensions": {},
+      "lowPoint": {
+        "value": 110,
+        "originalValue": "110",
+        "originalUnit": "ft",
+        "normalizedUnit": "ft",
+        "measurementId": "gainbridge-scoreboard-bottom-110",
+        "sourceId": "gainbridge-fieldhouse-tech-pack-2026",
+        "evidencePage": 5,
+        "status": "REFERENCE",
+        "confidence": "HIGH",
+        "exactness": "EXACT",
+        "derivationRule": "approved measurement gainbridge-scoreboard-bottom-110",
+        "participatesInFitCheck": false,
+        "evidence": [
+          {
+            "measurementId": "gainbridge-scoreboard-bottom-110",
+            "sourceId": "gainbridge-fieldhouse-tech-pack-2026",
+            "sourceTitle": "gainbridge_fieldhouse_indianapolis_in.pdf",
+            "driveUrl": "https://drive.google.com/file/d/1mKrBtLET4Sb7v3tt7OWKOonxTjFUrTjj",
+            "page": 5,
+            "section": "Rigging",
+            "excerpt": "Center-hung scoreboard trims at 110 ft floor to bottom.",
+            "reviewState": "APPROVED"
+          }
+        ]
+      },
+      "renderState": "REFERENCE_ONLY",
+      "exactness": "REFERENCE_ONLY",
+      "approvedMeasurementIds": [
+        "gainbridge-scoreboard-bottom-110"
+      ],
+      "participatesInFitCheck": false,
+      "derivationRule": "Partial center-hung source fact; unsupported axes are not fabricated."
+    },
+    "scoreboardLowPoint": {
+      "value": 110,
+      "originalValue": "110",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "gainbridge-scoreboard-bottom-110",
+      "sourceId": "gainbridge-fieldhouse-tech-pack-2026",
+      "evidencePage": 5,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement gainbridge-scoreboard-bottom-110",
+      "participatesInFitCheck": false,
+      "evidence": [
+        {
+          "measurementId": "gainbridge-scoreboard-bottom-110",
+          "sourceId": "gainbridge-fieldhouse-tech-pack-2026",
+          "sourceTitle": "gainbridge_fieldhouse_indianapolis_in.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1mKrBtLET4Sb7v3tt7OWKOonxTjFUrTjj",
+          "page": 5,
+          "section": "Rigging",
+          "excerpt": "Center-hung scoreboard trims at 110 ft floor to bottom.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "fixedObstructions": [],
+    "renderState": "REFERENCE_ONLY"
+  },
+  "loading": {
+    "dockDirection": "UNKNOWN",
+    "renderState": "REFERENCE_ONLY",
+    "warning": "Loading facts are approved, but no source-backed dock coordinate or direction was available for native placement."
+  },
+  "evidence": {
+    "approvedMeasurementIds": [
+      "gainbridge-scoreboard-bottom-110"
+    ],
+    "derivedGeometryIds": [],
+    "approximateGeometryIds": [],
+    "sourceIds": [
+      "gainbridge-fieldhouse-tech-pack-2026"
+    ],
+    "sourceTitles": [
+      "gainbridge_fieldhouse_indianapolis_in.pdf"
+    ]
+  },
+  "diagnostics": {
+    "approvedMeasurementCount": 1,
+    "derivedGeometryCount": 0,
+    "approximateGeometryCount": 0,
+    "conflictCount": 0,
+    "missingCriticalFields": [
+      "floorWidthFt",
+      "floorLengthFt",
+      "nativeFloorBoundary",
+      "nativeRiggingCad"
+    ],
+    "blockers": [
+      "Missing floorWidthFt",
+      "Missing floorLengthFt",
+      "Missing nativeFloorBoundary",
+      "Missing nativeRiggingCad"
+    ],
+    "warnings": [
+      "No approved venue-native origin exists; reference origin is shown only as a planning warning.",
+      "Blocked review records do not contribute controlling fit geometry."
+    ],
+    "renderingStatus": "BLOCKED_NO_SHELL"
+  },
+  "drtFit": {
+    "status": "BLOCKED",
+    "checkedFactIds": [
+      "gainbridge-scoreboard-bottom-110"
+    ],
+    "blockers": [
+      "Venue source review is blocked.",
+      "Approved floor width and length are required."
+    ],
+    "warnings": [
+      "Native CAD/rigging files remain requested before final operations.",
+      "Source is stale or undated; keep final engineering confirmation open."
+    ]
+  },
+  "generation": {
+    "generatorSchemaVersion": 1,
+    "sourceReviewDate": "2026-07-18",
+    "sourceRevision": "Snapshot metadata: Updated 2026-01-09; PDF title text: Updated 23 August 2023",
+    "reviewChecksum": "8169eb0c64029447"
+  }
+}

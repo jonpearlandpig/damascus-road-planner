@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": [
+    "source-assets/venue-twins/*.twin.json",
+    "source-assets/reviews/*.review.json"
+  ],
+  "summary": {
+    "venueTwins": 11,
+    "ready": 3,
+    "partial": 1,
+    "blocked": 7,
+    "approvedMeasurementsUsed": 42,
+    "derivedGeometryUsed": 24,
+    "approximateGeometryUsed": 0,
+    "openConflicts": 1,
+    "healthScore": 34,
+    "originMethods": {
+      "DERIVED_FLOOR_CENTER": 5,
+      "REFERENCE_ORIGIN_WITH_WARNING": 6
+    }
+  },
+  "rows": [
+    {
+      "venueSlug": "bok-center",
+      "readiness": "BLOCKED",
+      "floorGeometry": "Missing",
+      "riggingGeometry": "low 90 / high TBD / no grid boundary",
+      "centerHungGeometry": "46.67 x 37 / low 75 / APPROVED",
+      "stageReference": "UNKNOWN / MISSING",
+      "origin": "REFERENCE_ORIGIN_WITH_WARNING / Reference origin only",
+      "approvedFactsUsed": [
+        "bok-low-steel-90",
+        "bok-scoreboard-bottom-75",
+        "bok-scoreboard-width-46-67",
+        "bok-scoreboard-depth-37",
+        "bok-house-stage-max-width-56",
+        "bok-house-stage-max-depth-80"
+      ],
+      "derivedFactsUsed": [
+        "bok-center-maximum-house-stage",
+        "bok-center-centerhung-footprint"
+      ],
+      "approximateGeometry": [],
+      "missingCriticalFacts": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "nativeFloorBoundary",
+        "nativeRiggingCad"
+      ],
+      "conflicts": 0,
+      "drtFitStatus": "BLOCKED",
+      "renderingStatus": "BLOCKED_NO_SHELL"
+    },
+    {
+      "venueSlug": "gainbridge-fieldhouse",
+      "readiness": "BLOCKED",
+      "floorGeometry": "Missing",
+      "riggingGeometry": "Missing",
+      "centerHungGeometry": "TBD x TBD / low 110 / REFERENCE_ONLY",
+      "stageReference": "Missing",
+      "origin": "REFERENCE_ORIGIN_WITH_WARNING / Reference origin only",
+      "approvedFactsUsed": [
+        "gainbridge-scoreboard-bottom-110"
+      ],
+      "derivedFactsUsed": [],
+      "approximateGeometry": [],
+      "missingCriticalFacts": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "nativeFloorBoundary",
+        "nativeRiggingCad"
+      ],
+      "conflicts": 0,
+      "drtFitStatus": "BLOCKED",
+      "renderingStatus": "BLOCKED_NO_SHELL"
+    },
+    {
+      "venueSlug": "van-andel-arena",
+      "readiness": "BLOCKED",
+      "floorGeometry": "85 x 200 ft / REFERENCE_ONLY",
+      "riggingGeometry": "low TBD / high 98 / grid boundary",
+      "centerHungGeometry": "TBD x TBD / low 65 / REFERENCE_ONLY",
+      "stageReference": "UPSTAGE / REFERENCE_ONLY",
+      "origin": "DERIVED_FLOOR_CENTER / Derived event-floor center",
+      "approvedFactsUsed": [
+        "vaa-floor-width-85",
+        "vaa-floor-length-200",
+        "vaa-high-steel-98",
+        "vaa-grid-width-99",
+        "vaa-grid-depth-52",
+        "vaa-scoreboard-bottom-65",
+        "vaa-house-stage-width-60",
+        "vaa-house-stage-depth-40"
+      ],
+      "derivedFactsUsed": [
+        "van-andel-arena-event-floor-boundary",
+        "van-andel-arena-floor-center",
+        "van-andel-arena-rigging-grid-boundary",
+        "van-andel-arena-stage-centerline",
+        "van-andel-arena-maximum-house-stage"
+      ],
+      "approximateGeometry": [],
+      "missingCriticalFacts": [
+        "approvedLowSteelFt",
+        "nativeRiggingCad"
+      ],
+      "conflicts": 1,
+      "drtFitStatus": "BLOCKED",
+      "renderingStatus": "PARTIAL_RENDER"
+    },
+    {
+      "venueSlug": "giant-center",
+      "readiness": "PARTIAL",
+      "floorGeometry": "85 x 200 ft / DERIVED",
+      "riggingGeometry": "low 88 / high TBD / no grid boundary",
+      "centerHungGeometry": "Missing",
+      "stageReference": "UPSTAGE / DERIVED",
+      "origin": "DERIVED_FLOOR_CENTER / Derived event-floor center",
+      "approvedFactsUsed": [
+        "giant-floor-width-85",
+        "giant-floor-length-200",
+        "giant-low-steel-88",
+        "giant-house-stage-width-80",
+        "giant-house-stage-depth-40"
+      ],
+      "derivedFactsUsed": [
+        "giant-center-event-floor-boundary",
+        "giant-center-floor-center",
+        "giant-center-stage-centerline",
+        "giant-center-maximum-house-stage"
+      ],
+      "approximateGeometry": [],
+      "missingCriticalFacts": [
+        "centerhungOrObstructionProfile",
+        "nativeRiggingCad"
+      ],
+      "conflicts": 0,
+      "drtFitStatus": "PASS_WITH_WARNINGS",
+      "renderingStatus": "PARTIAL_RENDER"
+    },
+    {
+      "venueSlug": "spectrum-center",
+      "readiness": "READY",
+      "floorGeometry": "85 x 200 ft / DERIVED",
+      "riggingGeometry": "low 107 / high 130 / no grid boundary",
+      "centerHungGeometry": "Missing",
+      "stageReference": "UPSTAGE / DERIVED",
+      "origin": "DERIVED_FLOOR_CENTER / Derived event-floor center",
+      "approvedFactsUsed": [
+        "spectrum-floor-width-85",
+        "spectrum-floor-length-200",
+        "spectrum-low-steel-107",
+        "spectrum-high-steel-130"
+      ],
+      "derivedFactsUsed": [
+        "spectrum-center-event-floor-boundary",
+        "spectrum-center-floor-center",
+        "spectrum-center-stage-centerline"
+      ],
+      "approximateGeometry": [],
+      "missingCriticalFacts": [
+        "nativeCad",
+        "nativeRiggingCad"
+      ],
+      "conflicts": 0,
+      "drtFitStatus": "PASS_WITH_WARNINGS",
+      "renderingStatus": "READY_TO_RENDER"
+    },
+    {
+      "venueSlug": "target-center",
+      "readiness": "BLOCKED",
+      "floorGeometry": "Missing",
+      "riggingGeometry": "low 100 / high TBD / no grid boundary",
+      "centerHungGeometry": "Missing",
+      "stageReference": "Missing",
+      "origin": "REFERENCE_ORIGIN_WITH_WARNING / Reference origin only",
+      "approvedFactsUsed": [
+        "target-open-steel-100"
+      ],
+      "derivedFactsUsed": [],
+      "approximateGeometry": [],
+      "missingCriticalFacts": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "nativeFloorBoundary",
+        "centerhungBottomFt",
+        "nativeRiggingCad"
+      ],
+      "conflicts": 0,
+      "drtFitStatus": "BLOCKED",
+      "renderingStatus": "BLOCKED_NO_SHELL"
+    },
+    {
+      "venueSlug": "t-mobile-center",
+      "readiness": "READY",
+      "floorGeometry": "85 x 235 ft / DERIVED",
+      "riggingGeometry": "low 98 / high TBD / no grid boundary",
+      "centerHungGeometry": "32 x 32 / low 76 / APPROVED",
+      "stageReference": "UPSTAGE / DERIVED",
+      "origin": "DERIVED_FLOOR_CENTER / Derived event-floor center",
+      "approvedFactsUsed": [
+        "tmobile-floor-width-85",
+        "tmobile-floor-length-235",
+        "tmobile-low-steel-98",
+        "tmobile-scoreboard-bottom-76",
+        "tmobile-scoreboard-top-diameter-32"
+      ],
+      "derivedFactsUsed": [
+        "t-mobile-center-event-floor-boundary",
+        "t-mobile-center-floor-center",
+        "t-mobile-center-stage-centerline",
+        "t-mobile-center-centerhung-footprint"
+      ],
+      "approximateGeometry": [],
+      "missingCriticalFacts": [
+        "currentIssueDate",
+        "nativeRiggingCad"
+      ],
+      "conflicts": 0,
+      "drtFitStatus": "PASS_WITH_WARNINGS",
+      "renderingStatus": "READY_TO_RENDER"
+    },
+    {
+      "venueSlug": "desert-diamond-arena",
+      "readiness": "BLOCKED",
+      "floorGeometry": "Missing",
+      "riggingGeometry": "low 100 / high TBD / no grid boundary",
+      "centerHungGeometry": "TBD x TBD / low 58 / REFERENCE_ONLY",
+      "stageReference": "UNKNOWN / MISSING",
+      "origin": "REFERENCE_ORIGIN_WITH_WARNING / Reference origin only",
+      "approvedFactsUsed": [
+        "dda-low-steel-100",
+        "dda-scoreboard-bottom-58",
+        "dda-house-stage-width-60",
+        "dda-house-stage-depth-48"
+      ],
+      "derivedFactsUsed": [
+        "desert-diamond-arena-maximum-house-stage"
+      ],
+      "approximateGeometry": [],
+      "missingCriticalFacts": [
+        "currentRevision",
+        "floorWidthFt",
+        "floorLengthFt",
+        "nativeFloorBoundary",
+        "nativeRiggingCad"
+      ],
+      "conflicts": 0,
+      "drtFitStatus": "BLOCKED",
+      "renderingStatus": "BLOCKED_NO_SHELL"
+    },
+    {
+      "venueSlug": "red-rocks",
+      "readiness": "BLOCKED",
+      "floorGeometry": "Missing",
+      "riggingGeometry": "Missing",
+      "centerHungGeometry": "Missing",
+      "stageReference": "Missing",
+      "origin": "REFERENCE_ORIGIN_WITH_WARNING / Reference origin only",
+      "approvedFactsUsed": [],
+      "derivedFactsUsed": [],
+      "approximateGeometry": [],
+      "missingCriticalFacts": [
+        "currentRevision",
+        "venueNativeStageBoundary",
+        "riggingOrOverheadLimits",
+        "accessPathDimensions"
+      ],
+      "conflicts": 0,
+      "drtFitStatus": "BLOCKED",
+      "renderingStatus": "BLOCKED_NO_SHELL"
+    },
+    {
+      "venueSlug": "heb-center",
+      "readiness": "READY",
+      "floorGeometry": "85 x 250 ft / DERIVED",
+      "riggingGeometry": "low 50 / high TBD / no grid boundary",
+      "centerHungGeometry": "Missing",
+      "stageReference": "UPSTAGE / DERIVED",
+      "origin": "DERIVED_FLOOR_CENTER / Derived event-floor center",
+      "approvedFactsUsed": [
+        "heb-end-stage-floor-width-85",
+        "heb-end-stage-floor-length-250",
+        "heb-low-steel-50",
+        "heb-house-stage-width-60",
+        "heb-house-stage-depth-48"
+      ],
+      "derivedFactsUsed": [
+        "heb-center-event-floor-boundary",
+        "heb-center-floor-center",
+        "heb-center-stage-centerline",
+        "heb-center-maximum-house-stage"
+      ],
+      "approximateGeometry": [],
+      "missingCriticalFacts": [
+        "nativeCad",
+        "nativeRiggingCad"
+      ],
+      "conflicts": 0,
+      "drtFitStatus": "PASS_WITH_WARNINGS",
+      "renderingStatus": "READY_TO_RENDER"
+    },
+    {
+      "venueSlug": "dickies-arena",
+      "readiness": "BLOCKED",
+      "floorGeometry": "Missing",
+      "riggingGeometry": "Missing",
+      "centerHungGeometry": "TBD x TBD / low 80 / REFERENCE_ONLY",
+      "stageReference": "UNKNOWN / MISSING",
+      "origin": "REFERENCE_ORIGIN_WITH_WARNING / Reference origin only",
+      "approvedFactsUsed": [
+        "dickies-scoreboard-concert-trim-80",
+        "dickies-house-stage-width-80",
+        "dickies-house-stage-depth-40"
+      ],
+      "derivedFactsUsed": [
+        "dickies-arena-maximum-house-stage"
+      ],
+      "approximateGeometry": [],
+      "missingCriticalFacts": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "nativeFloorBoundary",
+        "lowSteelFt"
+      ],
+      "conflicts": 0,
+      "drtFitStatus": "BLOCKED",
+      "renderingStatus": "BLOCKED_NO_SHELL"
+    }
+  ]
+}

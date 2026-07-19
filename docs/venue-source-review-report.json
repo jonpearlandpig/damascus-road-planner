@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-18T00:00:00.000Z",
+  "generatedFrom": [
+    "checked-in Drive source snapshot",
+    "source-assets/reviews/*.review.json"
+  ],
+  "summary": {
+    "venueReviews": 11,
+    "ready": 3,
+    "partial": 1,
+    "blocked": 7,
+    "approvedFacts": 90,
+    "rejectedFacts": 6,
+    "openConflicts": 1,
+    "pageCount": 206
+  },
+  "rows": [
+    {
+      "venueSlug": "bok-center",
+      "sourceIds": [
+        "bok-center-production-manual-undated"
+      ],
+      "sourceRevision": "Undated production manual",
+      "pageCount": 11,
+      "pageCountSource": "PDF_PAGE_TREE",
+      "approvedFacts": 9,
+      "rejectedFacts": 1,
+      "conflicts": 0,
+      "missingRequiredGeometry": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "nativeFloorBoundary",
+        "nativeRiggingCad"
+      ],
+      "modelReadiness": "BLOCKED",
+      "strongestApprovedFields": [
+        "lowSteelFt",
+        "centerhungBottomFt",
+        "centerhungWidthFt",
+        "centerhungDepthFt",
+        "endStageRiggingLb",
+        "centerStageRiggingLb"
+      ]
+    },
+    {
+      "venueSlug": "gainbridge-fieldhouse",
+      "sourceIds": [
+        "gainbridge-fieldhouse-tech-pack-2026"
+      ],
+      "sourceRevision": "Snapshot metadata: Updated 2026-01-09; PDF title text: Updated 23 August 2023",
+      "pageCount": 7,
+      "pageCountSource": "PDF_PAGE_TREE",
+      "approvedFacts": 5,
+      "rejectedFacts": 1,
+      "conflicts": 0,
+      "missingRequiredGeometry": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "nativeFloorBoundary",
+        "nativeRiggingCad"
+      ],
+      "modelReadiness": "BLOCKED",
+      "strongestApprovedFields": [
+        "roofHeightUpstageFt",
+        "roofHeightCenterFt",
+        "totalGridRiggingLb",
+        "centerhungBottomFt",
+        "dockCount"
+      ]
+    },
+    {
+      "venueSlug": "van-andel-arena",
+      "sourceIds": [
+        "van-andel-arena-source-2026"
+      ],
+      "sourceRevision": "01.01.2026",
+      "pageCount": 27,
+      "pageCountSource": "PDF_SECTION_MARKERS",
+      "approvedFacts": 11,
+      "rejectedFacts": 0,
+      "conflicts": 1,
+      "missingRequiredGeometry": [
+        "approvedLowSteelFt",
+        "nativeRiggingCad"
+      ],
+      "modelReadiness": "BLOCKED",
+      "strongestApprovedFields": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "highSteelFt",
+        "suspendedGridHeightFt",
+        "gridHeightFt",
+        "gridWidthFt"
+      ]
+    },
+    {
+      "venueSlug": "giant-center",
+      "sourceIds": [
+        "giant-center-source-pack"
+      ],
+      "sourceRevision": "Source packet registered without visible revision date",
+      "pageCount": 2,
+      "pageCountSource": "CONNECTOR_TEXT_SEGMENT_ESTIMATE",
+      "approvedFacts": 8,
+      "rejectedFacts": 0,
+      "conflicts": 0,
+      "missingRequiredGeometry": [
+        "centerhungOrObstructionProfile",
+        "nativeRiggingCad"
+      ],
+      "modelReadiness": "PARTIAL",
+      "strongestApprovedFields": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "lowSteelFt",
+        "pointLoadLb",
+        "houseStageWidthFt",
+        "houseStageDepthFt"
+      ]
+    },
+    {
+      "venueSlug": "spectrum-center",
+      "sourceIds": [
+        "spectrum-center-production-guide-2025"
+      ],
+      "sourceRevision": "2025 Production Guide",
+      "pageCount": 28,
+      "pageCountSource": "TABLE_OF_CONTENTS",
+      "approvedFacts": 11,
+      "rejectedFacts": 0,
+      "conflicts": 0,
+      "missingRequiredGeometry": [
+        "nativeCad",
+        "nativeRiggingCad"
+      ],
+      "modelReadiness": "READY",
+      "strongestApprovedFields": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "lowSteelFt",
+        "highSteelFt",
+        "endStageRiggingLb",
+        "pointLoadLb"
+      ]
+    },
+    {
+      "venueSlug": "target-center",
+      "sourceIds": [
+        "target-center-source-pack"
+      ],
+      "sourceRevision": "2023 Technical Packet",
+      "pageCount": 8,
+      "pageCountSource": "PDF_PAGE_TREE",
+      "approvedFacts": 7,
+      "rejectedFacts": 1,
+      "conflicts": 0,
+      "missingRequiredGeometry": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "nativeFloorBoundary",
+        "centerhungBottomFt",
+        "nativeRiggingCad"
+      ],
+      "modelReadiness": "BLOCKED",
+      "strongestApprovedFields": [
+        "lowSteelFt",
+        "endStageRiggingLb",
+        "dockCount",
+        "houseStageMinHeightFt",
+        "houseStageMaxHeightFt",
+        "centerhungHeightFt"
+      ]
+    },
+    {
+      "venueSlug": "t-mobile-center",
+      "sourceIds": [
+        "t-mobile-center-source-pack"
+      ],
+      "sourceRevision": "Technical information packet; visible issue date not found",
+      "pageCount": 11,
+      "pageCountSource": "PDF_PAGE_TREE",
+      "approvedFacts": 10,
+      "rejectedFacts": 0,
+      "conflicts": 0,
+      "missingRequiredGeometry": [
+        "currentIssueDate",
+        "nativeRiggingCad"
+      ],
+      "modelReadiness": "READY",
+      "strongestApprovedFields": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "lowSteelFt",
+        "endStageRiggingLb",
+        "centerStageRiggingLb",
+        "totalGridRiggingLb"
+      ]
+    },
+    {
+      "venueSlug": "desert-diamond-arena",
+      "sourceIds": [
+        "desert-diamond-arena-tech-pack-2023"
+      ],
+      "sourceRevision": "May 2023",
+      "pageCount": 17,
+      "pageCountSource": "TABLE_OF_CONTENTS",
+      "approvedFacts": 8,
+      "rejectedFacts": 1,
+      "conflicts": 0,
+      "missingRequiredGeometry": [
+        "currentRevision",
+        "floorWidthFt",
+        "floorLengthFt",
+        "nativeFloorBoundary",
+        "nativeRiggingCad"
+      ],
+      "modelReadiness": "BLOCKED",
+      "strongestApprovedFields": [
+        "lowSteelFt",
+        "endStageRiggingLb",
+        "centerStageRiggingLb",
+        "centerhungBottomFt",
+        "dockCount",
+        "pushDistanceFt"
+      ]
+    },
+    {
+      "venueSlug": "red-rocks",
+      "sourceIds": [
+        "red-rocks-amphitheatre-guide-2017"
+      ],
+      "sourceRevision": "Rev. 3/15/2017",
+      "pageCount": 37,
+      "pageCountSource": "TABLE_OF_CONTENTS",
+      "approvedFacts": 2,
+      "rejectedFacts": 1,
+      "conflicts": 0,
+      "missingRequiredGeometry": [
+        "currentRevision",
+        "venueNativeStageBoundary",
+        "riggingOrOverheadLimits",
+        "accessPathDimensions"
+      ],
+      "modelReadiness": "BLOCKED",
+      "strongestApprovedFields": [
+        "venueType",
+        "loadingInformation"
+      ]
+    },
+    {
+      "venueSlug": "heb-center",
+      "sourceIds": [
+        "heb-center-technical-manual-2024"
+      ],
+      "sourceRevision": "2024 Technical Manual",
+      "pageCount": 24,
+      "pageCountSource": "CONNECTOR_TEXT_SEGMENT_ESTIMATE",
+      "approvedFacts": 9,
+      "rejectedFacts": 0,
+      "conflicts": 0,
+      "missingRequiredGeometry": [
+        "nativeCad",
+        "nativeRiggingCad"
+      ],
+      "modelReadiness": "READY",
+      "strongestApprovedFields": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "lowSteelFt",
+        "endStageRiggingLb",
+        "centerStageRiggingLb",
+        "centerhungRetraction"
+      ]
+    },
+    {
+      "venueSlug": "dickies-arena",
+      "sourceIds": [
+        "dickies-arena-tech-pack-2026"
+      ],
+      "sourceRevision": "Revised 2026",
+      "pageCount": 34,
+      "pageCountSource": "CONNECTOR_TEXT_SEGMENT_ESTIMATE",
+      "approvedFacts": 10,
+      "rejectedFacts": 1,
+      "conflicts": 0,
+      "missingRequiredGeometry": [
+        "floorWidthFt",
+        "floorLengthFt",
+        "nativeFloorBoundary",
+        "lowSteelFt"
+      ],
+      "modelReadiness": "BLOCKED",
+      "strongestApprovedFields": [
+        "buildingLengthFt",
+        "buildingWidthFt",
+        "dockCount",
+        "pushDistanceFt",
+        "stageEndOpeningWidthFt",
+        "stageEndOpeningHeightFt"
+      ]
+    }
+  ]
+}

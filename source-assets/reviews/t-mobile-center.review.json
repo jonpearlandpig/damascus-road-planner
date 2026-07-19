@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "t-mobile-center",
+  "sourceIdsReviewed": ["t-mobile-center-source-pack"],
+  "reviewDate": "2026-07-18",
+  "sourceRevision": "Technical information packet; visible issue date not found",
+  "pageCount": 11,
+  "pageCountSource": "PDF_PAGE_TREE",
+  "documentSections": {
+    "coverTitlePage": "FOUND",
+    "revisionOrIssueDate": "MISSING",
+    "tableOfContents": "MISSING",
+    "floorPlans": "FOUND",
+    "riggingInformation": "FOUND",
+    "roofOrSteelDiagrams": "FOUND",
+    "seatingConfigurations": "FOUND",
+    "loadingInformation": "FOUND",
+    "stageOrEndStageInformation": "FOUND",
+    "productionRestrictions": "FOUND"
+  },
+  "extractedFacts": [
+    {
+      "id": "tmobile-floor-width-85",
+      "field": "floorWidthFt",
+      "label": "Concert floor width",
+      "category": "floor",
+      "originalValue": "85",
+      "originalUnit": "ft",
+      "normalizedValue": 85,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "t-mobile-center-source-pack",
+          "page": 2,
+          "section": "Floor Size",
+          "excerpt": "Concert dimensions are stated as 85 wide x 235 long.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "tmobile-floor-length-235",
+      "field": "floorLengthFt",
+      "label": "Concert floor length",
+      "category": "floor",
+      "originalValue": "235",
+      "originalUnit": "ft",
+      "normalizedValue": 235,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "t-mobile-center-source-pack",
+          "page": 2,
+          "section": "Floor Size",
+          "excerpt": "Concert dimensions are stated as 85 wide x 235 long.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "tmobile-low-steel-98",
+      "field": "lowSteelFt",
+      "label": "Main steel height",
+      "category": "roofRigging",
+      "originalValue": "98",
+      "originalUnit": "ft",
+      "normalizedValue": 98,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "t-mobile-center-source-pack",
+          "page": 2,
+          "section": "Rigging",
+          "excerpt": "Main steel is described as approximately 98 ft to steel.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "tmobile-end-stage-rigging-150000",
+      "field": "endStageRiggingLb",
+      "label": "End-stage load capacity",
+      "category": "roofRigging",
+      "originalValue": "150000",
+      "originalUnit": "lb",
+      "normalizedValue": 150000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "t-mobile-center-source-pack",
+          "page": 2,
+          "section": "Load Capacities",
+          "excerpt": "Load capacities list End 150k, Center 124k, and Total Grid 450k.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "tmobile-center-stage-rigging-124000",
+      "field": "centerStageRiggingLb",
+      "label": "Center-stage load capacity",
+      "category": "roofRigging",
+      "originalValue": "124000",
+      "originalUnit": "lb",
+      "normalizedValue": 124000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "t-mobile-center-source-pack",
+          "page": 2,
+          "section": "Load Capacities",
+          "excerpt": "Load capacities list End 150k, Center 124k, and Total Grid 450k.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "tmobile-total-grid-rigging-450000",
+      "field": "totalGridRiggingLb",
+      "label": "Total grid load capacity",
+      "category": "roofRigging",
+      "originalValue": "450000",
+      "originalUnit": "lb",
+      "normalizedValue": 450000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "t-mobile-center-source-pack",
+          "page": 2,
+          "section": "Load Capacities",
+          "excerpt": "Load capacities list End 150k, Center 124k, and Total Grid 450k.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "tmobile-scoreboard-bottom-76",
+      "field": "centerhungBottomFt",
+      "label": "Scoreboard trim",
+      "category": "overheadObstruction",
+      "originalValue": "76",
+      "originalUnit": "ft",
+      "normalizedValue": 76,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "t-mobile-center-source-pack",
+          "page": 2,
+          "section": "Scoreboard",
+          "excerpt": "Scoreboard section lists trim at 76 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "tmobile-scoreboard-top-diameter-32",
+      "field": "centerhungDiameterFt",
+      "label": "Scoreboard top diameter",
+      "category": "overheadObstruction",
+      "originalValue": "32",
+      "originalUnit": "ft",
+      "normalizedValue": 32,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "t-mobile-center-source-pack",
+          "page": 2,
+          "section": "Scoreboard",
+          "excerpt": "Scoreboard diameter is listed as 32 top and 24 bottom.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "tmobile-docks-6",
+      "field": "dockCount",
+      "label": "Dock levelers",
+      "category": "loading",
+      "originalValue": "6",
+      "originalUnit": "count",
+      "normalizedValue": 6,
+      "normalizedUnit": "count",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 count",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "t-mobile-center-source-pack",
+          "page": 2,
+          "section": "Loading",
+          "excerpt": "Loading section lists dock levelers 6 and an elephant door/ramp.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "tmobile-push-distance-200",
+      "field": "pushDistanceFt",
+      "label": "Push to end stage",
+      "category": "loading",
+      "originalValue": "200",
+      "originalUnit": "ft",
+      "normalizedValue": 200,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "t-mobile-center-source-pack",
+          "page": 2,
+          "section": "Loading",
+          "excerpt": "Push to end stage is listed as 200 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    }
+  ],
+  "approvedFactIds": [
+    "tmobile-floor-width-85",
+    "tmobile-floor-length-235",
+    "tmobile-low-steel-98",
+    "tmobile-end-stage-rigging-150000",
+    "tmobile-center-stage-rigging-124000",
+    "tmobile-total-grid-rigging-450000",
+    "tmobile-scoreboard-bottom-76",
+    "tmobile-scoreboard-top-diameter-32",
+    "tmobile-docks-6",
+    "tmobile-push-distance-200"
+  ],
+  "conflicts": [],
+  "rejectedInterpretations": [],
+  "missingRequiredGeometry": ["currentIssueDate", "nativeRiggingCad"],
+  "modelReadiness": "READY",
+  "reviewerNotes": [
+    "The checked-in seed was previously estimate-only; these facts are now approved as reference measurements from the registered packet.",
+    "Because a visible issue date was not found, facts are REFERENCE rather than VERIFIED."
+  ],
+  "validationStatus": "PASS"
+}

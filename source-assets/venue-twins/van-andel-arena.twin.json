@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "van-andel-arena",
+  "readiness": "BLOCKED",
+  "coordinateSystem": {
+    "origin": "REFERENCE_ORIGIN",
+    "originMethod": "DERIVED_FLOOR_CENTER",
+    "originLabel": "Derived event-floor center",
+    "originPoint": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "xAxis": "STAGE_LEFT_TO_STAGE_RIGHT",
+    "yAxis": "ELEVATION",
+    "zAxis": "UPSTAGE_TO_DOWNSTAGE",
+    "unit": "ft",
+    "evidenceMeasurementIds": [
+      "vaa-floor-width-85",
+      "vaa-floor-length-200"
+    ],
+    "warning": "Origin is the derived center of the approved event-floor rectangle; it is not a verified center-court point."
+  },
+  "floor": {
+    "boundary": {
+      "id": "van-andel-arena-event-floor-boundary",
+      "points": [
+        {
+          "xFt": -42.5,
+          "zFt": -100
+        },
+        {
+          "xFt": 42.5,
+          "zFt": -100
+        },
+        {
+          "xFt": 42.5,
+          "zFt": 100
+        },
+        {
+          "xFt": -42.5,
+          "zFt": 100
+        }
+      ],
+      "derivationRule": "Derived rectangular event-floor boundary from approved floor width and length.",
+      "exactness": "REFERENCE_ONLY",
+      "renderState": "REFERENCE_ONLY",
+      "approvedMeasurementIds": [
+        "vaa-floor-width-85",
+        "vaa-floor-length-200"
+      ],
+      "participatesInFitCheck": false
+    },
+    "width": {
+      "value": 85,
+      "originalValue": "85",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "vaa-floor-width-85",
+      "sourceId": "van-andel-arena-source-2026",
+      "evidencePage": 7,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement vaa-floor-width-85",
+      "participatesInFitCheck": false,
+      "evidence": [
+        {
+          "measurementId": "vaa-floor-width-85",
+          "sourceId": "van-andel-arena-source-2026",
+          "sourceTitle": "van_andel_arena_grand_rapids_mi.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1q3kUnh8U7FLlraOEv_Dp5YF8syccTsCV",
+          "page": 7,
+          "section": "Arena Floor/Staging",
+          "excerpt": "Arena floor dimensions are stated as 200 x 85 in hockey configuration.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "length": {
+      "value": 200,
+      "originalValue": "200",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "vaa-floor-length-200",
+      "sourceId": "van-andel-arena-source-2026",
+      "evidencePage": 7,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement vaa-floor-length-200",
+      "participatesInFitCheck": false,
+      "evidence": [
+        {
+          "measurementId": "vaa-floor-length-200",
+          "sourceId": "van-andel-arena-source-2026",
+          "sourceTitle": "van_andel_arena_grand_rapids_mi.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1q3kUnh8U7FLlraOEv_Dp5YF8syccTsCV",
+          "page": 7,
+          "section": "Arena Floor/Staging",
+          "excerpt": "Arena floor dimensions are stated as 200 x 85 in hockey configuration.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "center": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "orientationDeg": 0,
+    "renderState": "REFERENCE_ONLY"
+  },
+  "rigging": {
+    "gridBoundary": {
+      "id": "van-andel-arena-rigging-grid-boundary",
+      "points": [
+        {
+          "xFt": -49.5,
+          "zFt": -26
+        },
+        {
+          "xFt": 49.5,
+          "zFt": -26
+        },
+        {
+          "xFt": 49.5,
+          "zFt": 26
+        },
+        {
+          "xFt": -49.5,
+          "zFt": 26
+        }
+      ],
+      "derivationRule": "Derived rigging-grid rectangle from approved grid width and depth.",
+      "exactness": "REFERENCE_ONLY",
+      "renderState": "REFERENCE_ONLY",
+      "approvedMeasurementIds": [
+        "vaa-grid-width-99",
+        "vaa-grid-depth-52"
+      ],
+      "participatesInFitCheck": false
+    },
+    "highSteel": {
+      "value": 98,
+      "originalValue": "98",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "vaa-high-steel-98",
+      "sourceId": "van-andel-arena-source-2026",
+      "evidencePage": 8,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement vaa-high-steel-98",
+      "participatesInFitCheck": false,
+      "evidence": [
+        {
+          "measurementId": "vaa-high-steel-98",
+          "sourceId": "van-andel-arena-source-2026",
+          "sourceTitle": "van_andel_arena_grand_rapids_mi.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1q3kUnh8U7FLlraOEv_Dp5YF8syccTsCV",
+          "page": 8,
+          "section": "Rigging",
+          "excerpt": "Rigging page states high steel height as 98 ft.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "noRigZones": [],
+    "renderState": "REFERENCE_ONLY"
+  },
+  "obstructions": {
+    "centerHung": {
+      "id": "van-andel-arena-centerhung",
+      "center": {
+        "xFt": 0,
+        "yFt": 65,
+        "zFt": 0
+      },
+      "dimensions": {},
+      "lowPoint": {
+        "value": 65,
+        "originalValue": "65",
+        "originalUnit": "ft",
+        "normalizedUnit": "ft",
+        "measurementId": "vaa-scoreboard-bottom-65",
+        "sourceId": "van-andel-arena-source-2026",
+        "evidencePage": 10,
+        "status": "REFERENCE",
+        "confidence": "HIGH",
+        "exactness": "EXACT",
+        "derivationRule": "approved measurement vaa-scoreboard-bottom-65",
+        "participatesInFitCheck": false,
+        "evidence": [
+          {
+            "measurementId": "vaa-scoreboard-bottom-65",
+            "sourceId": "van-andel-arena-source-2026",
+            "sourceTitle": "van_andel_arena_grand_rapids_mi.pdf",
+            "driveUrl": "https://drive.google.com/file/d/1q3kUnh8U7FLlraOEv_Dp5YF8syccTsCV",
+            "page": 10,
+            "section": "Capacities and Dimensions",
+            "excerpt": "Floor to Scoreboard at highest trim is stated as 65 ft.",
+            "reviewState": "APPROVED"
+          }
+        ]
+      },
+      "renderState": "REFERENCE_ONLY",
+      "exactness": "REFERENCE_ONLY",
+      "approvedMeasurementIds": [
+        "vaa-scoreboard-bottom-65"
+      ],
+      "participatesInFitCheck": false,
+      "derivationRule": "Partial center-hung source fact; unsupported axes are not fabricated."
+    },
+    "scoreboardLowPoint": {
+      "value": 65,
+      "originalValue": "65",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "vaa-scoreboard-bottom-65",
+      "sourceId": "van-andel-arena-source-2026",
+      "evidencePage": 10,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement vaa-scoreboard-bottom-65",
+      "participatesInFitCheck": false,
+      "evidence": [
+        {
+          "measurementId": "vaa-scoreboard-bottom-65",
+          "sourceId": "van-andel-arena-source-2026",
+          "sourceTitle": "van_andel_arena_grand_rapids_mi.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1q3kUnh8U7FLlraOEv_Dp5YF8syccTsCV",
+          "page": 10,
+          "section": "Capacities and Dimensions",
+          "excerpt": "Floor to Scoreboard at highest trim is stated as 65 ft.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "fixedObstructions": [],
+    "renderState": "REFERENCE_ONLY"
+  },
+  "stageReference": {
+    "endStageDirection": "UPSTAGE",
+    "stageCenterline": {
+      "id": "van-andel-arena-stage-centerline",
+      "start": {
+        "xFt": 0,
+        "zFt": -100
+      },
+      "end": {
+        "xFt": 0,
+        "zFt": 100
+      },
+      "derivationRule": "Derived from approved floor boundary dimensions and planner coordinate convention.",
+      "exactness": "DERIVED",
+      "approvedMeasurementIds": [
+        "vaa-floor-width-85",
+        "vaa-floor-length-200"
+      ],
+      "participatesInFitCheck": false
+    },
+    "maximumStageBounds": {
+      "id": "van-andel-arena-maximum-house-stage",
+      "points": [
+        {
+          "xFt": -30,
+          "zFt": -20
+        },
+        {
+          "xFt": 30,
+          "zFt": -20
+        },
+        {
+          "xFt": 30,
+          "zFt": 20
+        },
+        {
+          "xFt": -30,
+          "zFt": 20
+        }
+      ],
+      "derivationRule": "Derived maximum house-stage rectangle from approved house-stage width and depth.",
+      "exactness": "REFERENCE_ONLY",
+      "renderState": "REFERENCE_ONLY",
+      "approvedMeasurementIds": [
+        "vaa-house-stage-width-60",
+        "vaa-house-stage-depth-40"
+      ],
+      "participatesInFitCheck": false
+    },
+    "renderState": "REFERENCE_ONLY",
+    "warning": "Stage direction follows the planner coordinate convention; no venue-specific stage-end orientation was approved."
+  },
+  "loading": {
+    "dockDirection": "UNKNOWN",
+    "renderState": "REFERENCE_ONLY",
+    "warning": "Loading facts are approved, but no source-backed dock coordinate or direction was available for native placement."
+  },
+  "evidence": {
+    "approvedMeasurementIds": [
+      "vaa-floor-width-85",
+      "vaa-floor-length-200",
+      "vaa-high-steel-98",
+      "vaa-grid-width-99",
+      "vaa-grid-depth-52",
+      "vaa-scoreboard-bottom-65",
+      "vaa-house-stage-width-60",
+      "vaa-house-stage-depth-40"
+    ],
+    "derivedGeometryIds": [
+      "van-andel-arena-event-floor-boundary",
+      "van-andel-arena-floor-center",
+      "van-andel-arena-rigging-grid-boundary",
+      "van-andel-arena-stage-centerline",
+      "van-andel-arena-maximum-house-stage"
+    ],
+    "approximateGeometryIds": [],
+    "sourceIds": [
+      "van-andel-arena-source-2026"
+    ],
+    "sourceTitles": [
+      "van_andel_arena_grand_rapids_mi.pdf"
+    ]
+  },
+  "diagnostics": {
+    "approvedMeasurementCount": 8,
+    "derivedGeometryCount": 5,
+    "approximateGeometryCount": 0,
+    "conflictCount": 1,
+    "missingCriticalFields": [
+      "approvedLowSteelFt",
+      "nativeRiggingCad"
+    ],
+    "blockers": [
+      "Missing approvedLowSteelFt",
+      "Missing nativeRiggingCad",
+      "Low-steel height is stated as 65 ft 8 in on the rigging page and 63 ft on the dimensions page."
+    ],
+    "warnings": [
+      "Origin is the derived center of the approved event-floor rectangle; it is not a verified center-court point.",
+      "Blocked review records do not contribute controlling fit geometry."
+    ],
+    "renderingStatus": "PARTIAL_RENDER"
+  },
+  "drtFit": {
+    "status": "BLOCKED",
+    "checkedFactIds": [
+      "vaa-floor-width-85",
+      "vaa-floor-length-200",
+      "vaa-scoreboard-bottom-65"
+    ],
+    "blockers": [
+      "Open source conflict prevents venue-native fit approval.",
+      "Venue source review is blocked."
+    ],
+    "warnings": [
+      "Only 3.5 ft remains per side against the approved floor width.",
+      "Native CAD/rigging files remain requested before final operations."
+    ]
+  },
+  "generation": {
+    "generatorSchemaVersion": 1,
+    "sourceReviewDate": "2026-07-18",
+    "sourceRevision": "01.01.2026",
+    "reviewChecksum": "892c2c0593017e26"
+  }
+}

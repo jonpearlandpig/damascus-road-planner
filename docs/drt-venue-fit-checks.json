@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-18T00:00:00.000Z",
+  "generatedFrom": [
+    "source-assets/reviews/*.review.json",
+    "src/data/helpers.ts",
+    "src/geometry/drt.ts"
+  ],
+  "package": {
+    "id": "drt-current-working",
+    "revision": "AKB working geometry — 2026-07-17",
+    "deckWidthFt": 78,
+    "deckDepthFt": 42,
+    "centerThrustLengthFt": 42,
+    "sideThrustLengthFt": 32,
+    "bStageDiameterFt": 26,
+    "bStageLocalZFt": 76
+  },
+  "summary": {
+    "venuesChecked": 11,
+    "pass": 0,
+    "passWithWarnings": 4,
+    "blocked": 7,
+    "unresolved": 0
+  },
+  "checks": [
+    {
+      "venueSlug": "bok-center",
+      "status": "BLOCKED",
+      "modelReadiness": "BLOCKED",
+      "requiredWidthFt": 78,
+      "requiredLengthFt": 110,
+      "floorWidthFt": null,
+      "floorLengthFt": null,
+      "minSideClearanceFt": null,
+      "upstageClearanceFt": null,
+      "downstageClearanceFt": null,
+      "overheadClearanceFt": 49.17,
+      "checkedFactIds": [
+        "bok-low-steel-90",
+        "bok-scoreboard-bottom-75"
+      ],
+      "warnings": [
+        "Native CAD/rigging files remain requested before final operations.",
+        "Source is stale or undated; keep final engineering confirmation open."
+      ],
+      "blockers": [
+        "Venue source review is blocked.",
+        "Approved floor width and length are required."
+      ]
+    },
+    {
+      "venueSlug": "gainbridge-fieldhouse",
+      "status": "BLOCKED",
+      "modelReadiness": "BLOCKED",
+      "requiredWidthFt": 78,
+      "requiredLengthFt": 110,
+      "floorWidthFt": null,
+      "floorLengthFt": null,
+      "minSideClearanceFt": null,
+      "upstageClearanceFt": null,
+      "downstageClearanceFt": null,
+      "overheadClearanceFt": 69.17,
+      "checkedFactIds": [
+        "gainbridge-scoreboard-bottom-110"
+      ],
+      "warnings": [
+        "Native CAD/rigging files remain requested before final operations.",
+        "Source is stale or undated; keep final engineering confirmation open."
+      ],
+      "blockers": [
+        "Venue source review is blocked.",
+        "Approved floor width and length are required."
+      ]
+    },
+    {
+      "venueSlug": "van-andel-arena",
+      "status": "BLOCKED",
+      "modelReadiness": "BLOCKED",
+      "requiredWidthFt": 78,
+      "requiredLengthFt": 110,
+      "floorWidthFt": 85,
+      "floorLengthFt": 200,
+      "minSideClearanceFt": 3.5,
+      "upstageClearanceFt": 3,
+      "downstageClearanceFt": 87,
+      "overheadClearanceFt": 24.17,
+      "checkedFactIds": [
+        "vaa-floor-width-85",
+        "vaa-floor-length-200",
+        "vaa-scoreboard-bottom-65"
+      ],
+      "warnings": [
+        "Only 3.5 ft remains per side against the approved floor width.",
+        "Native CAD/rigging files remain requested before final operations."
+      ],
+      "blockers": [
+        "Open source conflict prevents venue-native fit approval.",
+        "Venue source review is blocked."
+      ]
+    },
+    {
+      "venueSlug": "giant-center",
+      "status": "PASS_WITH_WARNINGS",
+      "modelReadiness": "PARTIAL",
+      "requiredWidthFt": 78,
+      "requiredLengthFt": 110,
+      "floorWidthFt": 85,
+      "floorLengthFt": 200,
+      "minSideClearanceFt": 3.5,
+      "upstageClearanceFt": 3,
+      "downstageClearanceFt": 87,
+      "overheadClearanceFt": 47.17,
+      "checkedFactIds": [
+        "giant-floor-width-85",
+        "giant-floor-length-200",
+        "giant-low-steel-88"
+      ],
+      "warnings": [
+        "Only 3.5 ft remains per side against the approved floor width.",
+        "Native CAD/rigging files remain requested before final operations."
+      ],
+      "blockers": []
+    },
+    {
+      "venueSlug": "spectrum-center",
+      "status": "PASS_WITH_WARNINGS",
+      "modelReadiness": "READY",
+      "requiredWidthFt": 78,
+      "requiredLengthFt": 110,
+      "floorWidthFt": 85,
+      "floorLengthFt": 200,
+      "minSideClearanceFt": 3.5,
+      "upstageClearanceFt": 3,
+      "downstageClearanceFt": 87,
+      "overheadClearanceFt": 66.17,
+      "checkedFactIds": [
+        "spectrum-floor-width-85",
+        "spectrum-floor-length-200",
+        "spectrum-low-steel-107"
+      ],
+      "warnings": [
+        "Only 3.5 ft remains per side against the approved floor width.",
+        "Native CAD/rigging files remain requested before final operations."
+      ],
+      "blockers": []
+    },
+    {
+      "venueSlug": "target-center",
+      "status": "BLOCKED",
+      "modelReadiness": "BLOCKED",
+      "requiredWidthFt": 78,
+      "requiredLengthFt": 110,
+      "floorWidthFt": null,
+      "floorLengthFt": null,
+      "minSideClearanceFt": null,
+      "upstageClearanceFt": null,
+      "downstageClearanceFt": null,
+      "overheadClearanceFt": 59.17,
+      "checkedFactIds": [
+        "target-open-steel-100"
+      ],
+      "warnings": [
+        "Native CAD/rigging files remain requested before final operations.",
+        "Source is stale or undated; keep final engineering confirmation open."
+      ],
+      "blockers": [
+        "Venue source review is blocked.",
+        "Approved floor width and length are required."
+      ]
+    },
+    {
+      "venueSlug": "t-mobile-center",
+      "status": "PASS_WITH_WARNINGS",
+      "modelReadiness": "READY",
+      "requiredWidthFt": 78,
+      "requiredLengthFt": 110,
+      "floorWidthFt": 85,
+      "floorLengthFt": 235,
+      "minSideClearanceFt": 3.5,
+      "upstageClearanceFt": 20.5,
+      "downstageClearanceFt": 104.5,
+      "overheadClearanceFt": 57.17,
+      "checkedFactIds": [
+        "tmobile-floor-width-85",
+        "tmobile-floor-length-235",
+        "tmobile-low-steel-98",
+        "tmobile-scoreboard-bottom-76"
+      ],
+      "warnings": [
+        "Only 3.5 ft remains per side against the approved floor width.",
+        "Native CAD/rigging files remain requested before final operations."
+      ],
+      "blockers": []
+    },
+    {
+      "venueSlug": "desert-diamond-arena",
+      "status": "BLOCKED",
+      "modelReadiness": "BLOCKED",
+      "requiredWidthFt": 78,
+      "requiredLengthFt": 110,
+      "floorWidthFt": null,
+      "floorLengthFt": null,
+      "minSideClearanceFt": null,
+      "upstageClearanceFt": null,
+      "downstageClearanceFt": null,
+      "overheadClearanceFt": 59.17,
+      "checkedFactIds": [
+        "dda-low-steel-100",
+        "dda-scoreboard-bottom-58"
+      ],
+      "warnings": [
+        "Native CAD/rigging files remain requested before final operations.",
+        "Source is stale or undated; keep final engineering confirmation open."
+      ],
+      "blockers": [
+        "Venue source review is blocked.",
+        "Approved floor width and length are required."
+      ]
+    },
+    {
+      "venueSlug": "red-rocks",
+      "status": "BLOCKED",
+      "modelReadiness": "BLOCKED",
+      "requiredWidthFt": 78,
+      "requiredLengthFt": 110,
+      "floorWidthFt": null,
+      "floorLengthFt": null,
+      "minSideClearanceFt": null,
+      "upstageClearanceFt": null,
+      "downstageClearanceFt": null,
+      "overheadClearanceFt": null,
+      "checkedFactIds": [],
+      "warnings": [
+        "No approved low-steel, centerhung trim, or retraction clearance fact is available.",
+        "Source is stale or undated; keep final engineering confirmation open."
+      ],
+      "blockers": [
+        "Venue source review is blocked.",
+        "Approved floor width and length are required.",
+        "Venue requires an amphitheatre-native stage boundary instead of arena defaults."
+      ]
+    },
+    {
+      "venueSlug": "heb-center",
+      "status": "PASS_WITH_WARNINGS",
+      "modelReadiness": "READY",
+      "requiredWidthFt": 78,
+      "requiredLengthFt": 110,
+      "floorWidthFt": 85,
+      "floorLengthFt": 250,
+      "minSideClearanceFt": 3.5,
+      "upstageClearanceFt": 28,
+      "downstageClearanceFt": 112,
+      "overheadClearanceFt": 9.17,
+      "checkedFactIds": [
+        "heb-end-stage-floor-width-85",
+        "heb-end-stage-floor-length-250",
+        "heb-low-steel-50",
+        "heb-scoreboard-clearance-retracts"
+      ],
+      "warnings": [
+        "Only 3.5 ft remains per side against the approved floor width.",
+        "Native CAD/rigging files remain requested before final operations."
+      ],
+      "blockers": []
+    },
+    {
+      "venueSlug": "dickies-arena",
+      "status": "BLOCKED",
+      "modelReadiness": "BLOCKED",
+      "requiredWidthFt": 78,
+      "requiredLengthFt": 110,
+      "floorWidthFt": null,
+      "floorLengthFt": null,
+      "minSideClearanceFt": null,
+      "upstageClearanceFt": null,
+      "downstageClearanceFt": null,
+      "overheadClearanceFt": 39.17,
+      "checkedFactIds": [
+        "dickies-scoreboard-concert-trim-80"
+      ],
+      "warnings": [],
+      "blockers": [
+        "Venue source review is blocked.",
+        "Approved floor width and length are required."
+      ]
+    }
+  ]
+}

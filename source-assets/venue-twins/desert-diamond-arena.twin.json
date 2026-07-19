@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "desert-diamond-arena",
+  "readiness": "BLOCKED",
+  "coordinateSystem": {
+    "origin": "REFERENCE_ORIGIN",
+    "originMethod": "REFERENCE_ORIGIN_WITH_WARNING",
+    "originLabel": "Reference origin only",
+    "originPoint": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "xAxis": "STAGE_LEFT_TO_STAGE_RIGHT",
+    "yAxis": "ELEVATION",
+    "zAxis": "UPSTAGE_TO_DOWNSTAGE",
+    "unit": "ft",
+    "evidenceMeasurementIds": [],
+    "warning": "No approved venue-native origin exists; reference origin is shown only as a planning warning."
+  },
+  "rigging": {
+    "lowSteel": {
+      "value": 100,
+      "originalValue": "100",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "dda-low-steel-100",
+      "sourceId": "desert-diamond-arena-tech-pack-2023",
+      "evidencePage": 5,
+      "status": "REFERENCE",
+      "confidence": "MEDIUM",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement dda-low-steel-100",
+      "participatesInFitCheck": false,
+      "evidence": [
+        {
+          "measurementId": "dda-low-steel-100",
+          "sourceId": "desert-diamond-arena-tech-pack-2023",
+          "sourceTitle": "desert_diamond_arena_glendale_az.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1enGTWJxTDr2xoZbsOK-APPpDLG8ecPDj",
+          "page": 5,
+          "section": "Venue Info",
+          "excerpt": "Rigging lists 100 ft floor to low steel and no high-steel hangs.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "noRigZones": [],
+    "renderState": "REFERENCE_ONLY"
+  },
+  "obstructions": {
+    "centerHung": {
+      "id": "desert-diamond-arena-centerhung",
+      "center": {
+        "xFt": 0,
+        "yFt": 58,
+        "zFt": 0
+      },
+      "dimensions": {},
+      "lowPoint": {
+        "value": 58,
+        "originalValue": "58",
+        "originalUnit": "ft",
+        "normalizedUnit": "ft",
+        "measurementId": "dda-scoreboard-bottom-58",
+        "sourceId": "desert-diamond-arena-tech-pack-2023",
+        "evidencePage": 6,
+        "status": "REFERENCE",
+        "confidence": "MEDIUM",
+        "exactness": "EXACT",
+        "derivationRule": "approved measurement dda-scoreboard-bottom-58",
+        "participatesInFitCheck": false,
+        "evidence": [
+          {
+            "measurementId": "dda-scoreboard-bottom-58",
+            "sourceId": "desert-diamond-arena-tech-pack-2023",
+            "sourceTitle": "desert_diamond_arena_glendale_az.pdf",
+            "driveUrl": "https://drive.google.com/file/d/1enGTWJxTDr2xoZbsOK-APPpDLG8ecPDj",
+            "page": 6,
+            "section": "Arena Specs",
+            "excerpt": "Centerhung trim is 58 ft to bottom at maximum trim.",
+            "reviewState": "APPROVED"
+          }
+        ]
+      },
+      "renderState": "REFERENCE_ONLY",
+      "exactness": "REFERENCE_ONLY",
+      "approvedMeasurementIds": [
+        "dda-scoreboard-bottom-58"
+      ],
+      "participatesInFitCheck": false,
+      "derivationRule": "Partial center-hung source fact; unsupported axes are not fabricated."
+    },
+    "scoreboardLowPoint": {
+      "value": 58,
+      "originalValue": "58",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "dda-scoreboard-bottom-58",
+      "sourceId": "desert-diamond-arena-tech-pack-2023",
+      "evidencePage": 6,
+      "status": "REFERENCE",
+      "confidence": "MEDIUM",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement dda-scoreboard-bottom-58",
+      "participatesInFitCheck": false,
+      "evidence": [
+        {
+          "measurementId": "dda-scoreboard-bottom-58",
+          "sourceId": "desert-diamond-arena-tech-pack-2023",
+          "sourceTitle": "desert_diamond_arena_glendale_az.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1enGTWJxTDr2xoZbsOK-APPpDLG8ecPDj",
+          "page": 6,
+          "section": "Arena Specs",
+          "excerpt": "Centerhung trim is 58 ft to bottom at maximum trim.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "fixedObstructions": [],
+    "renderState": "REFERENCE_ONLY"
+  },
+  "stageReference": {
+    "endStageDirection": "UNKNOWN",
+    "maximumStageBounds": {
+      "id": "desert-diamond-arena-maximum-house-stage",
+      "points": [
+        {
+          "xFt": -30,
+          "zFt": -24
+        },
+        {
+          "xFt": 30,
+          "zFt": -24
+        },
+        {
+          "xFt": 30,
+          "zFt": 24
+        },
+        {
+          "xFt": -30,
+          "zFt": 24
+        }
+      ],
+      "derivationRule": "Derived maximum house-stage rectangle from approved house-stage width and depth.",
+      "exactness": "REFERENCE_ONLY",
+      "renderState": "REFERENCE_ONLY",
+      "approvedMeasurementIds": [
+        "dda-house-stage-width-60",
+        "dda-house-stage-depth-48"
+      ],
+      "participatesInFitCheck": false
+    },
+    "renderState": "MISSING"
+  },
+  "loading": {
+    "dockDirection": "UNKNOWN",
+    "renderState": "REFERENCE_ONLY",
+    "warning": "Loading facts are approved, but no source-backed dock coordinate or direction was available for native placement."
+  },
+  "evidence": {
+    "approvedMeasurementIds": [
+      "dda-low-steel-100",
+      "dda-scoreboard-bottom-58",
+      "dda-house-stage-width-60",
+      "dda-house-stage-depth-48"
+    ],
+    "derivedGeometryIds": [
+      "desert-diamond-arena-maximum-house-stage"
+    ],
+    "approximateGeometryIds": [],
+    "sourceIds": [
+      "desert-diamond-arena-tech-pack-2023"
+    ],
+    "sourceTitles": [
+      "desert_diamond_arena_glendale_az.pdf"
+    ]
+  },
+  "diagnostics": {
+    "approvedMeasurementCount": 4,
+    "derivedGeometryCount": 1,
+    "approximateGeometryCount": 0,
+    "conflictCount": 0,
+    "missingCriticalFields": [
+      "currentRevision",
+      "floorWidthFt",
+      "floorLengthFt",
+      "nativeFloorBoundary",
+      "nativeRiggingCad"
+    ],
+    "blockers": [
+      "Missing currentRevision",
+      "Missing floorWidthFt",
+      "Missing floorLengthFt",
+      "Missing nativeFloorBoundary",
+      "Missing nativeRiggingCad"
+    ],
+    "warnings": [
+      "No approved venue-native origin exists; reference origin is shown only as a planning warning.",
+      "Blocked review records do not contribute controlling fit geometry."
+    ],
+    "renderingStatus": "BLOCKED_NO_SHELL"
+  },
+  "drtFit": {
+    "status": "BLOCKED",
+    "checkedFactIds": [
+      "dda-low-steel-100",
+      "dda-scoreboard-bottom-58"
+    ],
+    "blockers": [
+      "Venue source review is blocked.",
+      "Approved floor width and length are required."
+    ],
+    "warnings": [
+      "Native CAD/rigging files remain requested before final operations.",
+      "Source is stale or undated; keep final engineering confirmation open."
+    ]
+  },
+  "generation": {
+    "generatorSchemaVersion": 1,
+    "sourceReviewDate": "2026-07-18",
+    "sourceRevision": "May 2023",
+    "reviewChecksum": "b71a21e42963b3c1"
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "van-andel-arena",
+  "sourceIdsReviewed": ["van-andel-arena-source-2026"],
+  "reviewDate": "2026-07-18",
+  "sourceRevision": "01.01.2026",
+  "pageCount": 27,
+  "pageCountSource": "PDF_SECTION_MARKERS",
+  "documentSections": {
+    "coverTitlePage": "FOUND",
+    "revisionOrIssueDate": "FOUND",
+    "tableOfContents": "FOUND",
+    "floorPlans": "FOUND",
+    "riggingInformation": "FOUND",
+    "roofOrSteelDiagrams": "FOUND",
+    "seatingConfigurations": "FOUND",
+    "loadingInformation": "FOUND",
+    "stageOrEndStageInformation": "FOUND",
+    "productionRestrictions": "FOUND"
+  },
+  "extractedFacts": [
+    {
+      "id": "vaa-floor-width-85",
+      "field": "floorWidthFt",
+      "label": "Arena floor width",
+      "category": "floor",
+      "originalValue": "85",
+      "originalUnit": "ft",
+      "normalizedValue": 85,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 7,
+          "section": "Arena Floor/Staging",
+          "excerpt": "Arena floor dimensions are stated as 200 x 85 in hockey configuration.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "vaa-floor-length-200",
+      "field": "floorLengthFt",
+      "label": "Arena floor length",
+      "category": "floor",
+      "originalValue": "200",
+      "originalUnit": "ft",
+      "normalizedValue": 200,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 7,
+          "section": "Arena Floor/Staging",
+          "excerpt": "Arena floor dimensions are stated as 200 x 85 in hockey configuration.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "vaa-high-steel-98",
+      "field": "highSteelFt",
+      "label": "High steel height",
+      "category": "roofRigging",
+      "originalValue": "98",
+      "originalUnit": "ft",
+      "normalizedValue": 98,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 8,
+          "section": "Rigging",
+          "excerpt": "Rigging page states high steel height as 98 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "vaa-suspended-grid-height-84-58",
+      "field": "suspendedGridHeightFt",
+      "label": "Suspended grid height",
+      "category": "roofRigging",
+      "originalValue": "84 ft 7 in",
+      "originalUnit": "ft",
+      "normalizedValue": 84.58,
+      "normalizedUnit": "ft",
+      "conversionMethod": "feet-and-inches",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 8,
+          "section": "Rigging",
+          "excerpt": "Rigging page lists suspended grid height as 84 ft 7 in.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "vaa-grid-height-86",
+      "field": "gridHeightFt",
+      "label": "Dimensions-page floor-to-grid height",
+      "category": "roofRigging",
+      "originalValue": "86",
+      "originalUnit": "ft",
+      "normalizedValue": 86,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 10,
+          "section": "Capacities and Dimensions",
+          "excerpt": "Capacities page states floor to grid is 86 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "vaa-low-steel-rigging-page-65-67",
+      "field": "lowSteelFt",
+      "label": "Rigging-page low steel height",
+      "category": "roofRigging",
+      "originalValue": "65 ft 8 in",
+      "originalUnit": "ft",
+      "normalizedValue": 65.67,
+      "normalizedUnit": "ft",
+      "conversionMethod": "feet-and-inches",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "CONFLICT",
+      "measurementStatus": "CONFLICT",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 8,
+          "section": "Rigging",
+          "excerpt": "Rigging page states low steel height as 65 ft 8 in.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "vaa-low-steel-dimensions-page-63",
+      "field": "lowSteelFt",
+      "label": "Dimensions-page floor-to-low-steel height",
+      "category": "roofRigging",
+      "originalValue": "63",
+      "originalUnit": "ft",
+      "normalizedValue": 63,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "CONFLICT",
+      "measurementStatus": "CONFLICT",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 10,
+          "section": "Capacities and Dimensions",
+          "excerpt": "Dimensions page states floor to low steel is 63 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "vaa-grid-width-99",
+      "field": "gridWidthFt",
+      "label": "Total grid width",
+      "category": "roofRigging",
+      "originalValue": "99",
+      "originalUnit": "ft",
+      "normalizedValue": 99,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 10,
+          "section": "Capacities and Dimensions",
+          "excerpt": "Total grid size is stated as 52 deep x 99 wide.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "vaa-grid-depth-52",
+      "field": "gridDepthFt",
+      "label": "Total grid depth",
+      "category": "roofRigging",
+      "originalValue": "52",
+      "originalUnit": "ft",
+      "normalizedValue": 52,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 10,
+          "section": "Capacities and Dimensions",
+          "excerpt": "Total grid size is stated as 52 deep x 99 wide.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "vaa-scoreboard-bottom-65",
+      "field": "centerhungBottomFt",
+      "label": "Floor to scoreboard at highest trim",
+      "category": "overheadObstruction",
+      "originalValue": "65",
+      "originalUnit": "ft",
+      "normalizedValue": 65,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 10,
+          "section": "Capacities and Dimensions",
+          "excerpt": "Floor to Scoreboard at highest trim is stated as 65 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "vaa-docks-5",
+      "field": "dockCount",
+      "label": "Loading dock count",
+      "category": "loading",
+      "originalValue": "5",
+      "originalUnit": "count",
+      "normalizedValue": 5,
+      "normalizedUnit": "count",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 count",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 6,
+          "section": "Loading Dock",
+          "excerpt": "Loading section describes Docks 1 through 5.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "vaa-house-stage-width-60",
+      "field": "houseStageWidthFt",
+      "label": "StageRight maximum width",
+      "category": "stage",
+      "originalValue": "60",
+      "originalUnit": "ft",
+      "normalizedValue": 60,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 7,
+          "section": "Arena Floor/Staging",
+          "excerpt": "StageRight maximum stage is 60 wide x 40 deep x 6 high.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "vaa-house-stage-depth-40",
+      "field": "houseStageDepthFt",
+      "label": "StageRight maximum depth",
+      "category": "stage",
+      "originalValue": "40",
+      "originalUnit": "ft",
+      "normalizedValue": 40,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "van-andel-arena-source-2026",
+          "page": 7,
+          "section": "Arena Floor/Staging",
+          "excerpt": "StageRight maximum stage is 60 wide x 40 deep x 6 high.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    }
+  ],
+  "approvedFactIds": [
+    "vaa-floor-width-85",
+    "vaa-floor-length-200",
+    "vaa-high-steel-98",
+    "vaa-suspended-grid-height-84-58",
+    "vaa-grid-height-86",
+    "vaa-grid-width-99",
+    "vaa-grid-depth-52",
+    "vaa-scoreboard-bottom-65",
+    "vaa-docks-5",
+    "vaa-house-stage-width-60",
+    "vaa-house-stage-depth-40"
+  ],
+  "conflicts": [
+    {
+      "id": "vaa-low-steel-conflict-63-vs-65-67",
+      "field": "lowSteelFt",
+      "summary": "Low-steel height is stated as 65 ft 8 in on the rigging page and 63 ft on the dimensions page.",
+      "candidateFactIds": ["vaa-low-steel-rigging-page-65-67", "vaa-low-steel-dimensions-page-63"],
+      "status": "OPEN",
+      "resolutionAction": "Ask venue for the controlling low-steel definition before approving lowSteelFt."
+    }
+  ],
+  "rejectedInterpretations": [],
+  "missingRequiredGeometry": ["approvedLowSteelFt", "nativeRiggingCad"],
+  "modelReadiness": "BLOCKED",
+  "reviewerNotes": [
+    "The 84 ft 7 in suspended-grid reference and the 86 ft floor-to-grid reference are preserved as distinct measurements.",
+    "The low-steel conflict remains open and must not be collapsed into a single seed value."
+  ],
+  "validationStatus": "PASS"
+}

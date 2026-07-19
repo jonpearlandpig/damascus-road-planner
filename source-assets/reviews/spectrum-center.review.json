@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "spectrum-center",
+  "sourceIdsReviewed": ["spectrum-center-production-guide-2025"],
+  "reviewDate": "2026-07-18",
+  "sourceRevision": "2025 Production Guide",
+  "pageCount": 28,
+  "pageCountSource": "TABLE_OF_CONTENTS",
+  "documentSections": {
+    "coverTitlePage": "FOUND",
+    "revisionOrIssueDate": "FOUND",
+    "tableOfContents": "FOUND",
+    "floorPlans": "FOUND",
+    "riggingInformation": "FOUND",
+    "roofOrSteelDiagrams": "FOUND",
+    "seatingConfigurations": "FOUND",
+    "loadingInformation": "FOUND",
+    "stageOrEndStageInformation": "FOUND",
+    "productionRestrictions": "FOUND"
+  },
+  "extractedFacts": [
+    {
+      "id": "spectrum-floor-width-85",
+      "field": "floorWidthFt",
+      "label": "Arena floor width",
+      "category": "floor",
+      "originalValue": "85",
+      "originalUnit": "ft",
+      "normalizedValue": 85,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "spectrum-center-production-guide-2025",
+          "page": 16,
+          "section": "Production Information",
+          "excerpt": "Floor size is stated as 85 wide x 200 long.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "spectrum-floor-length-200",
+      "field": "floorLengthFt",
+      "label": "Arena floor length",
+      "category": "floor",
+      "originalValue": "200",
+      "originalUnit": "ft",
+      "normalizedValue": 200,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "spectrum-center-production-guide-2025",
+          "page": 16,
+          "section": "Production Information",
+          "excerpt": "Floor size is stated as 85 wide x 200 long.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "spectrum-low-steel-107",
+      "field": "lowSteelFt",
+      "label": "Low steel height",
+      "category": "roofRigging",
+      "originalValue": "107",
+      "originalUnit": "ft",
+      "normalizedValue": 107,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "spectrum-center-production-guide-2025",
+          "page": 16,
+          "section": "Production Information",
+          "excerpt": "Steel height is listed as low 107 ft and high 130 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "spectrum-high-steel-130",
+      "field": "highSteelFt",
+      "label": "High steel height",
+      "category": "roofRigging",
+      "originalValue": "130",
+      "originalUnit": "ft",
+      "normalizedValue": 130,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "spectrum-center-production-guide-2025",
+          "page": 16,
+          "section": "Production Information",
+          "excerpt": "Steel height is listed as low 107 ft and high 130 ft.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "spectrum-end-stage-rigging-150000",
+      "field": "endStageRiggingLb",
+      "label": "End-stage total rigging load",
+      "category": "roofRigging",
+      "originalValue": "150000",
+      "originalUnit": "lb",
+      "normalizedValue": 150000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "spectrum-center-production-guide-2025",
+          "page": 19,
+          "section": "Rigging Information",
+          "excerpt": "Total rigging load for end or center stage shall not exceed 150,000 lb.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "spectrum-point-load-5000",
+      "field": "pointLoadLb",
+      "label": "Maximum load per marked span",
+      "category": "roofRigging",
+      "originalValue": "5000",
+      "originalUnit": "lb",
+      "normalizedValue": 5000,
+      "normalizedUnit": "lb",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 lb",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "spectrum-center-production-guide-2025",
+          "page": 19,
+          "section": "Rigging Information",
+          "excerpt": "Rigging limit is 5,000 lb maximum per marked span.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "spectrum-truck-positions-4",
+      "field": "truckPositionCount",
+      "label": "Simultaneous truck loading positions",
+      "category": "loading",
+      "originalValue": "4",
+      "originalUnit": "count",
+      "normalizedValue": 4,
+      "normalizedUnit": "count",
+      "conversionMethod": "identity",
+      "roundingPrecision": "1 count",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "spectrum-center-production-guide-2025",
+          "page": 16,
+          "section": "Production Information",
+          "excerpt": "Load in on Caldwell Street supports up to four trucks at a time.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "spectrum-push-distance-100",
+      "field": "pushDistanceFt",
+      "label": "End-stage push distance",
+      "category": "loading",
+      "originalValue": "100",
+      "originalUnit": "ft",
+      "normalizedValue": 100,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "MEDIUM",
+      "evidence": [
+        {
+          "sourceId": "spectrum-center-production-guide-2025",
+          "page": 16,
+          "section": "Production Information",
+          "excerpt": "Push distance to end stage is about 100 ft depending on stage and configuration.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "spectrum-house-stage-min-height-4",
+      "field": "houseStageMinHeightFt",
+      "label": "Rolling stage minimum height",
+      "category": "stage",
+      "originalValue": "4",
+      "originalUnit": "ft",
+      "normalizedValue": 4,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "spectrum-center-production-guide-2025",
+          "page": 17,
+          "section": "Staging",
+          "excerpt": "ME-3750 StageRight rolling stage is 4 ft to 6 ft high.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "spectrum-house-stage-max-height-6",
+      "field": "houseStageMaxHeightFt",
+      "label": "Rolling stage maximum height",
+      "category": "stage",
+      "originalValue": "6",
+      "originalUnit": "ft",
+      "normalizedValue": 6,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "spectrum-center-production-guide-2025",
+          "page": 17,
+          "section": "Staging",
+          "excerpt": "ME-3750 StageRight rolling stage is 4 ft to 6 ft high.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "spectrum-egress-5",
+      "field": "egressClearanceFt",
+      "label": "Minimum fire lane",
+      "category": "safety",
+      "originalValue": "5",
+      "originalUnit": "ft",
+      "normalizedValue": 5,
+      "normalizedUnit": "ft",
+      "conversionMethod": "identity",
+      "roundingPrecision": "0.01 ft",
+      "reviewState": "APPROVED",
+      "measurementStatus": "REFERENCE",
+      "confidence": "HIGH",
+      "evidence": [
+        {
+          "sourceId": "spectrum-center-production-guide-2025",
+          "page": 18,
+          "section": "Production Information",
+          "excerpt": "Minimum 5 ft fire lanes must be maintained.",
+          "extractionMethod": "TEXT"
+        }
+      ]
+    }
+  ],
+  "approvedFactIds": [
+    "spectrum-floor-width-85",
+    "spectrum-floor-length-200",
+    "spectrum-low-steel-107",
+    "spectrum-high-steel-130",
+    "spectrum-end-stage-rigging-150000",
+    "spectrum-point-load-5000",
+    "spectrum-truck-positions-4",
+    "spectrum-push-distance-100",
+    "spectrum-house-stage-min-height-4",
+    "spectrum-house-stage-max-height-6",
+    "spectrum-egress-5"
+  ],
+  "conflicts": [],
+  "rejectedInterpretations": [],
+  "missingRequiredGeometry": ["nativeCad", "nativeRiggingCad"],
+  "modelReadiness": "READY",
+  "reviewerNotes": [
+    "Text extraction and page references support source-backed floor, steel, load, loading, and egress values.",
+    "Native CAD remains requested for final operations."
+  ],
+  "validationStatus": "PASS"
+}
