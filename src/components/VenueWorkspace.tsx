@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AlertTriangle, ArrowLeft, Boxes, Building2, ChevronDown, ClipboardList, Eye, FileText, Grid3X3, Route, ShieldAlert, SlidersHorizontal, Users } from 'lucide-react';
-import type { ConfidenceState, LayerKey, SceneObjectRecord, VenueTwin } from '../data/types';
+import { AlertTriangle, ArrowLeft, Boxes, ChevronDown, Crosshair, Eye, FileText, Grid3X3, Landmark, LocateFixed, Route, ShieldAlert, SlidersHorizontal } from 'lucide-react';
+import type { ConfidenceState, SceneObjectRecord, VenueTwin } from '../data/types';
 import { adaptVenueGeometry, buildVenueIngestionRecords, inferVenueType, measurementFrameForVenue } from '../planner/venueAdapter';
 import { applyHistoryAction, createPlannerHistory, redoHistory, undoHistory, type PlannerHistory } from '../planner/history';
 import { createInitialPlannerScene } from '../planner/sceneSchema';
@@ -20,20 +20,39 @@ import { SavedViewsPanel } from './planner/SavedViewsPanel';
 import { SceneInspector } from './planner/SceneInspector';
 import { ConfidenceBadge } from './ConfidenceBadge';
 import { SourceDrawer } from './SourceDrawer';
+import { VenueTwinInspector } from './VenueTwinInspector';
+import { nativeRecordForElement } from '../venue-twins/adapters';
+import { venueNativeTwinForSlug } from '../venue-twins/records';
 
 const VenueScene = lazy(() => import('./VenueScene').then((module) => ({ default: module.VenueScene })));
 
-const layers: Array<{ key: LayerKey; label: string; icon: typeof Eye }> = [
-  { key: 'overview', label: 'Overview', icon: Building2 },
-  { key: 'production', label: 'Production', icon: Boxes },
-  { key: 'rigging', label: 'Rigging', icon: Grid3X3 },
-  { key: 'backstage', label: 'Backstage', icon: Users },
-  { key: 'logistics', label: 'Logistics', icon: Route },
-  { key: 'audience', label: 'Audience & sightlines', icon: Eye },
-  { key: 'safety', label: 'Safety & egress', icon: ShieldAlert },
-  { key: 'sources', label: 'Sources', icon: FileText },
-  { key: 'issues', label: 'Open issues', icon: ClipboardList },
+const layers: Array<{ key: string; label: string; icon: typeof Eye }> = [
+  { key: 'floor', label: 'Floor', icon: Landmark },
+  { key: 'centerlines', label: 'Centerlines', icon: Crosshair },
+  { key: 'stage-reference', label: 'Stage reference', icon: LocateFixed },
+  { key: 'rigging-grid', label: 'Rigging grid', icon: Grid3X3 },
+  { key: 'center-hung', label: 'Center-hung', icon: Boxes },
+  { key: 'obstructions', label: 'Obstructions', icon: ShieldAlert },
+  { key: 'loading', label: 'Loading', icon: Route },
+  { key: 'reference-geometry', label: 'Reference geometry', icon: FileText },
+  { key: 'drt-production', label: 'DRT production', icon: Boxes },
+  { key: 'fit-overlay', label: 'Fit-check overlay', icon: Eye },
 ];
+
+const defaultNativeLayers = ['floor', 'centerlines', 'stage-reference', 'rigging-grid', 'center-hung', 'loading', 'reference-geometry', 'drt-production', 'fit-overlay'];
+
+function layerStorageKey(venueSlug: string): string {
+  return `${venueSlug}-venue-native-layers`;
+}
+
+function loadLayerSettings(venueSlug: string): Set<string> {
+  try {
+    const raw = localStorage.getItem(layerStorageKey(venueSlug));
+    return raw ? new Set(JSON.parse(raw) as string[]) : new Set(defaultNativeLayers);
+  } catch {
+    return new Set(defaultNativeLayers);
+  }
+}
 
 function zoneToRecord(venue: VenueTwin, id: string): SceneObjectRecord | undefined {
   const zone = venue.zones.find((item) => item.id === id);
@@ -77,25 +96,34 @@ function createInitialHistory(venue: VenueTwin): PlannerHistory {
 }
 
 export function VenueWorkspace({ venue }: { venue: VenueTwin }) {
-  const [activeLayers, setActiveLayers] = useState<Set<string>>(new Set(['overview', 'production', 'rigging', 'logistics', 'backstage', 'safety']));
+  const [activeLayers, setActiveLayers] = useState<Set<string>>(() => loadLayerSettings(venue.slug));
   const [history, setHistory] = useState(() => createInitialHistory(venue));
   const [mobileLayersOpen, setMobileLayersOpen] = useState(false);
   const [measurementArmed, setMeasurementArmed] = useState(false);
   const [statusMessage, setStatusMessage] = useState('Scene ready');
   const scene = history.present;
+  const nativeTwin = useMemo(() => venueNativeTwinForSlug(venue.slug), [venue.slug]);
   const selectedObject = scene.objects.find((object) => object.id === scene.selectedObjectId);
   const frame = useMemo(() => measurementFrameForVenue(venue), [venue]);
   const adaptedGeometry = useMemo(() => adaptVenueGeometry(venue), [venue]);
   const ingestionRecords = useMemo(() => buildVenueIngestionRecords(venue), [venue]);
   const ingestionValidation = useMemo(() => validateIngestionRecords(ingestionRecords), [ingestionRecords]);
   const selectedRecord = useMemo(
-    () => selectedObject ? objectToRecord(selectedObject) : scene.selectedObjectId ? venue.objects.find((record) => record.id === scene.selectedObjectId) ?? zoneToRecord(venue, scene.selectedObjectId) : undefined,
-    [scene.selectedObjectId, selectedObject, venue],
+    () => selectedObject
+      ? objectToRecord(selectedObject)
+      : scene.selectedObjectId
+        ? nativeTwin ? nativeRecordForElement(nativeTwin, scene.selectedObjectId) ?? venue.objects.find((record) => record.id === scene.selectedObjectId) ?? zoneToRecord(venue, scene.selectedObjectId) : venue.objects.find((record) => record.id === scene.selectedObjectId) ?? zoneToRecord(venue, scene.selectedObjectId)
+        : undefined,
+    [nativeTwin, scene.selectedObjectId, selectedObject, venue],
   );
 
   useEffect(() => {
     autosaveSceneLocal(scene);
   }, [scene]);
+
+  useEffect(() => {
+    localStorage.setItem(layerStorageKey(venue.slug), JSON.stringify([...activeLayers]));
+  }, [activeLayers, venue.slug]);
 
   function dispatch(action: PlannerAction) {
     setHistory((current) => {
@@ -226,6 +254,11 @@ export function VenueWorkspace({ venue }: { venue: VenueTwin }) {
         </main>
         <aside className="planner-right-rail">
           <MeasurementPanel scene={scene} selectedObject={selectedObject} frame={frame} onAction={dispatch} onCancelMove={undo} />
+          <VenueTwinInspector
+            twin={nativeTwin}
+            selectedElementId={scene.selectedObjectId}
+            onSelectElement={(id) => dispatch({ type: 'selectObject', id })}
+          />
           <LightingControls selectedObject={selectedObject} onAction={dispatch} />
           <AtmosphereControls selectedObject={selectedObject} atmosphereObjects={scene.objects.filter((object) => Boolean(object.atmosphere))} onAction={dispatch} />
           <SavedViewsPanel scene={scene} onAction={dispatch} />

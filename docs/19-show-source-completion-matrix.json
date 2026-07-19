@@ -42,6 +42,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "Yes",
       "venueModelReadiness": "Ready",
+      "venueTwinReadiness": "BLOCKED",
+      "venueTwinRenderingStatus": "BLOCKED_NO_SHELL",
       "missingAction": "File native rigging/CAD only if operations requires parser-backed extraction.",
       "overallSourceStatus": "Complete",
       "controllingSourceTitle": "bok_center_tulsa_ok.pdf"
@@ -67,6 +69,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "No",
       "venueModelReadiness": "Blocked",
+      "venueTwinReadiness": "NO_TWIN",
+      "venueTwinRenderingStatus": "NO_TWIN",
       "missingAction": "Create 01 SOURCE DOCUMENTS folder and file the current venue technical packet plus rigging/floor references.",
       "overallSourceStatus": "Blocked",
       "controllingSourceTitle": "Unresolved"
@@ -92,6 +96,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "Partial",
       "venueModelReadiness": "Partial",
+      "venueTwinReadiness": "BLOCKED",
+      "venueTwinRenderingStatus": "BLOCKED_NO_SHELL",
       "missingAction": "Extract filed packet measurements and request separate rigging/CAD if the packet lacks parser-ready sheets.",
       "overallSourceStatus": "Complete",
       "controllingSourceTitle": "gainbridge_fieldhouse_indianapolis_in.pdf"
@@ -117,6 +123,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "Partial",
       "venueModelReadiness": "Blocked",
+      "venueTwinReadiness": "BLOCKED",
+      "venueTwinRenderingStatus": "PARTIAL_RENDER",
       "missingAction": "Resolve the 84 ft 7 in suspended-grid reference against the 86 ft dimensions-page grid reference before approval.",
       "overallSourceStatus": "Partial",
       "controllingSourceTitle": "van_andel_arena_grand_rapids_mi.pdf"
@@ -142,6 +150,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "No",
       "venueModelReadiness": "Blocked",
+      "venueTwinReadiness": "NO_TWIN",
+      "venueTwinRenderingStatus": "NO_TWIN",
       "missingAction": "Create 01 SOURCE DOCUMENTS folder and file current venue tech, rigging, and floor references.",
       "overallSourceStatus": "Blocked",
       "controllingSourceTitle": "Unresolved"
@@ -167,6 +177,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "No",
       "venueModelReadiness": "Blocked",
+      "venueTwinReadiness": "NO_TWIN",
+      "venueTwinRenderingStatus": "NO_TWIN",
       "missingAction": "Create 01 SOURCE DOCUMENTS folder and file current venue tech, rigging, and floor references.",
       "overallSourceStatus": "Blocked",
       "controllingSourceTitle": "Unresolved"
@@ -192,6 +204,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "Partial",
       "venueModelReadiness": "Partial",
+      "venueTwinReadiness": "PARTIAL",
+      "venueTwinRenderingStatus": "PARTIAL_RENDER",
       "missingAction": "Extract filed packet measurements and request separate rigging/CAD if the packet lacks parser-ready sheets.",
       "overallSourceStatus": "Complete",
       "controllingSourceTitle": "giant_center_hershey_pa.pdf"
@@ -217,6 +231,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "Yes",
       "venueModelReadiness": "Ready",
+      "venueTwinReadiness": "READY",
+      "venueTwinRenderingStatus": "READY_TO_RENDER",
       "missingAction": "File native CAD and current seating manifest before final operations.",
       "overallSourceStatus": "Complete",
       "controllingSourceTitle": "spectrum_center_charlotte_nc.pdf"
@@ -242,6 +258,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "No",
       "venueModelReadiness": "Blocked",
+      "venueTwinReadiness": "NO_TWIN",
+      "venueTwinRenderingStatus": "NO_TWIN",
       "missingAction": "Create 01 SOURCE DOCUMENTS folder and file current venue tech, rigging, and floor references.",
       "overallSourceStatus": "Blocked",
       "controllingSourceTitle": "Unresolved"
@@ -267,6 +285,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "No",
       "venueModelReadiness": "Blocked",
+      "venueTwinReadiness": "NO_TWIN",
+      "venueTwinRenderingStatus": "NO_TWIN",
       "missingAction": "Create 01 SOURCE DOCUMENTS folder and file current venue tech, rigging, and floor references.",
       "overallSourceStatus": "Blocked",
       "controllingSourceTitle": "Unresolved"
@@ -292,6 +312,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "Partial",
       "venueModelReadiness": "Partial",
+      "venueTwinReadiness": "BLOCKED",
+      "venueTwinRenderingStatus": "BLOCKED_NO_SHELL",
       "missingAction": "Extract filed packet measurements and request separate rigging/CAD if the packet lacks parser-ready sheets.",
       "overallSourceStatus": "Complete",
       "controllingSourceTitle": "target_center_minneapolis_mn.pdf"
@@ -317,6 +339,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "Partial",
       "venueModelReadiness": "Partial",
+      "venueTwinReadiness": "READY",
+      "venueTwinRenderingStatus": "READY_TO_RENDER",
       "missingAction": "Extract and reconcile filed packet measurements; keep authored geometry estimated until approved.",
       "overallSourceStatus": "Complete",
       "controllingSourceTitle": "t_mobile_center_kansas_city_mo.pdf"
@@ -342,6 +366,8 @@
       "venueSeedExists": "No",
       "venueSeedReconciled": "No",
       "venueModelReadiness": "Blocked",
+      "venueTwinReadiness": "NO_TWIN",
+      "venueTwinRenderingStatus": "NO_TWIN",
       "missingAction": "Confirm venue before creating a real venue slug or attaching Honda Center sources.",
       "overallSourceStatus": "TBD",
       "controllingSourceTitle": "Unresolved"
@@ -367,6 +393,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "No",
       "venueModelReadiness": "Blocked",
+      "venueTwinReadiness": "NO_TWIN",
+      "venueTwinRenderingStatus": "NO_TWIN",
       "missingAction": "Create 01 SOURCE DOCUMENTS folder and file Honda Center source documents; do not reuse contingency sources.",
       "overallSourceStatus": "Blocked",
       "controllingSourceTitle": "Unresolved"
@@ -392,6 +420,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "No",
       "venueModelReadiness": "Blocked",
+      "venueTwinReadiness": "NO_TWIN",
+      "venueTwinRenderingStatus": "NO_TWIN",
       "missingAction": "Create 01 SOURCE DOCUMENTS folder and file current venue tech, rigging, and floor references.",
       "overallSourceStatus": "Blocked",
       "controllingSourceTitle": "Unresolved"
@@ -417,6 +447,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "Partial",
       "venueModelReadiness": "Partial",
+      "venueTwinReadiness": "BLOCKED",
+      "venueTwinRenderingStatus": "BLOCKED_NO_SHELL",
       "missingAction": "File current 2026/27 venue revision before choosing a controlling source.",
       "overallSourceStatus": "Partial",
       "controllingSourceTitle": "Unresolved"
@@ -442,6 +474,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "Partial",
       "venueModelReadiness": "Partial",
+      "venueTwinReadiness": "BLOCKED",
+      "venueTwinRenderingStatus": "BLOCKED_NO_SHELL",
       "missingAction": "Confirm route state and file a current venue source before choosing a controlling source.",
       "overallSourceStatus": "Partial",
       "controllingSourceTitle": "Unresolved"
@@ -467,6 +501,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "Yes",
       "venueModelReadiness": "Ready",
+      "venueTwinReadiness": "READY",
+      "venueTwinRenderingStatus": "READY_TO_RENDER",
       "missingAction": "File separate current rigging pack and native CAD before final operations.",
       "overallSourceStatus": "Complete",
       "controllingSourceTitle": "heb_center_cedar_park_tx.pdf"
@@ -492,6 +528,8 @@
       "venueSeedExists": "Yes",
       "venueSeedReconciled": "Yes",
       "venueModelReadiness": "Ready",
+      "venueTwinReadiness": "BLOCKED",
+      "venueTwinRenderingStatus": "BLOCKED_NO_SHELL",
       "missingAction": "File low-steel/grid trim confirmation and native CAD before final operations.",
       "overallSourceStatus": "Complete",
       "controllingSourceTitle": "dickies_arena_fort_worth_tx.pdf"

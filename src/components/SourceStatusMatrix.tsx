@@ -73,6 +73,7 @@ export function SourceStatusMatrix() {
           <span role="columnheader">Sources</span>
           <span role="columnheader">Coverage</span>
           <span role="columnheader">Readiness</span>
+          <span role="columnheader">Twin</span>
           <span role="columnheader">Blocker</span>
         </div>
         {visibleRows.map((row) => (
@@ -82,6 +83,7 @@ export function SourceStatusMatrix() {
             <span className="source-counts" role="cell">{row.relevantFilesFound} file<small>{row.controllingSourceTitle}</small><small>{row.externalDriveSourceCount} Drive / {row.duplicateSources} dup</small></span>
             <span className="source-coverage" role="cell">Tech {row.techPack}<small>Rig {row.riggingPlot} / CAD {row.cadDwgDxf}</small></span>
             <span className="source-readiness" role="cell"><StatusIcon row={row} /> {row.overallSourceStatus}<small>{row.venueModelReadiness} model</small></span>
+            <span role="cell">{row.venueTwinReadiness}<small>{row.venueTwinRenderingStatus}</small></span>
             <span className="source-blocker" role="cell">{row.conflicts !== '0' ? row.conflicts : row.missingAction}</span>
           </article>
         ))}

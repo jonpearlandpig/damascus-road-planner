@@ -2,6 +2,7 @@ import type { MeasurementStatus, SourcedMeasurement, VenueGeometry, VenueTwin } 
 import { getSourceAsset, sourceAvailabilityLabel } from '../data/sourceAssets';
 import { drtPackage } from '../data/venues';
 import { deriveDrtProductionGeometry } from '../geometry/drt';
+import { bStagePlacementForVenue, floorBoundsForVenue } from '../venue-twins/adapters';
 import type { MeasurementFrame } from './measurements';
 import type { VenueBrowserRow, VenueIngestionRecord, VenueType } from './types';
 
@@ -232,9 +233,10 @@ export function adaptVenueGeometry(venue: VenueTwin): PlannerVenueGeometry {
 
 export function measurementFrameForVenue(venue: VenueTwin): MeasurementFrame {
   const drtGeometry = deriveDrtProductionGeometry(drtPackage);
+  const bounds = floorBoundsForVenue(venue);
   return {
-    floorWidthFt: venue.geometry.floorWidthFt,
-    floorLengthFt: venue.geometry.floorLengthFt,
+    floorWidthFt: bounds.widthFt,
+    floorLengthFt: bounds.lengthFt,
     roomCenter: { xFt: 0, yFt: 0, zFt: 0 },
     venueCenterlineXFt: 0,
     stageCenterlineXFt: 0,
@@ -244,6 +246,8 @@ export function measurementFrameForVenue(venue: VenueTwin): MeasurementFrame {
 }
 
 export function bStageCenterPlacementStatus(venue: VenueTwin): { status: MeasurementStatus; note: string } {
+  const generatedPlacement = bStagePlacementForVenue(venue);
+  if (generatedPlacement.status !== 'MISSING') return { status: generatedPlacement.status, note: generatedPlacement.note };
   const floorWidth = venue.geometryProvenance.floorWidthFt?.status;
   const floorLength = venue.geometryProvenance.floorLengthFt?.status;
   if (floorWidth === 'CONFLICT' || floorLength === 'CONFLICT' || venue.sourceStatus === 'CONFLICT') {

@@ -5,6 +5,7 @@ import { gearPackReferences } from './gearAdapter';
 import { getObjectDefinition, plannerObjectDefinitions } from './objectLibrary';
 import { snapAndConstrain } from './snapping';
 import { bStageCenterPlacementStatus } from './venueAdapter';
+import { bStagePlacementForVenue, floorBoundsForVenue } from '../venue-twins/adapters';
 import { PLANNER_SCHEMA_VERSION, SOURCE_RECONCILIATION_VERSION, type ObjectDefinition, type PlacedObject, type PlannerScene, type PlannerSceneSnapshot, type ScenePosition } from './types';
 
 function nowIso(): string {
@@ -69,6 +70,8 @@ export function createInitialPlannerScene(venue: VenueTwin): PlannerScene {
   const timestamp = nowIso();
   const drt = deriveDrtProductionGeometry(drtPackage);
   const bStageStatus = bStageCenterPlacementStatus(venue);
+  const bStagePlacement = bStagePlacementForVenue(venue);
+  const venueFloorBounds = floorBoundsForVenue(venue);
   const baseObjects: PlacedObject[] = [
     createSeedObject('drt-main-stage', 'drt-main-stage', { xFt: 0, yFt: drtPackage.deckHeightFt / 2, zFt: drt.stageCenterZFt }),
     createSeedObject('drt-center-thrust', 'drt-center-thrust', {
@@ -86,7 +89,7 @@ export function createInitialPlannerScene(venue: VenueTwin): PlannerScene {
       yFt: drtPackage.deckHeightFt / 2,
       zFt: drt.sideThrusts[1].zFt,
     }, drt.sideThrusts[1].rotationYRad * 180 / Math.PI),
-    createSeedObject('drt-b-stage', 'drt-b-stage', { xFt: 0, yFt: drtPackage.deckHeightFt / 2, zFt: 0 }, 0, [bStageStatus.note]),
+    createSeedObject('drt-b-stage', 'drt-b-stage', { ...bStagePlacement.position, yFt: drtPackage.deckHeightFt / 2 }, 0, [bStageStatus.note, bStagePlacement.note]),
     createSeedObject('drt-monolith', 'drt-monolith', {
       xFt: 0,
       yFt: drtPackage.deckHeightFt + drtPackage.prowHeightFt / 2,
@@ -105,7 +108,7 @@ export function createInitialPlannerScene(venue: VenueTwin): PlannerScene {
 
   const snappedObjects = baseObjects.map((object) => ({
     ...object,
-    position: snapAndConstrain(object.position, object.dimensions, { widthFt: venue.geometry.floorWidthFt, lengthFt: venue.geometry.floorLengthFt }, 1),
+    position: snapAndConstrain(object.position, object.dimensions, { widthFt: venueFloorBounds.widthFt, lengthFt: venueFloorBounds.lengthFt }, 1),
   }));
 
   return {
@@ -126,6 +129,7 @@ export function createInitialPlannerScene(venue: VenueTwin): PlannerScene {
     revisions: [],
     warningLog: [
       'Planning model only. Rigging loads and capacities require venue and licensed engineering approval.',
+      `Venue boundary source for initial DRT placement: ${venueFloorBounds.source}.`,
       ...snappedObjects.flatMap((object) => object.warnings),
     ],
   };

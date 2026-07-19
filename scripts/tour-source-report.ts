@@ -27,6 +27,8 @@ const columns: Array<[keyof TourSourceMatrixRow, string]> = [
   ['venueSeedExists', 'Venue seed exists'],
   ['venueSeedReconciled', 'Venue seed reconciled'],
   ['venueModelReadiness', 'Venue model readiness'],
+  ['venueTwinReadiness', 'Venue twin readiness'],
+  ['venueTwinRenderingStatus', 'Venue twin rendering'],
   ['missingAction', 'Missing action'],
   ['overallSourceStatus', 'Overall source status'],
 ];

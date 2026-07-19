@@ -1,4 +1,5 @@
 import rawSnapshot from '../../source-assets/drive-inventory/jq-spring-2027-source-snapshot.json';
+import { venueNativeTwinForSlug } from '../venue-twins/records';
 
 export type SourceAvailability =
   | 'AVAILABLE_REPO'
@@ -137,6 +138,8 @@ export interface TourSourceMatrixRow {
   venueSeedExists: 'Yes' | 'No';
   venueSeedReconciled: VenueSeedReconciledState;
   venueModelReadiness: VenueModelReadiness;
+  venueTwinReadiness: string;
+  venueTwinRenderingStatus: string;
   missingAction: string;
   overallSourceStatus: TourSourceStatus;
   controllingSourceTitle: string;
@@ -182,6 +185,7 @@ export function buildCompletionMatrix(snapshot: TourSourceSnapshot = tourSourceS
       const validControlling = controlling && controlling.authority === 'CONTROLLING' && !badControllingAvailability.has(controlling.availability);
       const unresolved = sources.length > 0 && !validControlling;
       const conflicts = show.conflicts.map((conflict) => conflict.summary).join('; ');
+      const twin = show.venueSlug ? venueNativeTwinForSlug(show.venueSlug) : undefined;
 
       return {
         routePosition: show.routePosition,
@@ -204,6 +208,8 @@ export function buildCompletionMatrix(snapshot: TourSourceSnapshot = tourSourceS
         venueSeedExists: show.venueSeedExists ? 'Yes' : 'No',
         venueSeedReconciled: show.venueSeedReconciled,
         venueModelReadiness: show.venueModelReadiness,
+        venueTwinReadiness: twin?.readiness ?? 'NO_TWIN',
+        venueTwinRenderingStatus: twin?.diagnostics.renderingStatus ?? 'NO_TWIN',
         missingAction: show.missingAction,
         overallSourceStatus: show.overallSourceStatus,
         controllingSourceTitle: controlling?.title ?? 'Unresolved',
@@ -225,4 +231,3 @@ export function matrixSummary(rows: TourSourceMatrixRow[]) {
     conflicts: rows.filter((row) => row.conflicts !== '0').length,
   };
 }
-
