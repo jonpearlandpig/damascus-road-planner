@@ -1,6 +1,6 @@
-import { BoxSelect, Download, Eye, Grid3X3, Import, RotateCcw, RotateCw, Save, Undo2 } from 'lucide-react';
+import { BoxSelect, Download, Eye, Grid3X3, Hand, Import, MousePointer2, Move3d, Rotate3d, RotateCcw, RotateCw, Save, Undo2 } from 'lucide-react';
 import type { PlannerAction } from '../../planner/store';
-import type { CameraProjection, PlannerScene, PlannerViewMode } from '../../planner/types';
+import type { CameraProjection, PlannerScene, PlannerTool, PlannerViewMode } from '../../planner/types';
 import { rotationIncrementsDeg, snapIntervalsFt } from '../../planner/snapping';
 
 const viewOptions: Array<{ mode: PlannerViewMode; label: string }> = [
@@ -18,7 +18,7 @@ const viewOptions: Array<{ mode: PlannerViewMode; label: string }> = [
 
 interface PlannerToolbarProps {
   scene: PlannerScene;
-  measurementArmed: boolean;
+  tool: PlannerTool;
   canUndo: boolean;
   canRedo: boolean;
   onAction: (action: PlannerAction) => void;
@@ -28,12 +28,12 @@ interface PlannerToolbarProps {
   onLoad: () => void;
   onExport: () => void;
   onImport: (file: File) => void;
-  onToggleMeasurement: () => void;
+  onToolChange: (tool: PlannerTool) => void;
 }
 
 export function PlannerToolbar({
   scene,
-  measurementArmed,
+  tool,
   canUndo,
   canRedo,
   onAction,
@@ -43,10 +43,30 @@ export function PlannerToolbar({
   onLoad,
   onExport,
   onImport,
-  onToggleMeasurement,
+  onToolChange,
 }: PlannerToolbarProps) {
+  const tools: Array<{ id: PlannerTool; label: string; icon: typeof MousePointer2; ariaLabel: string }> = [
+    { id: 'SELECT', label: 'Select', icon: MousePointer2, ariaLabel: 'Use select tool' },
+    { id: 'MOVE', label: 'Move', icon: Move3d, ariaLabel: 'Use move tool' },
+    { id: 'ROTATE', label: 'Rotate', icon: Rotate3d, ariaLabel: 'Use rotate tool' },
+    { id: 'MEASURE', label: 'Measure', icon: BoxSelect, ariaLabel: 'Toggle measurement tool' },
+    { id: 'PAN', label: 'Pan', icon: Hand, ariaLabel: 'Use pan tool' },
+  ];
   return (
     <div className="planner-toolbar" aria-label="Planner controls">
+      <div className="tool-mode-group" role="group" aria-label="Editor tool">
+        {tools.map(({ id, label, icon: Icon, ariaLabel }) => (
+          <button
+            key={id}
+            className={tool === id ? 'tool-button tool-button--active' : 'tool-button'}
+            onClick={() => onToolChange(id === 'MEASURE' && tool === 'MEASURE' ? 'SELECT' : id)}
+            aria-label={ariaLabel}
+            aria-pressed={tool === id}
+          >
+            <Icon size={16} /><span>{label}</span>
+          </button>
+        ))}
+      </div>
       <button className={scene.grid.visible ? 'tool-button tool-button--active' : 'tool-button'} onClick={() => onAction({ type: 'setGrid', grid: { visible: !scene.grid.visible } })} aria-label="Toggle floor grid">
         <Grid3X3 size={16} /><span>Grid</span>
       </button>
@@ -64,7 +84,10 @@ export function PlannerToolbar({
       </label>
       <label className="tool-select">
         <span>View</span>
-        <select value={scene.camera.mode} onChange={(event) => onAction({ type: 'setCamera', camera: { mode: event.currentTarget.value as PlannerViewMode } })}>
+        <select value={scene.camera.mode} onChange={(event) => {
+          const mode = event.currentTarget.value as PlannerViewMode;
+          onAction({ type: 'setCamera', camera: { mode, projection: mode === 'PLAN' ? 'ORTHOGRAPHIC' : scene.camera.projection } });
+        }}>
           {viewOptions.map((view) => <option key={view.mode} value={view.mode}>{view.label}</option>)}
         </select>
       </label>
@@ -75,12 +98,9 @@ export function PlannerToolbar({
           <option value="ORTHOGRAPHIC">Ortho</option>
         </select>
       </label>
-      <button className={measurementArmed ? 'tool-button tool-button--active' : 'tool-button'} onClick={onToggleMeasurement} aria-label="Toggle measurement tool">
-        <BoxSelect size={16} /><span>Measure</span>
-      </button>
       <button className="tool-button" onClick={onUndo} disabled={!canUndo} aria-label="Undo last edit"><Undo2 size={16} /><span>Undo</span></button>
       <button className="tool-button" onClick={onRedo} disabled={!canRedo} aria-label="Redo last edit"><RotateCw size={16} /><span>Redo</span></button>
-      <button className="tool-button" onClick={() => onAction({ type: 'setCamera', camera: { mode: 'FREE_ORBIT', projection: 'PERSPECTIVE', activeSavedViewId: undefined } })} aria-label="Reset camera"><RotateCcw size={16} /><span>Reset</span></button>
+      <button className="tool-button" onClick={() => onAction({ type: 'setCamera', camera: { mode: 'FREE_ORBIT', projection: 'PERSPECTIVE', activeSavedViewId: undefined, resetSequence: (scene.camera.resetSequence ?? 0) + 1 } })} aria-label="Reset camera"><RotateCcw size={16} /><span>Reset</span></button>
       <button className="tool-button" onClick={onSave} aria-label="Save scene locally"><Save size={16} /><span>Save</span></button>
       <button className="tool-button" onClick={onLoad} aria-label="Load saved scene"><Eye size={16} /><span>Load</span></button>
       <button className="tool-button" onClick={onExport} aria-label="Export scene JSON"><Download size={16} /><span>Export</span></button>
