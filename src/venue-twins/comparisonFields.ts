@@ -1,0 +1,15 @@
+export const venueNativeComparisonFields = [
+  'floorWidth',
+  'floorLength',
+  'floorArea',
+  'originQuality',
+  'lowSteel',
+  'highSteel',
+  'centerHungLowPoint',
+  'gridSize',
+  'stageOrientation',
+  'drtFit',
+  'readiness',
+  'missingCriticalFields',
+  'conflictCount',
+] as const;

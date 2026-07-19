@@ -64,6 +64,14 @@ test.describe('route browser smoke', () => {
     await expect(page.getByRole('button', { name: 'Toggle measurement tool' })).toBeEnabled();
     await expect(page.getByRole('button', { name: 'Save scene locally' })).toBeEnabled();
     await expect(page.getByRole('region', { name: 'Persistent measurement readout' })).toBeVisible();
+    await expect(page.getByRole('region', { name: 'Venue native twin inspector' })).toBeVisible();
+    await expect(page.getByText('VENUE-NATIVE TWIN')).toBeVisible();
+    const layerRail = page.getByLabel('Venue model layers');
+    await expect(layerRail.getByRole('button', { name: 'Floor', exact: true })).toBeVisible();
+    await expect(layerRail.getByRole('button', { name: 'Rigging grid', exact: true })).toBeVisible();
+    await expect(layerRail.getByRole('button', { name: 'Center-hung', exact: true })).toBeVisible();
+    await expect(layerRail.getByRole('button', { name: 'Fit-check overlay', exact: true })).toBeVisible();
+    await expect(page.getByText('VENUE TWIN READY / PASS_WITH_WARNINGS')).toBeVisible();
     await expect(page.getByText('SOURCE INTEGRITY')).toBeVisible();
     await expectNoDocumentOverflow(page);
   });
@@ -85,6 +93,56 @@ test.describe('route browser smoke', () => {
     await expect(page).toHaveURL(/\/venues\/spectrum-center$/);
     await expect(page.getByRole('heading', { name: 'Spectrum Center' })).toBeVisible();
     await expectCanvasLoaded(page);
+  });
+
+  test('venue-native workspace exposes readiness states and evidence links', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+
+    await page.goto('/venues/spectrum-center');
+    await expectCanvasLoaded(page);
+    await expect(page.getByRole('region', { name: 'Venue native twin inspector' })).toContainText('READY / READY_TO_RENDER');
+    await expect(page.getByText('Planning fit only; not engineering approval.')).toBeVisible();
+    await page.getByRole('button', { name: 'Floor evidence' }).click();
+    await expect(page.getByText(/venue native floor/i)).toBeVisible();
+    await expect(page.getByRole('link', { name: /spectrum-floor-width-85/i }).first()).toBeVisible();
+
+    const floorToggle = page.getByLabel('Venue model layers').getByRole('button', { name: 'Floor', exact: true });
+    await expect(floorToggle).toHaveClass(/layer-button--active/);
+    await floorToggle.click();
+    await expect(floorToggle).not.toHaveClass(/layer-button--active/);
+    await floorToggle.click();
+
+    await page.goto('/venues/giant-center');
+    await expectCanvasLoaded(page);
+    await expect(page.getByRole('region', { name: 'Venue native twin inspector' })).toContainText('PARTIAL / PARTIAL_RENDER');
+    await expect(page.getByText('VENUE TWIN PARTIAL / PASS_WITH_WARNINGS')).toBeVisible();
+
+    await page.goto('/venues/red-rocks');
+    await expectCanvasLoaded(page);
+    await expect(page.getByText('No source-backed venue-native floor shell')).toBeVisible();
+    await expect(page.getByText('VENUE TWIN BLOCKED / BLOCKED')).toBeVisible();
+    await expect(page.getByRole('region', { name: 'Venue native twin inspector' })).toContainText('BLOCKED / BLOCKED_NO_SHELL');
+
+    await page.goto('/venues/van-andel-arena');
+    await expectCanvasLoaded(page);
+    await expect(page.getByText('Fit check blocked / missing or conflicted geometry')).toBeVisible();
+    await expect(page.getByRole('region', { name: 'Venue native twin inspector' })).toContainText('Conflicts');
+  });
+
+  test('comparison route includes venue-native geometry fields', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/compare');
+
+    await expect(page.getByRole('heading', { name: 'Strongest venue comparison' })).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'Floor width' })).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'Floor length' })).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'Low steel' })).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'High steel' })).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'Center-hung low point' })).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'DRT fit' })).toBeVisible();
+    await expect(page.getByRole('columnheader', { name: 'Readiness' })).toBeVisible();
+    await expect(page.getByText('PASS_WITH_WARNINGS').first()).toBeVisible();
+    await expectNoDocumentOverflow(page);
   });
 
   test('source inventory matrix exposes 19 show statuses and filters', async ({ page }) => {
