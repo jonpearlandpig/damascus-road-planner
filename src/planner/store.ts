@@ -112,7 +112,16 @@ export function applyPlannerAction(scene: PlannerScene, venue: VenueTwin, action
       );
       const id = generateObjectId(scene, definition.id);
       const object = objectFromDefinition(definition, id, position, 0, action.allowGearOverride ? ['Planning override exceeds filed gear-pack quantity.'] : []);
-      const nextObject = action.parentId ? { ...object, parentId: action.parentId } : object;
+      const insertedObject = object.geometryClass === 'DRT_TOURING_PRODUCTION'
+        ? {
+          ...object,
+          geometryClass: 'PLANNING_SCENE' as const,
+          placementStatus: 'UNRESOLVED' as const,
+          designDecisionId: undefined,
+          warnings: [...object.warnings, 'Copied from the DRT library into the planning scene; this instance is not canonical production geometry.'],
+        }
+        : object;
+      const nextObject = action.parentId ? { ...insertedObject, parentId: action.parentId } : insertedObject;
       return {
         scene: touch({
           ...scene,
@@ -124,6 +133,7 @@ export function applyPlannerAction(scene: PlannerScene, venue: VenueTwin, action
     case 'moveObject': {
       const object = scene.objects.find((item) => item.id === action.id);
       if (!object) return { scene, rejected: true, message: `Object ${action.id} is not in the scene.` };
+      if (!object.editable || object.geometryClass === 'VENUE_NATIVE' || object.geometryClass === 'HOUSE_REFERENCE') return { scene, rejected: true, message: `${object.label} is fixed reference geometry.` };
       if (object.locked) return { scene, rejected: true, message: `${object.label} is locked.` };
       const position = snapAndConstrain({ ...object.position, ...action.position }, object.dimensions, floorBounds(venue), scene.grid.snapFt);
       return { scene: updateObject(scene, action.id, (item) => ({ ...item, position })) };
@@ -131,6 +141,7 @@ export function applyPlannerAction(scene: PlannerScene, venue: VenueTwin, action
     case 'rotateObject': {
       const object = scene.objects.find((item) => item.id === action.id);
       if (!object) return { scene, rejected: true, message: `Object ${action.id} is not in the scene.` };
+      if (!object.editable || object.geometryClass === 'VENUE_NATIVE' || object.geometryClass === 'HOUSE_REFERENCE') return { scene, rejected: true, message: `${object.label} is fixed reference geometry.` };
       if (object.locked) return { scene, rejected: true, message: `${object.label} is locked.` };
       const rotationYDeg = snapRotationDeg(action.rotationYDeg, action.incrementDeg ?? scene.grid.rotationIncrementDeg);
       return { scene: updateObject(scene, action.id, (item) => ({ ...item, rotationYDeg })) };
@@ -144,20 +155,37 @@ export function applyPlannerAction(scene: PlannerScene, venue: VenueTwin, action
         scene: touch({
           ...scene,
           selectedObjectId: id,
-          objects: [...scene.objects, { ...object, id, label: `${object.label} copy`, position, locked: false, parentId: undefined }],
+          objects: [...scene.objects, {
+            ...object,
+            id,
+            canonicalGeometryId: undefined,
+            geometryClass: 'PLANNING_SCENE',
+            placementStatus: 'UNRESOLVED',
+            designDecisionId: undefined,
+            label: `${object.label} copy`,
+            position,
+            locked: false,
+            parentId: undefined,
+            warnings: [...object.warnings, 'Copied into the planning scene; this instance is not canonical production geometry.'],
+          }],
         }),
       };
     }
     case 'deleteObject': {
       const object = scene.objects.find((item) => item.id === action.id);
       if (!object) return { scene, rejected: true, message: `Object ${action.id} is not in the scene.` };
+      if (!object.editable || object.geometryClass === 'VENUE_NATIVE' || object.geometryClass === 'HOUSE_REFERENCE') return { scene, rejected: true, message: `${object.label} is fixed reference geometry.` };
       if (object.locked) return { scene, rejected: true, message: `${object.label} is locked.` };
       const childIds = new Set(scene.objects.filter((item) => item.parentId === action.id).map((item) => item.id));
       const objects = scene.objects.filter((item) => item.id !== action.id && !childIds.has(item.id));
       return { scene: touch({ ...scene, selectedObjectId: selectedOrFirst({ ...scene, objects }, scene.selectedObjectId ?? ''), objects }) };
     }
-    case 'lockObject':
-      return { scene: updateObject(scene, action.id, (object) => ({ ...object, locked: action.locked })) };
+    case 'lockObject': {
+      const object = scene.objects.find((item) => item.id === action.id);
+      if (!object) return { scene, rejected: true, message: `Object ${action.id} is not in the scene.` };
+      if (!object.editable || object.geometryClass === 'VENUE_NATIVE' || object.geometryClass === 'HOUSE_REFERENCE') return { scene, rejected: true, message: `${object.label} is always locked.` };
+      return { scene: updateObject(scene, action.id, (item) => ({ ...item, locked: action.locked })) };
+    }
     case 'renameObject':
       return { scene: updateObject(scene, action.id, (object) => ({ ...object, label: action.label.trim() || object.label })) };
     case 'toggleObjectVisibility':

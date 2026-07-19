@@ -8,7 +8,7 @@
   ],
   "package": {
     "id": "drt-current-working",
-    "revision": "AKB working geometry — 2026-07-17",
+    "revision": "drt-canonical-2026-07-17.1",
     "deckWidthFt": 78,
     "deckDepthFt": 42,
     "centerThrustLengthFt": 42,

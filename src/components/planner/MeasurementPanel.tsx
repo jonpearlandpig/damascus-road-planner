@@ -2,13 +2,14 @@ import { Copy, Lock, LockOpen, Save, Trash2, X } from 'lucide-react';
 import { useState } from 'react';
 import { distanceBetweenPoints, formatFeetDecimal, objectMeasurementReadout, type MeasurementFrame } from '../../planner/measurements';
 import type { PlannerAction } from '../../planner/store';
-import type { PlacedObject, PlannerScene, ScenePosition } from '../../planner/types';
+import type { PlacedObject, PlannerScene, PlannerTool, ScenePosition } from '../../planner/types';
 import { formatFeet } from '../../lib/units';
 
 interface MeasurementPanelProps {
   scene: PlannerScene;
   selectedObject?: PlacedObject;
   frame: MeasurementFrame;
+  tool: PlannerTool;
   onAction: (action: PlannerAction) => void;
   onCancelMove: () => void;
 }
@@ -22,7 +23,7 @@ function inputPosition(object: PlacedObject, field: keyof ScenePosition, value: 
   return Number.isFinite(numeric) ? { [field]: numeric } : { [field]: object.position[field] };
 }
 
-export function MeasurementPanel({ scene, selectedObject, frame, onAction, onCancelMove }: MeasurementPanelProps) {
+export function MeasurementPanel({ scene, selectedObject, frame, tool, onAction, onCancelMove }: MeasurementPanelProps) {
   const [measurementName, setMeasurementName] = useState('Measurement');
   const activeResult = scene.activeMeasurement?.start && scene.activeMeasurement.end
     ? distanceBetweenPoints(scene.activeMeasurement.start, scene.activeMeasurement.end)
@@ -39,11 +40,14 @@ export function MeasurementPanel({ scene, selectedObject, frame, onAction, onCan
       {selectedObject && (
         <>
           <div className="transform-grid">
-            <label><span>X</span><input data-testid="selected-x" type="number" step={scene.grid.snapFt} value={numberValue(selectedObject.position.xFt)} onChange={(event) => onAction({ type: 'moveObject', id: selectedObject.id, position: inputPosition(selectedObject, 'xFt', event.currentTarget.value) })} /></label>
-            <label><span>Y</span><input type="number" step={scene.grid.snapFt} value={numberValue(selectedObject.position.yFt)} onChange={(event) => onAction({ type: 'moveObject', id: selectedObject.id, position: inputPosition(selectedObject, 'yFt', event.currentTarget.value) })} /></label>
-            <label><span>Z</span><input data-testid="selected-z" type="number" step={scene.grid.snapFt} value={numberValue(selectedObject.position.zFt)} onChange={(event) => onAction({ type: 'moveObject', id: selectedObject.id, position: inputPosition(selectedObject, 'zFt', event.currentTarget.value) })} /></label>
-            <label><span>Rot</span><input data-testid="selected-rotation" type="number" step={scene.grid.rotationIncrementDeg} value={numberValue(selectedObject.rotationYDeg)} onChange={(event) => onAction({ type: 'rotateObject', id: selectedObject.id, rotationYDeg: Number(event.currentTarget.value) })} /></label>
+            <label><span>X</span><input data-testid="selected-x" type="number" step={scene.grid.snapFt} value={numberValue(selectedObject.position.xFt)} disabled={selectedObject.locked || tool !== 'MOVE'} onChange={(event) => onAction({ type: 'moveObject', id: selectedObject.id, position: inputPosition(selectedObject, 'xFt', event.currentTarget.value) })} /></label>
+            <label><span>Y</span><input type="number" step={scene.grid.snapFt} value={numberValue(selectedObject.position.yFt)} disabled={selectedObject.locked || tool !== 'MOVE'} onChange={(event) => onAction({ type: 'moveObject', id: selectedObject.id, position: inputPosition(selectedObject, 'yFt', event.currentTarget.value) })} /></label>
+            <label><span>Z</span><input data-testid="selected-z" type="number" step={scene.grid.snapFt} value={numberValue(selectedObject.position.zFt)} disabled={selectedObject.locked || tool !== 'MOVE'} onChange={(event) => onAction({ type: 'moveObject', id: selectedObject.id, position: inputPosition(selectedObject, 'zFt', event.currentTarget.value) })} /></label>
+            <label><span>Rot</span><input data-testid="selected-rotation" type="number" step={scene.grid.rotationIncrementDeg} value={numberValue(selectedObject.rotationYDeg)} disabled={selectedObject.locked || tool !== 'ROTATE'} onChange={(event) => onAction({ type: 'rotateObject', id: selectedObject.id, rotationYDeg: Number(event.currentTarget.value) })} /></label>
           </div>
+          <p className="transform-permission" data-testid="transform-permission">
+            {selectedObject.locked ? 'Locked. Unlock deliberately before transforming.' : tool === 'MOVE' ? 'Move enabled through visible axis handles or numeric fields.' : tool === 'ROTATE' ? 'Rotate enabled through the visible ring or rotation field.' : 'Select a Move or Rotate tool to transform this object.'}
+          </p>
           <dl className="measurement-grid">
             <dt>Width</dt><dd>{formatFeet(selectedObject.dimensions.widthFt)}</dd>
             <dt>Depth</dt><dd>{formatFeet(selectedObject.dimensions.depthFt)}</dd>

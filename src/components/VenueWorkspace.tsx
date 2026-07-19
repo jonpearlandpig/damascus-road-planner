@@ -6,7 +6,7 @@ import { adaptVenueGeometry, buildVenueIngestionRecords, inferVenueType, measure
 import { applyHistoryAction, createPlannerHistory, redoHistory, undoHistory, type PlannerHistory } from '../planner/history';
 import { createInitialPlannerScene } from '../planner/sceneSchema';
 import { autosaveSceneLocal, exportSceneJson, importSceneJson, loadSceneLocal, saveSceneLocal } from '../planner/persistence';
-import type { PlacedObject, PlannerScene } from '../planner/types';
+import type { PlacedObject, PlannerScene, PlannerTool } from '../planner/types';
 import { applyPlannerAction, type PlannerAction } from '../planner/store';
 import { validateIngestionRecords } from '../planner/ingestion';
 import { AtmosphereControls } from './planner/AtmosphereControls';
@@ -26,20 +26,28 @@ import { venueNativeTwinForSlug } from '../venue-twins/records';
 
 const VenueScene = lazy(() => import('./VenueScene').then((module) => ({ default: module.VenueScene })));
 
-const layers: Array<{ key: string; label: string; icon: typeof Eye }> = [
-  { key: 'floor', label: 'Floor', icon: Landmark },
-  { key: 'centerlines', label: 'Centerlines', icon: Crosshair },
-  { key: 'stage-reference', label: 'Stage reference', icon: LocateFixed },
-  { key: 'rigging-grid', label: 'Rigging grid', icon: Grid3X3 },
-  { key: 'center-hung', label: 'Center-hung', icon: Boxes },
-  { key: 'obstructions', label: 'Obstructions', icon: ShieldAlert },
-  { key: 'loading', label: 'Loading', icon: Route },
-  { key: 'reference-geometry', label: 'Reference geometry', icon: FileText },
-  { key: 'drt-production', label: 'DRT production', icon: Boxes },
-  { key: 'fit-overlay', label: 'Fit-check overlay', icon: Eye },
+const layerGroups: Array<{ label: string; items: Array<{ key: string; label: string; icon: typeof Eye }> }> = [
+  { label: 'VENUE-NATIVE / FIXED', items: [
+    { key: 'floor', label: 'Floor', icon: Landmark },
+    { key: 'centerlines', label: 'Centerlines', icon: Crosshair },
+    { key: 'rigging-grid', label: 'Rigging grid', icon: Grid3X3 },
+    { key: 'center-hung', label: 'Center-hung', icon: Boxes },
+    { key: 'obstructions', label: 'Obstructions', icon: ShieldAlert },
+    { key: 'loading', label: 'Loading', icon: Route },
+    { key: 'fit-overlay', label: 'Fit-check overlay', icon: Eye },
+  ] },
+  { label: 'HOUSE REFERENCE / FIXED', items: [
+    { key: 'stage-reference', label: 'House stage', icon: LocateFixed },
+    { key: 'reference-geometry', label: 'Other references', icon: FileText },
+  ] },
+  { label: 'DRT TOURING PRODUCTION', items: [
+    { key: 'drt-production', label: 'DRT production', icon: Boxes },
+  ] },
 ];
 
-const defaultNativeLayers = ['floor', 'centerlines', 'stage-reference', 'rigging-grid', 'center-hung', 'loading', 'reference-geometry', 'drt-production', 'fit-overlay'];
+const layers = layerGroups.flatMap((group) => group.items);
+
+const defaultNativeLayers = ['floor', 'centerlines', 'rigging-grid', 'center-hung', 'loading', 'drt-production', 'fit-overlay'];
 
 function layerStorageKey(venueSlug: string): string {
   return `${venueSlug}-venue-native-layers`;
@@ -99,7 +107,7 @@ export function VenueWorkspace({ venue }: { venue: VenueTwin }) {
   const [activeLayers, setActiveLayers] = useState<Set<string>>(() => loadLayerSettings(venue.slug));
   const [history, setHistory] = useState(() => createInitialHistory(venue));
   const [mobileLayersOpen, setMobileLayersOpen] = useState(false);
-  const [measurementArmed, setMeasurementArmed] = useState(false);
+  const [tool, setTool] = useState<PlannerTool>('SELECT');
   const [statusMessage, setStatusMessage] = useState('Scene ready');
   const scene = history.present;
   const nativeTwin = useMemo(() => venueNativeTwinForSlug(venue.slug), [venue.slug]);
@@ -206,23 +214,33 @@ export function VenueWorkspace({ venue }: { venue: VenueTwin }) {
       <div className="workspace-layout workspace-layout--planner">
         <nav className="layer-rail planner-left-rail" aria-label="Venue model layers">
           <div className="layer-rail__title">LAYERS</div>
-          {layers.map(({ key, label, icon: Icon }) => <button key={key} className={`layer-button ${activeLayers.has(key) ? 'layer-button--active' : ''}`} onClick={() => toggleLayer(key)}><Icon size={17} /><span>{label}</span></button>)}
+          {layerGroups.map((group) => (
+            <div className="layer-group" key={group.label}>
+              <div className="layer-group__title">{group.label}</div>
+              {group.items.map(({ key, label, icon: Icon }) => <button key={key} className={`layer-button ${activeLayers.has(key) ? 'layer-button--active' : ''}`} onClick={() => toggleLayer(key)}><Icon size={17} /><span>{label}</span></button>)}
+            </div>
+          ))}
           <div className="layer-rail__status">
             <ConfidenceBadge state={venue.riggingConfidence} />
             <p>Rigging loads and capacities require venue and engineer approval.</p>
           </div>
-          <ObjectLibrary onAction={dispatch} />
-          <GearPackBrowser scene={scene} onAction={dispatch} />
-          <CommandConsole
-            history={history}
-            venue={venue}
-            onSceneResult={(nextScene, message) => replaceScene(nextScene, message ?? 'Command applied')}
-          />
+          <details className="planner-disclosure">
+            <summary>Production library</summary>
+            <ObjectLibrary onAction={dispatch} />
+          </details>
+          <details className="planner-disclosure">
+            <summary>Gear browser</summary>
+            <GearPackBrowser scene={scene} onAction={dispatch} />
+          </details>
+          <details className="planner-disclosure">
+            <summary>Command console</summary>
+            <CommandConsole history={history} venue={venue} onSceneResult={(nextScene, message) => replaceScene(nextScene, message ?? 'Command applied')} />
+          </details>
         </nav>
         <main className="workspace-main">
           <PlannerToolbar
             scene={scene}
-            measurementArmed={measurementArmed}
+            tool={tool}
             canUndo={history.past.length > 0}
             canRedo={history.future.length > 0}
             onAction={dispatch}
@@ -232,14 +250,14 @@ export function VenueWorkspace({ venue }: { venue: VenueTwin }) {
             onLoad={loadScene}
             onExport={exportScene}
             onImport={importScene}
-            onToggleMeasurement={() => setMeasurementArmed((armed) => !armed)}
+            onToolChange={setTool}
           />
           <Suspense fallback={<SceneFallback venue={venue} />}>
             <VenueScene
               venue={venue}
               plannerScene={scene}
               activeLayers={activeLayers}
-              measurementArmed={measurementArmed}
+              tool={tool}
               onAction={dispatch}
             />
           </Suspense>
@@ -253,22 +271,21 @@ export function VenueWorkspace({ venue }: { venue: VenueTwin }) {
           {mobileLayersOpen && <div className="mobile-layer-sheet">{layers.map(({ key, label }) => <button key={key} className={activeLayers.has(key) ? 'mobile-layer-chip mobile-layer-chip--active' : 'mobile-layer-chip'} onClick={() => toggleLayer(key)}>{label}</button>)}</div>}
         </main>
         <aside className="planner-right-rail">
-          <MeasurementPanel scene={scene} selectedObject={selectedObject} frame={frame} onAction={dispatch} onCancelMove={undo} />
-          <VenueTwinInspector
-            twin={nativeTwin}
-            selectedElementId={scene.selectedObjectId}
-            onSelectElement={(id) => dispatch({ type: 'selectObject', id })}
-          />
-          <LightingControls selectedObject={selectedObject} onAction={dispatch} />
-          <AtmosphereControls selectedObject={selectedObject} atmosphereObjects={scene.objects.filter((object) => Boolean(object.atmosphere))} onAction={dispatch} />
-          <SavedViewsPanel scene={scene} onAction={dispatch} />
-          <SceneInspector scene={scene} selectedObject={selectedObject} onAction={dispatch} />
-          <section className="planner-panel source-integrity-panel">
-            <div className="panel-heading"><div><span className="eyebrow">SOURCE INTEGRITY</span><h2>{adaptedGeometry.floorWidth.status} floor</h2></div></div>
-            <p>{adaptedGeometry.floorBoundary.note}</p>
-            {adaptedGeometry.warnings.slice(0, 5).map((warning) => <div key={warning} className="warning-line">{warning}</div>)}
-            {ingestionValidation.errors.map((error) => <div key={error} className="warning-line warning-line--error">{error}</div>)}
-          </section>
+          <MeasurementPanel scene={scene} selectedObject={selectedObject} frame={frame} tool={tool} onAction={dispatch} onCancelMove={undo} />
+          <details className="planner-disclosure"><summary>Venue evidence</summary><VenueTwinInspector twin={nativeTwin} selectedElementId={scene.selectedObjectId} onSelectElement={(id) => dispatch({ type: 'selectObject', id })} /></details>
+          <details className="planner-disclosure"><summary>Lighting</summary><LightingControls selectedObject={selectedObject} onAction={dispatch} /></details>
+          <details className="planner-disclosure"><summary>Atmospherics</summary><AtmosphereControls selectedObject={selectedObject} atmosphereObjects={scene.objects.filter((object) => Boolean(object.atmosphere))} onAction={dispatch} /></details>
+          <details className="planner-disclosure"><summary>Saved views</summary><SavedViewsPanel scene={scene} onAction={dispatch} /></details>
+          <details className="planner-disclosure"><summary>Scene hierarchy</summary><SceneInspector scene={scene} selectedObject={selectedObject} onAction={dispatch} /></details>
+          <details className="planner-disclosure">
+            <summary>Source integrity and status</summary>
+            <section className="planner-panel source-integrity-panel">
+              <div className="panel-heading"><div><span className="eyebrow">SOURCE INTEGRITY</span><h2>{adaptedGeometry.floorWidth.status} floor</h2></div></div>
+              <p>{adaptedGeometry.floorBoundary.note}</p>
+              {adaptedGeometry.warnings.slice(0, 5).map((warning) => <div key={warning} className="warning-line">{warning}</div>)}
+              {ingestionValidation.errors.map((error) => <div key={error} className="warning-line warning-line--error">{error}</div>)}
+            </section>
+          </details>
           <SourceDrawer record={selectedRecord} onClose={() => dispatch({ type: 'selectObject', id: undefined })} />
         </aside>
       </div>

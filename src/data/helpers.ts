@@ -10,12 +10,12 @@ import type {
   VenueGeometryProvenance,
   VenueTwin,
 } from './types';
-import { assertDrtPackageInvariants } from '../geometry/drt';
+import { canonicalDrtPackage } from '../production/drt/canonicalGeometry';
 
 export const tourSource: SourceRef = {
-  file: 'JQ 2026 — AKB / Damascus Road MASTER editable Rev D',
-  section: 'Verified Facts + current design master',
-  revision: 'Working geometry — 2026-07-17',
+  file: 'T.I. design authority',
+  section: 'Authored geometry + current-master reference',
+  revision: canonicalDrtPackage.revision,
   originalValue: '78′ × 42′ deck; 35′-4″ prow; 26′ B-stage',
   confidence: 'CALIBRATED PLANNING',
   authority: 'MANAGEMENT CONFIRMED',
@@ -25,15 +25,7 @@ export function venueSource(file: string, section: string, revision: string, val
   return { file, section, revision, originalValue: value, confidence, authority: 'VENUE ISSUED' };
 }
 
-export const drtPackage: TourPackage = {
-  id: 'drt-current-working', revision: 'AKB working geometry — 2026-07-17', name: 'Damascus Road Tour Production Package',
-  deckWidthFt: 78, deckDepthFt: 42, deckHeightFt: 5.5,
-  prowBaseFt: 50, prowVertexDepthFt: 25, prowHeightFt: 35 + 4 / 12,
-  centerThrustWidthFt: 6, centerThrustLengthFt: 42,
-  sideThrustWidthFt: 5, sideThrustLengthFt: 32,
-  bStageDiameterFt: 26, bStageLocalZFt: 76,
-};
-assertDrtPackageInvariants(drtPackage);
+export const drtPackage: TourPackage = canonicalDrtPackage;
 
 function unitForGeometryField(field: keyof VenueGeometry): MeasurementUnit {
   if (field.endsWith('Lb')) return 'lb';

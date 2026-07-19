@@ -38,7 +38,10 @@ describe('planner geometry, state, and command foundation', () => {
 
   it('moves, locks, duplicates, deletes, and preserves undo/redo history', () => {
     const initial = createPlannerHistory(createInitialPlannerScene(spectrum));
-    const moved = applyHistoryAction(initial, spectrum, { type: 'moveObject', id: 'drt-b-stage', position: { xFt: 4.6, zFt: 5.4 } }).history;
+    const initiallyRejected = applyHistoryAction(initial, spectrum, { type: 'moveObject', id: 'drt-b-stage', position: { xFt: 4.6, zFt: 5.4 } });
+    expect(initiallyRejected.result.rejected).toBe(true);
+    const unlockedInitial = applyHistoryAction(initial, spectrum, { type: 'lockObject', id: 'drt-b-stage', locked: false }).history;
+    const moved = applyHistoryAction(unlockedInitial, spectrum, { type: 'moveObject', id: 'drt-b-stage', position: { xFt: 4.6, zFt: 5.4 } }).history;
     expect(moved.present.objects.find((object) => object.id === 'drt-b-stage')?.position).toMatchObject({ xFt: 5, zFt: 5 });
     const locked = applyHistoryAction(moved, spectrum, { type: 'lockObject', id: 'drt-b-stage', locked: true }).history;
     const rejected = applyHistoryAction(locked, spectrum, { type: 'moveObject', id: 'drt-b-stage', position: { xFt: 10 } });
@@ -79,6 +82,7 @@ describe('planner geometry, state, and command foundation', () => {
 
   it('saves, imports, records revisions, and restores snapshots', () => {
     let scene = createInitialPlannerScene(spectrum);
+    scene = applyPlannerAction(scene, spectrum, { type: 'lockObject', id: 'drt-b-stage', locked: false }).scene;
     scene = applyPlannerAction(scene, spectrum, { type: 'moveObject', id: 'drt-b-stage', position: { xFt: 10, zFt: 10 } }).scene;
     scene = applyPlannerAction(scene, spectrum, { type: 'recordRevision', note: 'center move' }).scene;
     scene = applyPlannerAction(scene, spectrum, { type: 'moveObject', id: 'drt-b-stage', position: { xFt: 15, zFt: 15 } }).scene;
@@ -86,13 +90,59 @@ describe('planner geometry, state, and command foundation', () => {
     expect(restored.objects.find((object) => object.id === 'drt-b-stage')?.position).toMatchObject({ xFt: 10, zFt: 10 });
     const imported = importSceneJson(exportSceneJson(restored));
     expect(imported.errors).toEqual([]);
-    expect(imported.scene?.schemaVersion).toBe(1);
+    expect(imported.scene?.schemaVersion).toBe(2);
+    expect(imported.scene?.drtSeedVersion).toBe(scene.drtSeedVersion);
+  });
+
+  it('migrates schema 1 scenes by refreshing DRT geometry and preserving user planning objects', () => {
+    let legacy = createInitialPlannerScene(spectrum);
+    legacy = applyPlannerAction(legacy, spectrum, { type: 'addObject', definitionId: 'straight-truss-40' }).scene;
+    const planningObjectId = legacy.selectedObjectId;
+    const serialized = JSON.parse(exportSceneJson(legacy)) as Record<string, unknown> & { objects: Array<Record<string, unknown>> };
+    serialized.schemaVersion = 1;
+    delete serialized.drtSeedVersion;
+    serialized.objects = serialized.objects.map((object) => object.id === 'drt-b-stage'
+      ? { ...object, position: { xFt: 19, yFt: 3, zFt: 22 } }
+      : object);
+
+    const imported = importSceneJson(JSON.stringify(serialized));
+    expect(imported.scene?.schemaVersion).toBe(2);
+    expect(imported.scene?.objects.find((object) => object.id === 'drt-b-stage')?.position).toMatchObject({ xFt: 0, zFt: 0 });
+    expect(imported.scene?.objects.find((object) => object.id === planningObjectId)?.geometryClass).toBe('PLANNING_SCENE');
+    expect(imported.errors).toContain('Migrated schema 1 scene to 2 and refreshed the canonical DRT seed.');
+  });
+
+  it('rejects incompatible seed versions and imported venue-native geometry clearly', () => {
+    const incompatible = createInitialPlannerScene(spectrum);
+    const wrongSeed = importSceneJson(JSON.stringify({ ...incompatible, drtSeedVersion: 'drt-unknown' }));
+    expect(wrongSeed.scene).toBeUndefined();
+    expect(wrongSeed.errors).toContain('Unsupported DRT seed version drt-unknown.');
+
+    const venueObject = { ...incompatible.objects[0], id: 'imported-venue-shell', geometryClass: 'VENUE_NATIVE' };
+    const unsafe = importSceneJson(JSON.stringify({ ...incompatible, objects: [...incompatible.objects, venueObject] }));
+    expect(unsafe.scene).toBeUndefined();
+    expect(unsafe.errors).toContain('Object imported-venue-shell cannot import venue or house-reference geometry as editable scene state.');
+  });
+
+  it('records exactly one history entry for a committed transform and none for selection', () => {
+    let history = createPlannerHistory(createInitialPlannerScene(spectrum));
+    history = applyHistoryAction(history, spectrum, { type: 'selectObject', id: 'drt-main-stage' }).history;
+    expect(history.past).toHaveLength(0);
+    history = applyHistoryAction(history, spectrum, { type: 'selectObject', id: undefined }).history;
+    expect(history.present.selectedObjectId).toBeUndefined();
+    history = applyHistoryAction(history, spectrum, { type: 'selectObject', id: 'drt-main-stage' }).history;
+    history = applyHistoryAction(history, spectrum, { type: 'lockObject', id: 'drt-main-stage', locked: false }).history;
+    const beforeTransform = history.past.length;
+    history = applyHistoryAction(history, spectrum, { type: 'moveObject', id: 'drt-main-stage', position: { xFt: 4 } }).history;
+    expect(history.past).toHaveLength(beforeTransform + 1);
+    expect(undoHistory(history).present.objects.find((object) => object.id === 'drt-main-stage')?.position.xFt).toBe(0);
   });
 
   it('dispatches deterministic commands through the same scene actions', () => {
     let scene = createInitialPlannerScene(spectrum);
     scene = dispatchPlannerCommand(scene, spectrum, { kind: 'ADD_OBJECT', definitionId: 'straight-truss-40' }).scene;
     expect(scene.objects.some((object) => object.category === 'Truss')).toBe(true);
+    scene = applyPlannerAction(scene, spectrum, { type: 'lockObject', id: 'drt-b-stage', locked: false }).scene;
     scene = dispatchPlannerCommand(scene, spectrum, { kind: 'MOVE_OBJECT', objectId: 'drt-b-stage', position: { xFt: 6, zFt: 6 } }).scene;
     scene = dispatchPlannerCommand(scene, spectrum, { kind: 'CENTER_IN_VENUE', objectId: 'drt-b-stage' }).scene;
     expect(scene.objects.find((object) => object.id === 'drt-b-stage')?.position).toMatchObject({ xFt: 0, zFt: 0 });

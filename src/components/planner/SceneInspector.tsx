@@ -13,7 +13,8 @@ function childrenFor(scene: PlannerScene, id: string): PlacedObject[] {
 }
 
 export function SceneInspector({ scene, selectedObject, onAction }: SceneInspectorProps) {
-  const rootObjects = scene.objects.filter((object) => !object.parentId);
+  const drtObjects = scene.objects.filter((object) => !object.parentId && object.geometryClass === 'DRT_TOURING_PRODUCTION');
+  const planningObjects = scene.objects.filter((object) => !object.parentId && object.geometryClass === 'PLANNING_SCENE');
   const selectedIds = selectedObject ? scene.objects.filter((object) => object.category === selectedObject.category).map((object) => object.id) : [];
 
   return (
@@ -32,11 +33,22 @@ export function SceneInspector({ scene, selectedObject, onAction }: SceneInspect
         </div>
       )}
       <div className="scene-tree">
-        <div className="tree-header"><span>Venue</span><strong>{scene.venueSlug}</strong></div>
-        <div className="tree-header"><span>Show</span><strong>{scene.name}</strong></div>
-        {rootObjects.map((object) => (
+        <div className="tree-header"><span>VENUE-NATIVE / FIXED</span><strong>{scene.venueSlug}</strong></div>
+        <div className="tree-static-node"><strong>Shell / floor / rigging / labels</strong><small>Evidence-linked / never editable</small></div>
+        <div className="tree-header"><span>HOUSE REFERENCE / FIXED</span><strong>hidden by default</strong></div>
+        <div className="tree-static-node"><strong>House stage and filed references</strong><small>Reference only / never DRT</small></div>
+        <div className="tree-header"><span>DRT TOURING PRODUCTION</span><strong>{scene.drtSeedVersion}</strong></div>
+        {drtObjects.map((object) => (
           <div key={object.id} className="tree-node-wrap">
-            <button className={scene.selectedObjectId === object.id ? 'tree-node tree-node--selected' : 'tree-node'} onClick={() => onAction({ type: 'selectObject', id: object.id })}>
+            <button
+              className={scene.selectedObjectId === object.id ? 'tree-node tree-node--selected' : 'tree-node'}
+              data-object-id={object.id}
+              data-x-ft={object.position.xFt}
+              data-z-ft={object.position.zFt}
+              data-locked={object.locked ? 'true' : 'false'}
+              aria-label={`${object.label} / DRT touring production / ${object.locked ? 'locked' : 'unlocked'}`}
+              onClick={() => onAction({ type: 'selectObject', id: object.id })}
+            >
               <span>{object.visible ? 'on' : 'off'}</span><strong>{object.label}</strong><small>{object.category}{object.locked ? ' / locked' : ''}</small>
             </button>
             {childrenFor(scene, object.id).map((child) => (
@@ -44,6 +56,22 @@ export function SceneInspector({ scene, selectedObject, onAction }: SceneInspect
                 <span>{child.visible ? 'on' : 'off'}</span><strong>{child.label}</strong><small>{child.category}</small>
               </button>
             ))}
+          </div>
+        ))}
+        {planningObjects.length > 0 && <div className="tree-header"><span>PLANNING SCENE</span><strong>{planningObjects.length} object(s)</strong></div>}
+        {planningObjects.map((object) => (
+          <div key={object.id} className="tree-node-wrap">
+            <button
+              className={scene.selectedObjectId === object.id ? 'tree-node tree-node--selected' : 'tree-node'}
+              data-object-id={object.id}
+              data-x-ft={object.position.xFt}
+              data-z-ft={object.position.zFt}
+              data-locked={object.locked ? 'true' : 'false'}
+              aria-label={`${object.label} / planning scene / ${object.locked ? 'locked' : 'unlocked'}`}
+              onClick={() => onAction({ type: 'selectObject', id: object.id })}
+            >
+              <span>{object.visible ? 'on' : 'off'}</span><strong>{object.label}</strong><small>{object.category}{object.locked ? ' / locked' : ''}</small>
+            </button>
           </div>
         ))}
         <div className="tree-header"><span>Saved measurements</span><strong>{scene.measurements.length}</strong></div>
