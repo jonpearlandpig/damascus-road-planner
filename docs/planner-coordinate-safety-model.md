@@ -15,7 +15,14 @@ The persistent floor grid is centered on the venue origin. Major grid lines are 
 
 ## Source And Geometry Boundaries
 
-Venue seeds remain the source-backed venue data authority. Editable show scene state lives separately in `PlannerScene`.
+Venue seeds remain the source-backed venue data authority. Touring production geometry is defined only by `src/production/drt/canonicalGeometry.ts`. Editable planning-scene additions live separately in `PlannerScene`.
+
+The scene hierarchy has three explicit classes:
+
+- `VENUE_NATIVE`: evidence-linked, fixed, and never persisted as an editable object.
+- `HOUSE_REFERENCE`: reference-only, fixed, and hidden by default.
+- `DRT_TOURING_PRODUCTION`: canonical touring geometry, persisted with a DRT seed version and locked on venue open.
+- `PLANNING_SCENE`: user-created copies and library additions; these never become venue facts or canonical DRT objects.
 
 The venue adapter maps current seeds into structured geometry without inventing unsupported values:
 
@@ -45,6 +52,7 @@ A measurement can become `VERIFIED` only when the mapping is approved and attach
 `PlannerScene` records:
 
 - Schema version
+- Canonical DRT seed version
 - Venue slug
 - Source reconciliation version
 - Gear-pack references
@@ -56,6 +64,22 @@ A measurement can become `VERIFIED` only when the mapping is approved and attach
 - Created and modified timestamps
 
 All direct manipulation, form controls, and deterministic commands route through the same reducer in `src/planner/store.ts`.
+
+Schema 1 scenes are migrated by refreshing canonical DRT objects from the current seed while retaining noncanonical user objects as `PLANNING_SCENE`. Current-schema scenes with a missing or incompatible DRT seed are rejected clearly.
+
+## Editor Input Ownership
+
+The default tool is `SELECT`. Click selection commits only on pointer-up when travel remains within 5 screen pixels. A drag is therefore a camera gesture, not an object transform.
+
+- `SELECT`: left drag orbits; right/middle drag pans; wheel zooms; an empty click deselects.
+- `PAN`: left, right, and middle drag pan; objects cannot be selected or transformed.
+- `MEASURE`: floor clicks set points without selecting or moving production.
+- `MOVE`: only a visible X or Z handle on the selected, unlocked, editable object may claim the pointer.
+- `ROTATE`: only the visible Y ring or the enabled inspector field may rotate the selected, unlocked object.
+
+Transforms use pointer capture. Draft values render locally during pointer movement and produce one reducer/history action at pointer-up. Escape, pointer cancel, capture loss, or window focus loss discards the draft. A claimed handle stops the native pointer event immediately so camera controls cannot begin the same gesture.
+
+Venue-native and house-reference geometry have no transform path. Canonical DRT production starts locked and requires a deliberate unlock before a gizmo or numeric transform field becomes available.
 
 ## Safety Warnings
 
