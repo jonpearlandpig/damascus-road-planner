@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "spectrum-center",
+  "readiness": "READY",
+  "coordinateSystem": {
+    "origin": "REFERENCE_ORIGIN",
+    "originMethod": "DERIVED_FLOOR_CENTER",
+    "originLabel": "Derived event-floor center",
+    "originPoint": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "xAxis": "STAGE_LEFT_TO_STAGE_RIGHT",
+    "yAxis": "ELEVATION",
+    "zAxis": "UPSTAGE_TO_DOWNSTAGE",
+    "unit": "ft",
+    "evidenceMeasurementIds": [
+      "spectrum-floor-width-85",
+      "spectrum-floor-length-200"
+    ],
+    "warning": "Origin is the derived center of the approved event-floor rectangle; it is not a verified center-court point."
+  },
+  "floor": {
+    "boundary": {
+      "id": "spectrum-center-event-floor-boundary",
+      "points": [
+        {
+          "xFt": -42.5,
+          "zFt": -100
+        },
+        {
+          "xFt": 42.5,
+          "zFt": -100
+        },
+        {
+          "xFt": 42.5,
+          "zFt": 100
+        },
+        {
+          "xFt": -42.5,
+          "zFt": 100
+        }
+      ],
+      "derivationRule": "Derived rectangular event-floor boundary from approved floor width and length.",
+      "exactness": "DERIVED",
+      "renderState": "DERIVED",
+      "approvedMeasurementIds": [
+        "spectrum-floor-width-85",
+        "spectrum-floor-length-200"
+      ],
+      "participatesInFitCheck": true
+    },
+    "width": {
+      "value": 85,
+      "originalValue": "85",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "spectrum-floor-width-85",
+      "sourceId": "spectrum-center-production-guide-2025",
+      "evidencePage": 16,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement spectrum-floor-width-85",
+      "participatesInFitCheck": true,
+      "evidence": [
+        {
+          "measurementId": "spectrum-floor-width-85",
+          "sourceId": "spectrum-center-production-guide-2025",
+          "sourceTitle": "spectrum_center_charlotte_nc.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1VCZGkq0IOvWMTpd1OWAhkGmdNNgXg08b",
+          "page": 16,
+          "section": "Production Information",
+          "excerpt": "Floor size is stated as 85 wide x 200 long.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "length": {
+      "value": 200,
+      "originalValue": "200",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "spectrum-floor-length-200",
+      "sourceId": "spectrum-center-production-guide-2025",
+      "evidencePage": 16,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement spectrum-floor-length-200",
+      "participatesInFitCheck": true,
+      "evidence": [
+        {
+          "measurementId": "spectrum-floor-length-200",
+          "sourceId": "spectrum-center-production-guide-2025",
+          "sourceTitle": "spectrum_center_charlotte_nc.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1VCZGkq0IOvWMTpd1OWAhkGmdNNgXg08b",
+          "page": 16,
+          "section": "Production Information",
+          "excerpt": "Floor size is stated as 85 wide x 200 long.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "center": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "orientationDeg": 0,
+    "renderState": "DERIVED"
+  },
+  "rigging": {
+    "lowSteel": {
+      "value": 107,
+      "originalValue": "107",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "spectrum-low-steel-107",
+      "sourceId": "spectrum-center-production-guide-2025",
+      "evidencePage": 16,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement spectrum-low-steel-107",
+      "participatesInFitCheck": true,
+      "evidence": [
+        {
+          "measurementId": "spectrum-low-steel-107",
+          "sourceId": "spectrum-center-production-guide-2025",
+          "sourceTitle": "spectrum_center_charlotte_nc.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1VCZGkq0IOvWMTpd1OWAhkGmdNNgXg08b",
+          "page": 16,
+          "section": "Production Information",
+          "excerpt": "Steel height is listed as low 107 ft and high 130 ft.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "highSteel": {
+      "value": 130,
+      "originalValue": "130",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "spectrum-high-steel-130",
+      "sourceId": "spectrum-center-production-guide-2025",
+      "evidencePage": 16,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement spectrum-high-steel-130",
+      "participatesInFitCheck": false,
+      "evidence": [
+        {
+          "measurementId": "spectrum-high-steel-130",
+          "sourceId": "spectrum-center-production-guide-2025",
+          "sourceTitle": "spectrum_center_charlotte_nc.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1VCZGkq0IOvWMTpd1OWAhkGmdNNgXg08b",
+          "page": 16,
+          "section": "Production Information",
+          "excerpt": "Steel height is listed as low 107 ft and high 130 ft.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "noRigZones": [],
+    "renderState": "APPROVED"
+  },
+  "stageReference": {
+    "endStageDirection": "UPSTAGE",
+    "stageCenterline": {
+      "id": "spectrum-center-stage-centerline",
+      "start": {
+        "xFt": 0,
+        "zFt": -100
+      },
+      "end": {
+        "xFt": 0,
+        "zFt": 100
+      },
+      "derivationRule": "Derived from approved floor boundary dimensions and planner coordinate convention.",
+      "exactness": "DERIVED",
+      "approvedMeasurementIds": [
+        "spectrum-floor-width-85",
+        "spectrum-floor-length-200"
+      ],
+      "participatesInFitCheck": true
+    },
+    "renderState": "DERIVED",
+    "warning": "Stage direction follows the planner coordinate convention; no venue-specific stage-end orientation was approved."
+  },
+  "loading": {
+    "dockDirection": "UNKNOWN",
+    "renderState": "REFERENCE_ONLY",
+    "warning": "Loading facts are approved, but no source-backed dock coordinate or direction was available for native placement."
+  },
+  "evidence": {
+    "approvedMeasurementIds": [
+      "spectrum-floor-width-85",
+      "spectrum-floor-length-200",
+      "spectrum-low-steel-107",
+      "spectrum-high-steel-130"
+    ],
+    "derivedGeometryIds": [
+      "spectrum-center-event-floor-boundary",
+      "spectrum-center-floor-center",
+      "spectrum-center-stage-centerline"
+    ],
+    "approximateGeometryIds": [],
+    "sourceIds": [
+      "spectrum-center-production-guide-2025"
+    ],
+    "sourceTitles": [
+      "spectrum_center_charlotte_nc.pdf"
+    ]
+  },
+  "diagnostics": {
+    "approvedMeasurementCount": 4,
+    "derivedGeometryCount": 3,
+    "approximateGeometryCount": 0,
+    "conflictCount": 0,
+    "missingCriticalFields": [
+      "nativeCad",
+      "nativeRiggingCad"
+    ],
+    "blockers": [
+      "Missing nativeCad",
+      "Missing nativeRiggingCad"
+    ],
+    "warnings": [
+      "Origin is the derived center of the approved event-floor rectangle; it is not a verified center-court point."
+    ],
+    "renderingStatus": "READY_TO_RENDER"
+  },
+  "drtFit": {
+    "status": "PASS_WITH_WARNINGS",
+    "checkedFactIds": [
+      "spectrum-floor-width-85",
+      "spectrum-floor-length-200",
+      "spectrum-low-steel-107"
+    ],
+    "blockers": [],
+    "warnings": [
+      "Only 3.5 ft remains per side against the approved floor width.",
+      "Native CAD/rigging files remain requested before final operations."
+    ]
+  },
+  "generation": {
+    "generatorSchemaVersion": 1,
+    "sourceReviewDate": "2026-07-18",
+    "sourceRevision": "2025 Production Guide",
+    "reviewChecksum": "ff833cefce1207c0"
+  }
+}

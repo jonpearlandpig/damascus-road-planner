@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "dickies-arena",
+  "readiness": "BLOCKED",
+  "coordinateSystem": {
+    "origin": "REFERENCE_ORIGIN",
+    "originMethod": "REFERENCE_ORIGIN_WITH_WARNING",
+    "originLabel": "Reference origin only",
+    "originPoint": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "xAxis": "STAGE_LEFT_TO_STAGE_RIGHT",
+    "yAxis": "ELEVATION",
+    "zAxis": "UPSTAGE_TO_DOWNSTAGE",
+    "unit": "ft",
+    "evidenceMeasurementIds": [],
+    "warning": "No approved venue-native origin exists; reference origin is shown only as a planning warning."
+  },
+  "obstructions": {
+    "centerHung": {
+      "id": "dickies-arena-centerhung",
+      "center": {
+        "xFt": 0,
+        "yFt": 80,
+        "zFt": 0
+      },
+      "dimensions": {},
+      "lowPoint": {
+        "value": 80,
+        "originalValue": "80",
+        "originalUnit": "ft",
+        "normalizedUnit": "ft",
+        "measurementId": "dickies-scoreboard-concert-trim-80",
+        "sourceId": "dickies-arena-tech-pack-2026",
+        "evidencePage": 15,
+        "status": "REFERENCE",
+        "confidence": "HIGH",
+        "exactness": "EXACT",
+        "derivationRule": "approved measurement dickies-scoreboard-concert-trim-80",
+        "participatesInFitCheck": false,
+        "evidence": [
+          {
+            "measurementId": "dickies-scoreboard-concert-trim-80",
+            "sourceId": "dickies-arena-tech-pack-2026",
+            "sourceTitle": "dickies_arena_fort_worth_tx.pdf",
+            "driveUrl": "https://drive.google.com/file/d/1NfMyUpU0hRilfcn4_EnJDg1CNZZYWmgg",
+            "page": 15,
+            "section": "Rigging",
+            "excerpt": "Video board standard concert trim is listed as 80 ft with max trim 89 ft.",
+            "reviewState": "APPROVED"
+          }
+        ]
+      },
+      "renderState": "REFERENCE_ONLY",
+      "exactness": "REFERENCE_ONLY",
+      "approvedMeasurementIds": [
+        "dickies-scoreboard-concert-trim-80"
+      ],
+      "participatesInFitCheck": false,
+      "derivationRule": "Partial center-hung source fact; unsupported axes are not fabricated."
+    },
+    "scoreboardLowPoint": {
+      "value": 80,
+      "originalValue": "80",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "dickies-scoreboard-concert-trim-80",
+      "sourceId": "dickies-arena-tech-pack-2026",
+      "evidencePage": 15,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement dickies-scoreboard-concert-trim-80",
+      "participatesInFitCheck": false,
+      "evidence": [
+        {
+          "measurementId": "dickies-scoreboard-concert-trim-80",
+          "sourceId": "dickies-arena-tech-pack-2026",
+          "sourceTitle": "dickies_arena_fort_worth_tx.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1NfMyUpU0hRilfcn4_EnJDg1CNZZYWmgg",
+          "page": 15,
+          "section": "Rigging",
+          "excerpt": "Video board standard concert trim is listed as 80 ft with max trim 89 ft.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "fixedObstructions": [],
+    "renderState": "REFERENCE_ONLY"
+  },
+  "stageReference": {
+    "endStageDirection": "UNKNOWN",
+    "maximumStageBounds": {
+      "id": "dickies-arena-maximum-house-stage",
+      "points": [
+        {
+          "xFt": -40,
+          "zFt": -20
+        },
+        {
+          "xFt": 40,
+          "zFt": -20
+        },
+        {
+          "xFt": 40,
+          "zFt": 20
+        },
+        {
+          "xFt": -40,
+          "zFt": 20
+        }
+      ],
+      "derivationRule": "Derived maximum house-stage rectangle from approved house-stage width and depth.",
+      "exactness": "REFERENCE_ONLY",
+      "renderState": "REFERENCE_ONLY",
+      "approvedMeasurementIds": [
+        "dickies-house-stage-width-80",
+        "dickies-house-stage-depth-40"
+      ],
+      "participatesInFitCheck": false
+    },
+    "renderState": "MISSING"
+  },
+  "loading": {
+    "dockDirection": "UNKNOWN",
+    "renderState": "REFERENCE_ONLY",
+    "warning": "Loading facts are approved, but no source-backed dock coordinate or direction was available for native placement."
+  },
+  "evidence": {
+    "approvedMeasurementIds": [
+      "dickies-scoreboard-concert-trim-80",
+      "dickies-house-stage-width-80",
+      "dickies-house-stage-depth-40"
+    ],
+    "derivedGeometryIds": [
+      "dickies-arena-maximum-house-stage"
+    ],
+    "approximateGeometryIds": [],
+    "sourceIds": [
+      "dickies-arena-tech-pack-2026"
+    ],
+    "sourceTitles": [
+      "dickies_arena_fort_worth_tx.pdf"
+    ]
+  },
+  "diagnostics": {
+    "approvedMeasurementCount": 3,
+    "derivedGeometryCount": 1,
+    "approximateGeometryCount": 0,
+    "conflictCount": 0,
+    "missingCriticalFields": [
+      "floorWidthFt",
+      "floorLengthFt",
+      "nativeFloorBoundary",
+      "lowSteelFt"
+    ],
+    "blockers": [
+      "Missing floorWidthFt",
+      "Missing floorLengthFt",
+      "Missing nativeFloorBoundary",
+      "Missing lowSteelFt"
+    ],
+    "warnings": [
+      "No approved venue-native origin exists; reference origin is shown only as a planning warning.",
+      "Blocked review records do not contribute controlling fit geometry."
+    ],
+    "renderingStatus": "BLOCKED_NO_SHELL"
+  },
+  "drtFit": {
+    "status": "BLOCKED",
+    "checkedFactIds": [
+      "dickies-scoreboard-concert-trim-80"
+    ],
+    "blockers": [
+      "Venue source review is blocked.",
+      "Approved floor width and length are required."
+    ],
+    "warnings": []
+  },
+  "generation": {
+    "generatorSchemaVersion": 1,
+    "sourceReviewDate": "2026-07-18",
+    "sourceRevision": "Revised 2026",
+    "reviewChecksum": "93450b827f4c9f34"
+  }
+}

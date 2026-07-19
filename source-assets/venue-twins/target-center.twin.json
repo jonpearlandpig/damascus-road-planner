@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "target-center",
+  "readiness": "BLOCKED",
+  "coordinateSystem": {
+    "origin": "REFERENCE_ORIGIN",
+    "originMethod": "REFERENCE_ORIGIN_WITH_WARNING",
+    "originLabel": "Reference origin only",
+    "originPoint": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "xAxis": "STAGE_LEFT_TO_STAGE_RIGHT",
+    "yAxis": "ELEVATION",
+    "zAxis": "UPSTAGE_TO_DOWNSTAGE",
+    "unit": "ft",
+    "evidenceMeasurementIds": [],
+    "warning": "No approved venue-native origin exists; reference origin is shown only as a planning warning."
+  },
+  "rigging": {
+    "lowSteel": {
+      "value": 100,
+      "originalValue": "100",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "target-open-steel-100",
+      "sourceId": "target-center-source-pack",
+      "evidencePage": 3,
+      "status": "REFERENCE",
+      "confidence": "MEDIUM",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement target-open-steel-100",
+      "participatesInFitCheck": false,
+      "evidence": [
+        {
+          "measurementId": "target-open-steel-100",
+          "sourceId": "target-center-source-pack",
+          "sourceTitle": "target_center_minneapolis_mn.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1TrL320sssF-ZyiVqhvaDDAgxQ75Ky6sI",
+          "page": 3,
+          "section": "Building Specs",
+          "excerpt": "Rigging section lists open steel at 100 ft.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "noRigZones": [],
+    "renderState": "REFERENCE_ONLY"
+  },
+  "loading": {
+    "dockDirection": "UNKNOWN",
+    "renderState": "REFERENCE_ONLY",
+    "warning": "Loading facts are approved, but no source-backed dock coordinate or direction was available for native placement."
+  },
+  "evidence": {
+    "approvedMeasurementIds": [
+      "target-open-steel-100"
+    ],
+    "derivedGeometryIds": [],
+    "approximateGeometryIds": [],
+    "sourceIds": [
+      "target-center-source-pack"
+    ],
+    "sourceTitles": [
+      "target_center_minneapolis_mn.pdf"
+    ]
+  },
+  "diagnostics": {
+    "approvedMeasurementCount": 1,
+    "derivedGeometryCount": 0,
+    "approximateGeometryCount": 0,
+    "conflictCount": 0,
+    "missingCriticalFields": [
+      "floorWidthFt",
+      "floorLengthFt",
+      "nativeFloorBoundary",
+      "centerhungBottomFt",
+      "nativeRiggingCad"
+    ],
+    "blockers": [
+      "Missing floorWidthFt",
+      "Missing floorLengthFt",
+      "Missing nativeFloorBoundary",
+      "Missing centerhungBottomFt",
+      "Missing nativeRiggingCad"
+    ],
+    "warnings": [
+      "No approved venue-native origin exists; reference origin is shown only as a planning warning.",
+      "Blocked review records do not contribute controlling fit geometry."
+    ],
+    "renderingStatus": "BLOCKED_NO_SHELL"
+  },
+  "drtFit": {
+    "status": "BLOCKED",
+    "checkedFactIds": [
+      "target-open-steel-100"
+    ],
+    "blockers": [
+      "Venue source review is blocked.",
+      "Approved floor width and length are required."
+    ],
+    "warnings": [
+      "Native CAD/rigging files remain requested before final operations.",
+      "Source is stale or undated; keep final engineering confirmation open."
+    ]
+  },
+  "generation": {
+    "generatorSchemaVersion": 1,
+    "sourceReviewDate": "2026-07-18",
+    "sourceRevision": "2023 Technical Packet",
+    "reviewChecksum": "fa04a0cdcbe12988"
+  }
+}

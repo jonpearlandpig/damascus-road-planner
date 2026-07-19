@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "bok-center",
+  "readiness": "BLOCKED",
+  "coordinateSystem": {
+    "origin": "REFERENCE_ORIGIN",
+    "originMethod": "REFERENCE_ORIGIN_WITH_WARNING",
+    "originLabel": "Reference origin only",
+    "originPoint": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "xAxis": "STAGE_LEFT_TO_STAGE_RIGHT",
+    "yAxis": "ELEVATION",
+    "zAxis": "UPSTAGE_TO_DOWNSTAGE",
+    "unit": "ft",
+    "evidenceMeasurementIds": [],
+    "warning": "No approved venue-native origin exists; reference origin is shown only as a planning warning."
+  },
+  "rigging": {
+    "lowSteel": {
+      "value": 90,
+      "originalValue": "90",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "bok-low-steel-90",
+      "sourceId": "bok-center-production-manual-undated",
+      "evidencePage": 9,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement bok-low-steel-90",
+      "participatesInFitCheck": false,
+      "evidence": [
+        {
+          "measurementId": "bok-low-steel-90",
+          "sourceId": "bok-center-production-manual-undated",
+          "sourceTitle": "bok_center_tulsa_ok.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1B7NjOmgXIk1sCOMUY6_EhL5riFEcWu8C",
+          "page": 9,
+          "section": "Rigging Grid",
+          "excerpt": "Floor to Rigging Grid - 90 ft from floor to bottom of steel.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "noRigZones": [],
+    "renderState": "REFERENCE_ONLY"
+  },
+  "obstructions": {
+    "centerHung": {
+      "id": "bok-center-centerhung",
+      "center": {
+        "xFt": 0,
+        "yFt": 75,
+        "zFt": 0
+      },
+      "dimensions": {
+        "widthFt": {
+          "value": 46.67,
+          "originalValue": "46 ft 8 in",
+          "originalUnit": "ft",
+          "normalizedUnit": "ft",
+          "measurementId": "bok-scoreboard-width-46-67",
+          "sourceId": "bok-center-production-manual-undated",
+          "evidencePage": 9,
+          "status": "REFERENCE",
+          "confidence": "HIGH",
+          "exactness": "EXACT",
+          "derivationRule": "approved measurement bok-scoreboard-width-46-67",
+          "participatesInFitCheck": false,
+          "evidence": [
+            {
+              "measurementId": "bok-scoreboard-width-46-67",
+              "sourceId": "bok-center-production-manual-undated",
+              "sourceTitle": "bok_center_tulsa_ok.pdf",
+              "driveUrl": "https://drive.google.com/file/d/1B7NjOmgXIk1sCOMUY6_EhL5riFEcWu8C",
+              "page": 9,
+              "section": "Rigging Grid",
+              "excerpt": "Scoreboard Bay Dimensions: 46'-8\" east-west and 37' north-south.",
+              "reviewState": "APPROVED"
+            }
+          ]
+        },
+        "depthFt": {
+          "value": 37,
+          "originalValue": "37",
+          "originalUnit": "ft",
+          "normalizedUnit": "ft",
+          "measurementId": "bok-scoreboard-depth-37",
+          "sourceId": "bok-center-production-manual-undated",
+          "evidencePage": 9,
+          "status": "REFERENCE",
+          "confidence": "HIGH",
+          "exactness": "EXACT",
+          "derivationRule": "approved measurement bok-scoreboard-depth-37",
+          "participatesInFitCheck": false,
+          "evidence": [
+            {
+              "measurementId": "bok-scoreboard-depth-37",
+              "sourceId": "bok-center-production-manual-undated",
+              "sourceTitle": "bok_center_tulsa_ok.pdf",
+              "driveUrl": "https://drive.google.com/file/d/1B7NjOmgXIk1sCOMUY6_EhL5riFEcWu8C",
+              "page": 9,
+              "section": "Rigging Grid",
+              "excerpt": "Scoreboard Bay Dimensions: 46'-8\" east-west and 37' north-south.",
+              "reviewState": "APPROVED"
+            }
+          ]
+        }
+      },
+      "footprint": {
+        "id": "bok-center-centerhung-footprint",
+        "points": [
+          {
+            "xFt": -23.335,
+            "zFt": -18.5
+          },
+          {
+            "xFt": 23.335,
+            "zFt": -18.5
+          },
+          {
+            "xFt": 23.335,
+            "zFt": 18.5
+          },
+          {
+            "xFt": -23.335,
+            "zFt": 18.5
+          }
+        ],
+        "derivationRule": "Derived center-hung footprint from approved scoreboard width/depth or approved diameter.",
+        "exactness": "DERIVED",
+        "renderState": "APPROVED",
+        "approvedMeasurementIds": [
+          "bok-scoreboard-width-46-67",
+          "bok-scoreboard-depth-37",
+          "bok-scoreboard-bottom-75"
+        ],
+        "participatesInFitCheck": false
+      },
+      "lowPoint": {
+        "value": 75,
+        "originalValue": "75",
+        "originalUnit": "ft",
+        "normalizedUnit": "ft",
+        "measurementId": "bok-scoreboard-bottom-75",
+        "sourceId": "bok-center-production-manual-undated",
+        "evidencePage": 9,
+        "status": "REFERENCE",
+        "confidence": "HIGH",
+        "exactness": "EXACT",
+        "derivationRule": "approved measurement bok-scoreboard-bottom-75",
+        "participatesInFitCheck": false,
+        "evidence": [
+          {
+            "measurementId": "bok-scoreboard-bottom-75",
+            "sourceId": "bok-center-production-manual-undated",
+            "sourceTitle": "bok_center_tulsa_ok.pdf",
+            "driveUrl": "https://drive.google.com/file/d/1B7NjOmgXIk1sCOMUY6_EhL5riFEcWu8C",
+            "page": 9,
+            "section": "Rigging Grid",
+            "excerpt": "Scoreboard hangs 15 ft below rigging grid, 75 ft from floor to bottom of scoreboard.",
+            "reviewState": "APPROVED"
+          }
+        ]
+      },
+      "renderState": "APPROVED",
+      "exactness": "DERIVED",
+      "approvedMeasurementIds": [
+        "bok-scoreboard-width-46-67",
+        "bok-scoreboard-depth-37",
+        "bok-scoreboard-bottom-75"
+      ],
+      "participatesInFitCheck": false,
+      "derivationRule": "Approved center-hung footprint and/or low point only; missing axes are not fabricated."
+    },
+    "scoreboardLowPoint": {
+      "value": 75,
+      "originalValue": "75",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "bok-scoreboard-bottom-75",
+      "sourceId": "bok-center-production-manual-undated",
+      "evidencePage": 9,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement bok-scoreboard-bottom-75",
+      "participatesInFitCheck": false,
+      "evidence": [
+        {
+          "measurementId": "bok-scoreboard-bottom-75",
+          "sourceId": "bok-center-production-manual-undated",
+          "sourceTitle": "bok_center_tulsa_ok.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1B7NjOmgXIk1sCOMUY6_EhL5riFEcWu8C",
+          "page": 9,
+          "section": "Rigging Grid",
+          "excerpt": "Scoreboard hangs 15 ft below rigging grid, 75 ft from floor to bottom of scoreboard.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "fixedObstructions": [],
+    "renderState": "APPROVED"
+  },
+  "stageReference": {
+    "endStageDirection": "UNKNOWN",
+    "maximumStageBounds": {
+      "id": "bok-center-maximum-house-stage",
+      "points": [
+        {
+          "xFt": -28,
+          "zFt": -40
+        },
+        {
+          "xFt": 28,
+          "zFt": -40
+        },
+        {
+          "xFt": 28,
+          "zFt": 40
+        },
+        {
+          "xFt": -28,
+          "zFt": 40
+        }
+      ],
+      "derivationRule": "Derived maximum house-stage rectangle from approved house-stage width and depth.",
+      "exactness": "REFERENCE_ONLY",
+      "renderState": "REFERENCE_ONLY",
+      "approvedMeasurementIds": [
+        "bok-house-stage-max-width-56",
+        "bok-house-stage-max-depth-80"
+      ],
+      "participatesInFitCheck": false
+    },
+    "renderState": "MISSING"
+  },
+  "loading": {
+    "dockDirection": "UNKNOWN",
+    "renderState": "REFERENCE_ONLY",
+    "warning": "Loading facts are approved, but no source-backed dock coordinate or direction was available for native placement."
+  },
+  "evidence": {
+    "approvedMeasurementIds": [
+      "bok-low-steel-90",
+      "bok-scoreboard-bottom-75",
+      "bok-scoreboard-width-46-67",
+      "bok-scoreboard-depth-37",
+      "bok-house-stage-max-width-56",
+      "bok-house-stage-max-depth-80"
+    ],
+    "derivedGeometryIds": [
+      "bok-center-maximum-house-stage",
+      "bok-center-centerhung-footprint"
+    ],
+    "approximateGeometryIds": [],
+    "sourceIds": [
+      "bok-center-production-manual-undated"
+    ],
+    "sourceTitles": [
+      "bok_center_tulsa_ok.pdf"
+    ]
+  },
+  "diagnostics": {
+    "approvedMeasurementCount": 6,
+    "derivedGeometryCount": 2,
+    "approximateGeometryCount": 0,
+    "conflictCount": 0,
+    "missingCriticalFields": [
+      "floorWidthFt",
+      "floorLengthFt",
+      "nativeFloorBoundary",
+      "nativeRiggingCad"
+    ],
+    "blockers": [
+      "Missing floorWidthFt",
+      "Missing floorLengthFt",
+      "Missing nativeFloorBoundary",
+      "Missing nativeRiggingCad"
+    ],
+    "warnings": [
+      "No approved venue-native origin exists; reference origin is shown only as a planning warning.",
+      "Blocked review records do not contribute controlling fit geometry."
+    ],
+    "renderingStatus": "BLOCKED_NO_SHELL"
+  },
+  "drtFit": {
+    "status": "BLOCKED",
+    "checkedFactIds": [
+      "bok-low-steel-90",
+      "bok-scoreboard-bottom-75"
+    ],
+    "blockers": [
+      "Venue source review is blocked.",
+      "Approved floor width and length are required."
+    ],
+    "warnings": [
+      "Native CAD/rigging files remain requested before final operations.",
+      "Source is stale or undated; keep final engineering confirmation open."
+    ]
+  },
+  "generation": {
+    "generatorSchemaVersion": 1,
+    "sourceReviewDate": "2026-07-18",
+    "sourceRevision": "Undated production manual",
+    "reviewChecksum": "2313bc647df86377"
+  }
+}

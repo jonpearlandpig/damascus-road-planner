@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "venueSlug": "t-mobile-center",
+  "readiness": "READY",
+  "coordinateSystem": {
+    "origin": "REFERENCE_ORIGIN",
+    "originMethod": "DERIVED_FLOOR_CENTER",
+    "originLabel": "Derived event-floor center",
+    "originPoint": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "xAxis": "STAGE_LEFT_TO_STAGE_RIGHT",
+    "yAxis": "ELEVATION",
+    "zAxis": "UPSTAGE_TO_DOWNSTAGE",
+    "unit": "ft",
+    "evidenceMeasurementIds": [
+      "tmobile-floor-width-85",
+      "tmobile-floor-length-235"
+    ],
+    "warning": "Origin is the derived center of the approved event-floor rectangle; it is not a verified center-court point."
+  },
+  "floor": {
+    "boundary": {
+      "id": "t-mobile-center-event-floor-boundary",
+      "points": [
+        {
+          "xFt": -42.5,
+          "zFt": -117.5
+        },
+        {
+          "xFt": 42.5,
+          "zFt": -117.5
+        },
+        {
+          "xFt": 42.5,
+          "zFt": 117.5
+        },
+        {
+          "xFt": -42.5,
+          "zFt": 117.5
+        }
+      ],
+      "derivationRule": "Derived rectangular event-floor boundary from approved floor width and length.",
+      "exactness": "DERIVED",
+      "renderState": "DERIVED",
+      "approvedMeasurementIds": [
+        "tmobile-floor-width-85",
+        "tmobile-floor-length-235"
+      ],
+      "participatesInFitCheck": true
+    },
+    "width": {
+      "value": 85,
+      "originalValue": "85",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "tmobile-floor-width-85",
+      "sourceId": "t-mobile-center-source-pack",
+      "evidencePage": 2,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement tmobile-floor-width-85",
+      "participatesInFitCheck": true,
+      "evidence": [
+        {
+          "measurementId": "tmobile-floor-width-85",
+          "sourceId": "t-mobile-center-source-pack",
+          "sourceTitle": "t_mobile_center_kansas_city_mo.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1qVfSnoOt7EL201kdZ8ZW0eZoqjKQTGgJ",
+          "page": 2,
+          "section": "Floor Size",
+          "excerpt": "Concert dimensions are stated as 85 wide x 235 long.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "length": {
+      "value": 235,
+      "originalValue": "235",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "tmobile-floor-length-235",
+      "sourceId": "t-mobile-center-source-pack",
+      "evidencePage": 2,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement tmobile-floor-length-235",
+      "participatesInFitCheck": true,
+      "evidence": [
+        {
+          "measurementId": "tmobile-floor-length-235",
+          "sourceId": "t-mobile-center-source-pack",
+          "sourceTitle": "t_mobile_center_kansas_city_mo.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1qVfSnoOt7EL201kdZ8ZW0eZoqjKQTGgJ",
+          "page": 2,
+          "section": "Floor Size",
+          "excerpt": "Concert dimensions are stated as 85 wide x 235 long.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "center": {
+      "xFt": 0,
+      "zFt": 0
+    },
+    "orientationDeg": 0,
+    "renderState": "DERIVED"
+  },
+  "rigging": {
+    "lowSteel": {
+      "value": 98,
+      "originalValue": "98",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "tmobile-low-steel-98",
+      "sourceId": "t-mobile-center-source-pack",
+      "evidencePage": 2,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement tmobile-low-steel-98",
+      "participatesInFitCheck": true,
+      "evidence": [
+        {
+          "measurementId": "tmobile-low-steel-98",
+          "sourceId": "t-mobile-center-source-pack",
+          "sourceTitle": "t_mobile_center_kansas_city_mo.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1qVfSnoOt7EL201kdZ8ZW0eZoqjKQTGgJ",
+          "page": 2,
+          "section": "Rigging",
+          "excerpt": "Main steel is described as approximately 98 ft to steel.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "noRigZones": [],
+    "renderState": "APPROVED"
+  },
+  "obstructions": {
+    "centerHung": {
+      "id": "t-mobile-center-centerhung",
+      "center": {
+        "xFt": 0,
+        "yFt": 76,
+        "zFt": 0
+      },
+      "dimensions": {
+        "widthFt": {
+          "value": 32,
+          "originalValue": "32",
+          "originalUnit": "ft",
+          "normalizedUnit": "ft",
+          "measurementId": "tmobile-scoreboard-top-diameter-32",
+          "sourceId": "t-mobile-center-source-pack",
+          "evidencePage": 2,
+          "status": "REFERENCE",
+          "confidence": "HIGH",
+          "exactness": "EXACT",
+          "derivationRule": "approved measurement tmobile-scoreboard-top-diameter-32",
+          "participatesInFitCheck": false,
+          "evidence": [
+            {
+              "measurementId": "tmobile-scoreboard-top-diameter-32",
+              "sourceId": "t-mobile-center-source-pack",
+              "sourceTitle": "t_mobile_center_kansas_city_mo.pdf",
+              "driveUrl": "https://drive.google.com/file/d/1qVfSnoOt7EL201kdZ8ZW0eZoqjKQTGgJ",
+              "page": 2,
+              "section": "Scoreboard",
+              "excerpt": "Scoreboard diameter is listed as 32 top and 24 bottom.",
+              "reviewState": "APPROVED"
+            }
+          ]
+        },
+        "depthFt": {
+          "value": 32,
+          "originalValue": "32",
+          "originalUnit": "ft",
+          "normalizedUnit": "ft",
+          "measurementId": "tmobile-scoreboard-top-diameter-32",
+          "sourceId": "t-mobile-center-source-pack",
+          "evidencePage": 2,
+          "status": "REFERENCE",
+          "confidence": "HIGH",
+          "exactness": "EXACT",
+          "derivationRule": "approved measurement tmobile-scoreboard-top-diameter-32",
+          "participatesInFitCheck": false,
+          "evidence": [
+            {
+              "measurementId": "tmobile-scoreboard-top-diameter-32",
+              "sourceId": "t-mobile-center-source-pack",
+              "sourceTitle": "t_mobile_center_kansas_city_mo.pdf",
+              "driveUrl": "https://drive.google.com/file/d/1qVfSnoOt7EL201kdZ8ZW0eZoqjKQTGgJ",
+              "page": 2,
+              "section": "Scoreboard",
+              "excerpt": "Scoreboard diameter is listed as 32 top and 24 bottom.",
+              "reviewState": "APPROVED"
+            }
+          ]
+        }
+      },
+      "footprint": {
+        "id": "t-mobile-center-centerhung-footprint",
+        "points": [
+          {
+            "xFt": -16,
+            "zFt": -16
+          },
+          {
+            "xFt": 16,
+            "zFt": -16
+          },
+          {
+            "xFt": 16,
+            "zFt": 16
+          },
+          {
+            "xFt": -16,
+            "zFt": 16
+          }
+        ],
+        "derivationRule": "Derived center-hung footprint from approved scoreboard width/depth or approved diameter.",
+        "exactness": "DERIVED",
+        "renderState": "APPROVED",
+        "approvedMeasurementIds": [
+          "tmobile-scoreboard-top-diameter-32",
+          "tmobile-scoreboard-top-diameter-32",
+          "tmobile-scoreboard-bottom-76"
+        ],
+        "participatesInFitCheck": true
+      },
+      "lowPoint": {
+        "value": 76,
+        "originalValue": "76",
+        "originalUnit": "ft",
+        "normalizedUnit": "ft",
+        "measurementId": "tmobile-scoreboard-bottom-76",
+        "sourceId": "t-mobile-center-source-pack",
+        "evidencePage": 2,
+        "status": "REFERENCE",
+        "confidence": "HIGH",
+        "exactness": "EXACT",
+        "derivationRule": "approved measurement tmobile-scoreboard-bottom-76",
+        "participatesInFitCheck": true,
+        "evidence": [
+          {
+            "measurementId": "tmobile-scoreboard-bottom-76",
+            "sourceId": "t-mobile-center-source-pack",
+            "sourceTitle": "t_mobile_center_kansas_city_mo.pdf",
+            "driveUrl": "https://drive.google.com/file/d/1qVfSnoOt7EL201kdZ8ZW0eZoqjKQTGgJ",
+            "page": 2,
+            "section": "Scoreboard",
+            "excerpt": "Scoreboard section lists trim at 76 ft.",
+            "reviewState": "APPROVED"
+          }
+        ]
+      },
+      "renderState": "APPROVED",
+      "exactness": "DERIVED",
+      "approvedMeasurementIds": [
+        "tmobile-scoreboard-top-diameter-32",
+        "tmobile-scoreboard-top-diameter-32",
+        "tmobile-scoreboard-bottom-76"
+      ],
+      "participatesInFitCheck": true,
+      "derivationRule": "Approved center-hung footprint and/or low point only; missing axes are not fabricated."
+    },
+    "scoreboardLowPoint": {
+      "value": 76,
+      "originalValue": "76",
+      "originalUnit": "ft",
+      "normalizedUnit": "ft",
+      "measurementId": "tmobile-scoreboard-bottom-76",
+      "sourceId": "t-mobile-center-source-pack",
+      "evidencePage": 2,
+      "status": "REFERENCE",
+      "confidence": "HIGH",
+      "exactness": "EXACT",
+      "derivationRule": "approved measurement tmobile-scoreboard-bottom-76",
+      "participatesInFitCheck": true,
+      "evidence": [
+        {
+          "measurementId": "tmobile-scoreboard-bottom-76",
+          "sourceId": "t-mobile-center-source-pack",
+          "sourceTitle": "t_mobile_center_kansas_city_mo.pdf",
+          "driveUrl": "https://drive.google.com/file/d/1qVfSnoOt7EL201kdZ8ZW0eZoqjKQTGgJ",
+          "page": 2,
+          "section": "Scoreboard",
+          "excerpt": "Scoreboard section lists trim at 76 ft.",
+          "reviewState": "APPROVED"
+        }
+      ]
+    },
+    "fixedObstructions": [],
+    "renderState": "APPROVED"
+  },
+  "stageReference": {
+    "endStageDirection": "UPSTAGE",
+    "stageCenterline": {
+      "id": "t-mobile-center-stage-centerline",
+      "start": {
+        "xFt": 0,
+        "zFt": -117.5
+      },
+      "end": {
+        "xFt": 0,
+        "zFt": 117.5
+      },
+      "derivationRule": "Derived from approved floor boundary dimensions and planner coordinate convention.",
+      "exactness": "DERIVED",
+      "approvedMeasurementIds": [
+        "tmobile-floor-width-85",
+        "tmobile-floor-length-235"
+      ],
+      "participatesInFitCheck": true
+    },
+    "renderState": "DERIVED",
+    "warning": "Stage direction follows the planner coordinate convention; no venue-specific stage-end orientation was approved."
+  },
+  "loading": {
+    "dockDirection": "UNKNOWN",
+    "renderState": "REFERENCE_ONLY",
+    "warning": "Loading facts are approved, but no source-backed dock coordinate or direction was available for native placement."
+  },
+  "evidence": {
+    "approvedMeasurementIds": [
+      "tmobile-floor-width-85",
+      "tmobile-floor-length-235",
+      "tmobile-low-steel-98",
+      "tmobile-scoreboard-bottom-76",
+      "tmobile-scoreboard-top-diameter-32"
+    ],
+    "derivedGeometryIds": [
+      "t-mobile-center-event-floor-boundary",
+      "t-mobile-center-floor-center",
+      "t-mobile-center-stage-centerline",
+      "t-mobile-center-centerhung-footprint"
+    ],
+    "approximateGeometryIds": [],
+    "sourceIds": [
+      "t-mobile-center-source-pack"
+    ],
+    "sourceTitles": [
+      "t_mobile_center_kansas_city_mo.pdf"
+    ]
+  },
+  "diagnostics": {
+    "approvedMeasurementCount": 5,
+    "derivedGeometryCount": 4,
+    "approximateGeometryCount": 0,
+    "conflictCount": 0,
+    "missingCriticalFields": [
+      "currentIssueDate",
+      "nativeRiggingCad"
+    ],
+    "blockers": [
+      "Missing currentIssueDate",
+      "Missing nativeRiggingCad"
+    ],
+    "warnings": [
+      "Origin is the derived center of the approved event-floor rectangle; it is not a verified center-court point."
+    ],
+    "renderingStatus": "READY_TO_RENDER"
+  },
+  "drtFit": {
+    "status": "PASS_WITH_WARNINGS",
+    "checkedFactIds": [
+      "tmobile-floor-width-85",
+      "tmobile-floor-length-235",
+      "tmobile-low-steel-98",
+      "tmobile-scoreboard-bottom-76"
+    ],
+    "blockers": [],
+    "warnings": [
+      "Only 3.5 ft remains per side against the approved floor width.",
+      "Native CAD/rigging files remain requested before final operations."
+    ]
+  },
+  "generation": {
+    "generatorSchemaVersion": 1,
+    "sourceReviewDate": "2026-07-18",
+    "sourceRevision": "Technical information packet; visible issue date not found",
+    "reviewChecksum": "fa8ab8137c859d54"
+  }
+}
